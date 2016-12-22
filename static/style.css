@@ -106,13 +106,13 @@ h3::after{
 table  {
     border-collapse:collapse;
     border-spacing:0;
-    background: url(bg2.gif);
+    background: url(bg-td.gif);
     line-height: 1;
     width: 100%
 }
 
 table thead tr {
-    background: url(bg4.gif);
+    background: url(bg-th.gif);
     color: #f0f0f0;
 }
 
