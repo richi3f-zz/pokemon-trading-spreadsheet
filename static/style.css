@@ -84,6 +84,15 @@ h1 a:focus, h1 a:hover {
     color:#4d6ad8;
 }
 
+h2{
+    background-color:#f0f0f0;
+    color:#4d6ad8;
+    font-size:1.5em;
+    font-weight:700;
+    margin: 0 0 1em;
+    text-align: center
+}
+
 h3{
     display:inline-block;
     font-size:1em;

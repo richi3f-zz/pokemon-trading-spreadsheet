@@ -24,10 +24,7 @@ function filterPkmn(option, checked) {
         }
     });
 }
-var handle = 0;
-var state = false;
 $(document).ready(function() {
-
     var handle = 0;
     $("tr").hover(function() {
         var $pkmn = $(this).find(".sprite");
@@ -39,13 +36,6 @@ $(document).ready(function() {
         clearInterval(handle);
     });
 
-    $('#q').keyup(function() {
-        var value = this.value.toLowerCase().trim();
-        $("tbody").find("tr").each(function(index) {
-                var id = $(this).find("td").eq(1).text().toLowerCase().trim();
-                $(this).toggle(id.indexOf(value) !== -1);
-        });
-    });
     $("select").multiselect({
         buttonWidth: '140px',
         numberDisplayed: 1,
