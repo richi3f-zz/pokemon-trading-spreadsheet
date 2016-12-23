@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="style.xsl" ?>
+<shop>
+  <title>Looking For</title>
+  <pokemon>
+    <number>794</number>
+    <name>Buzzwole</name>
+    <set>
+      <nature>Adamant</nature>
+      <ability>Beast Boost</ability>
+      <ivs hp="31" atk="31" def="x" spa="x" spd="x" spe="31" />
+      <poke-ball>Beast Ball</poke-ball>
+    </set>
+  </pokemon>
+  <pokemon>
+    <number>798</number>
+    <name>Kartana</name>
+    <set>
+      <nature>Jolly</nature>
+      <ability>Beast Boost</ability>
+      <ivs hp="31" atk="31" def="x" spa="x" spd="x" spe="31" />
+      <poke-ball>Beast Ball</poke-ball>
+    </set>
+  </pokemon>
+  <pokemon>
+    <number>633</number>
+    <name>Deino</name>
+    <set>
+      <nature>Modest</nature>
+      <ability>Hustle</ability>
+      <egg-move>Head Smash</egg-move>
+      <egg-move>Ice Fang</egg-move>
+      <egg-move>Screech</egg-move>
+      <egg-move>Thunder Fang</egg-move>
+      <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="31" />
+      <poke-ball>Friend Ball</poke-ball>
+      <poke-ball>Love Ball</poke-ball>
+    </set>
+  </pokemon>
+  <pokemon>
+    <number>128</number>
+    <name>Tauros</name>
+    <set>
+      <nature>Jolly</nature>
+      <ability hidden="yes">Sheer Force</ability>
+      <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
+      <poke-ball>Premier Ball</poke-ball>
+      <poke-ball>Level Ball</poke-ball>
+    </set>
+  </pokemon>
+  <pokemon>
+    <number>540</number>
+    <name>Sewaddle</name>
+    <set>
+      <nature>Jolly</nature>
+      <ability>Chlorophyll</ability>
+      <egg-move>Agility</egg-move>
+      <egg-move>Baton Pass</egg-move>
+      <egg-move>Mind Reader</egg-move>
+      <egg-move>Screech</egg-move>
+      <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
+      <poke-ball>Friend Ball</poke-ball>
+    </set>
+  </pokemon>
+  <pokemon>
+    <number>320</number>
+    <name>Wailmer</name>
+    <set>
+      <nature>Modest</nature>
+      <ability hidden="yes">Pressure</ability>
+      <egg-move>Soak</egg-move>
+      <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="31" />
+      <poke-ball>Lure Ball</poke-ball>
+      <poke-ball>Love Ball</poke-ball>
+    </set>
+  </pokemon>
+  <pokemon>
+    <number>568</number>
+    <name>Trubbish</name>
+    <set>
+      <nature>Impish</nature>
+      <ability hidden="yes">Aftermath</ability>
+      <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
+      <poke-ball>Love Ball</poke-ball>
+    </set>
+  </pokemon>
+  <pokemon>
+    <number>607</number>
+    <name>Litwick</name>
+    <set>
+      <nature>Timid</nature>
+      <ability>Flash Fire</ability>
+      <egg-move>Acid</egg-move>
+      <egg-move>Acid Armor</egg-move>
+      <egg-move>Clear Smog</egg-move>
+      <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="31" />
+      <poke-ball>Love Ball</poke-ball>
+    </set>
+  </pokemon>
+  <pokemon>
+    <number>532</number>
+    <name>Timburr</name>
+    <set>
+      <nature>Adamant</nature>
+      <ability>Guts</ability>
+      <egg-move>Counter</egg-move>
+      <egg-move>Mach Punch</egg-move>
+      <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
+      <poke-ball>Love Ball</poke-ball>
+    </set>
+  </pokemon>
+  <pokemon>
+    <number>128</number>
+    <name>Carvanha</name>
+    <set>
+      <nature>Jolly</nature>
+      <ability hidden="yes">Speed Boost</ability>
+      <egg-move>Ancient Power</egg-move>
+      <egg-move>Double-Edge</egg-move>
+      <egg-move>Hydro Pump</egg-move>
+      <egg-move>Psychic Fangs</egg-move>
+      <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
+      <poke-ball>Lure Ball</poke-ball>
+      <poke-ball>Love Ball</poke-ball>
+    </set>
+  </pokemon>
+  <pokemon>
+    <number>128</number>
+    <name>Drifloon</name>
+    <set>
+      <nature>Modest</nature>
+      <ability hidden="yes">Flare Boost</ability>
+      <egg-move>Destiny Bond</egg-move>
+      <egg-move>Disable</egg-move>
+      <egg-move>Hypnosis</egg-move>
+      <egg-move>Memento</egg-move>
+      <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="31" />
+      <poke-ball>Love Ball</poke-ball>
+    </set>
+  </pokemon>
+</shop>
