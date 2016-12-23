@@ -257,8 +257,12 @@
     <set>
       <nature>Timid</nature>
       <ability hidden="yes">Magic Guard</ability>
+      <egg-move>Encore</egg-move>
+      <egg-move>Fire Punch</egg-move>
+      <egg-move>Knock Off</egg-move>
+      <egg-move>Thunder Punc</egg-move>
       <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="31" />
-      <poke-ball>Ultra Ball</poke-ball>
+      <poke-ball>Level Ball</poke-ball>
       <poke-ball>Fast Ball</poke-ball>
     </set>
   </pokemon>
@@ -973,6 +977,48 @@
       <egg-move>Splash</egg-move>
       <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="0" />
       <poke-ball>Lure Ball</poke-ball>
+    </set>
+  </pokemon>
+  <pokemon>
+    <number>540</number>
+    <name>Sewaddle</name>
+    <set>
+      <nature>Jolly</nature>
+      <ability>Chlorophyll</ability>
+      <egg-move>Air Slash</egg-move>
+      <egg-move>Agility</egg-move>
+      <egg-move>Baton Pass</egg-move>
+      <egg-move>Me First</egg-move>
+      <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
+      <poke-ball>Friend Ball</poke-ball>
+    </set>
+  </pokemon>
+  <pokemon>
+    <number>147</number>
+    <name>Dratini</name>
+    <set>
+      <nature>Adamant</nature>
+      <ability hidden="yes">Marvel Scale</ability>
+      <egg-move>Aqua Jet</egg-move>
+      <egg-move>Dragon Dance</egg-move>
+      <egg-move>Dragon Rush</egg-move>
+      <egg-move>Haze</egg-move>
+      <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
+      <poke-ball>Level Ball</poke-ball>
+    </set>
+  </pokemon>
+  <pokemon>
+    <number>147</number>
+    <name>Tepig</name>
+    <set>
+      <nature>Adamant</nature>
+      <ability>Blaze</ability>
+      <egg-move>Heavy Slam</egg-move>
+      <egg-move>Sucker Punch</egg-move>
+      <egg-move>Superpower</egg-move>
+      <egg-move>Yawn</egg-move>
+      <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
+      <poke-ball>Level Ball</poke-ball>
     </set>
   </pokemon>
 </shop>
