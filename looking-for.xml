@@ -138,4 +138,34 @@
       <poke-ball>Love Ball</poke-ball>
     </set>
   </pokemon>
+  <pokemon>
+    <number>781</number>
+    <name>Dhelmise</name>
+    <set>
+      <nature>Adamant</nature>
+      <ability>Steelworker</ability>
+      <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
+      <poke-ball>Level Ball</poke-ball>
+    </set>
+  </pokemon>
+  <pokemon>
+    <number>781</number>
+    <name>Dhelmise</name>
+    <set>
+      <nature>Adamant</nature>
+      <ability>Steelworker</ability>
+      <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
+      <poke-ball>Level Ball</poke-ball>
+    </set>
+  </pokemon>
+  <pokemon>
+    <number>674</number>
+    <name>Pancham</name>
+    <set>
+      <nature>Adamant</nature>
+      <ability hidden="yes">Scrappy</ability>
+      <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
+      <poke-ball>Love Ball</poke-ball>
+    </set>
+  </pokemon>
 </shop>
