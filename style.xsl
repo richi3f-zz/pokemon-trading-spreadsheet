@@ -25,6 +25,7 @@
 <body>
     <article>
         <h1><a href="http://reddit.com/u/richi3f">/u/richi3f</a>'s Pokémon Stock</h1>
+        <h2><xsl:value-of select="shop/title" /></h2>
         <div id="filters">
             <h3>Filters</h3>
             <div class="filter">
