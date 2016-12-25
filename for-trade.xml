@@ -716,7 +716,8 @@
       <egg-move>Shadow Sneak</egg-move>
       <egg-move>Stockpile</egg-move>
       <egg-move>Swallow</egg-move>
-      <ivs hp="31" atk="x" def="31" spa="x" spd="31" spe="0" />
+      <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
+      <poke-ball>Dusk Ball</poke-ball>
       <poke-ball>Friend Ball</poke-ball>
       <poke-ball>Love Ball</poke-ball>
     </set>
@@ -1008,7 +1009,7 @@
     </set>
   </pokemon>
   <pokemon>
-    <number>147</number>
+    <number>498</number>
     <name>Tepig</name>
     <set>
       <nature>Adamant</nature>
@@ -1019,6 +1020,52 @@
       <egg-move>Yawn</egg-move>
       <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
       <poke-ball>Level Ball</poke-ball>
+    </set>
+  </pokemon>
+  <pokemon>
+    <number>674</number>
+    <name>Pancham</name>
+    <set>
+      <nature>Adamant</nature>
+      <ability hidden="yes">Blaze</ability>
+      <egg-move>Foul Play</egg-move>
+      <egg-move>Power Trip</egg-move>
+      <egg-move>Quick Guard</egg-move>
+      <egg-move>Storm Throw</egg-move>
+      <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
+      <poke-ball>Love Ball</poke-ball>
+    </set>
+  </pokemon>
+  <pokemon>
+    <number>320</number>
+    <name>Wailmer</name>
+    <set>
+      <nature>Modest</nature>
+      <ability hidden="yes">Pressure</ability>
+      <egg-move>Aqua Ring</egg-move>
+      <egg-move>Clear Smog</egg-move>
+      <egg-move>Curse</egg-move>
+      <egg-move>Snore</egg-move>
+      <egg-move></egg-move>
+      <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="31" />
+      <poke-ball>Lure Ball</poke-ball>
+      <poke-ball>Heavy Ball</poke-ball>
+    </set>
+  </pokemon>
+  <pokemon>
+    <number>546</number>
+    <name>Cottonee</name>
+    <set>
+      <nature>Timid</nature>
+      <ability hidden="yes">Chlorophyll</ability>
+      <egg-move>Captivate</egg-move>
+      <egg-move>Encore</egg-move>
+      <egg-move>Grass Whistle</egg-move>
+      <egg-move>Worry Seed</egg-move>
+      <egg-move></egg-move>
+      <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="31" />
+      <poke-ball>Love Ball</poke-ball>
+      <poke-ball>Friend Ball</poke-ball>
     </set>
   </pokemon>
 </shop>
