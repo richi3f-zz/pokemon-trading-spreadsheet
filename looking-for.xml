@@ -45,6 +45,7 @@
       <ability hidden="yes">Sheer Force</ability>
       <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
       <poke-ball>Premier Ball</poke-ball>
+      <poke-ball>Fast Ball</poke-ball>
       <poke-ball>Level Ball</poke-ball>
     </set>
   </pokemon>
@@ -101,7 +102,6 @@
       <nature>Jolly</nature>
       <ability hidden="yes">Speed Boost</ability>
       <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
-      <poke-ball>Lure Ball</poke-ball>
       <poke-ball>Fast Ball</poke-ball>
       <poke-ball>Love Ball</poke-ball>
     </set>
