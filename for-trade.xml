@@ -1098,6 +1098,7 @@
       <egg-move>Psychic Fangs</egg-move>
       <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
       <poke-ball>Lure Ball</poke-ball>
+      <poke-ball>Fast Ball</poke-ball>
     </set>
   </pokemon>
   <pokemon>
