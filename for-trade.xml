@@ -1128,4 +1128,18 @@
       <poke-ball>Poké Ball</poke-ball>
     </set>
   </pokemon>
+  <pokemon>
+    <number>69</number>
+    <name>Bellsprout</name>
+    <set>
+      <nature>Modest</nature>
+      <ability>Chlorophyll</ability>
+      <egg-move>Acid Spray</egg-move>
+      <egg-move>Giga Drain</egg-move>
+      <egg-move>Ingrain</egg-move>
+      <egg-move>Weather Ball</egg-move>
+      <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="31" />
+      <poke-ball>Love Ball</poke-ball>
+    </set>
+  </pokemon>
 </shop>
