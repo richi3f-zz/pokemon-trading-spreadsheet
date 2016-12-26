@@ -656,10 +656,10 @@
     <set>
       <nature>Modest</nature>
       <ability>Shell Armor</ability>
-      <egg-move illegal="yes">Fire Spin</egg-move>
+      <egg-move>Fire Spin</egg-move>
       <egg-move>Head Smash</egg-move>
-      <egg-move illegal="yes">Revenge</egg-move>
-      <egg-move illegal="yes">Wide Guard</egg-move>
+      <egg-move>Revenge</egg-move>
+      <egg-move>Wide Guard</egg-move>
       <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="31" />
       <poke-ball>Level Ball</poke-ball>
       <poke-ball>Heavy Ball</poke-ball>
@@ -746,7 +746,7 @@
     <set>
       <nature>Quiet</nature>
       <ability hidden="yes">Sand Veil</ability>
-      <egg-move illegal="yes">Ancient Power</egg-move>
+      <egg-move>Ancient Power</egg-move>
       <egg-move>Destiny Bond</egg-move>
       <egg-move>Stockpile</egg-move>
       <egg-move>Swallow</egg-move>
@@ -762,7 +762,7 @@
       <ability hidden="yes">Cloud Nine</ability>
       <egg-move>Hurricane</egg-move>
       <egg-move>Mist</egg-move>
-      <egg-move illegal="yes">Play Rough</egg-move>
+      <egg-move>Play Rough</egg-move>
       <egg-move>Razor Wind</egg-move>
       <ivs hp="31" atk="31" def="31" spa="31" spd="31" spe="0" />
       <poke-ball>Love Ball</poke-ball>
@@ -978,13 +978,13 @@
     <number>116</number>
     <name>Horsea</name>
     <set>
-      <nature>Quiet</nature>
+      <nature>Modest</nature>
       <ability>Swift Swim</ability>
       <egg-move>Disable</egg-move>
       <egg-move>Muddy Water</egg-move>
       <egg-move>Outrage</egg-move>
       <egg-move>Splash</egg-move>
-      <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="0" />
+      <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="31" />
       <poke-ball>Lure Ball</poke-ball>
     </set>
   </pokemon>
@@ -1102,6 +1102,7 @@
       <egg-move>Hydro Pump</egg-move>
       <egg-move>Psychic Fangs</egg-move>
       <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
+      <poke-ball>Fast Ball</poke-ball>
       <poke-ball>Lure Ball</poke-ball>
     </set>
   </pokemon>

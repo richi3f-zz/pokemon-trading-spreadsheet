@@ -181,4 +181,40 @@
       <poke-ball>Lure Ball</poke-ball>
     </set>
   </pokemon>
+  <pokemon>
+    <number>296</number>
+    <name>Makuhita</name>
+    <set>
+      <nature>Adamant</nature>
+      <ability hidden="yes">Sheer Force</ability>
+      <egg-move>Bullet Punch</egg-move>
+      <egg-move>Feint</egg-move>
+      <egg-move>Helping Hand</egg-move>
+      <egg-move>Wide Guard</egg-move>
+      <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
+      <poke-ball>Heavy Ball</poke-ball>
+      <poke-ball>Love Ball</poke-ball>
+    </set>
+  </pokemon>
+  <pokemon>
+    <number>769</number>
+    <name>Sandygast</name>
+    <set>
+      <nature>Quiet</nature>
+      <ability hidden="yes">Sand Veil</ability>
+      <egg-move>Amnesia</egg-move>
+      <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="0" />
+      <poke-ball>Heavy Ball</poke-ball>
+    </set>
+  </pokemon>
+  <pokemon>
+    <number>102</number>
+    <name>Exeggcute</name>
+    <set>
+      <nature>Brave</nature>
+      <ability hidden="yes">Harvest</ability>
+      <ivs hp="31" atk="31" def="31" spa="31" spd="31" spe="x" />
+      <poke-ball>Heavy Ball</poke-ball>
+    </set>
+  </pokemon>
 </shop>
