@@ -45,7 +45,6 @@
       <ability hidden="yes">Sheer Force</ability>
       <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
       <poke-ball>Premier Ball</poke-ball>
-      <poke-ball>Fast Ball</poke-ball>
       <poke-ball>Level Ball</poke-ball>
     </set>
   </pokemon>
@@ -102,6 +101,7 @@
       <nature>Jolly</nature>
       <ability hidden="yes">Speed Boost</ability>
       <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
+      <poke-ball>Lure Ball</poke-ball>
       <poke-ball>Fast Ball</poke-ball>
       <poke-ball>Love Ball</poke-ball>
     </set>
@@ -180,6 +180,26 @@
       <ability hidden="yes">Rough Skin</ability>
       <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
       <poke-ball>Fast Ball</poke-ball>
+    </set>
+  </pokemon>
+  <pokemon>
+    <number>594</number>
+    <name>Alomomola</name>
+    <set>
+      <nature>Calm</nature>
+      <ability hidden="yes">Regenerator</ability>
+      <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="31" />
+      <poke-ball>Lure Ball</poke-ball>
+    </set>
+  </pokemon>
+  <pokemon>
+    <number>767</number>
+    <name>Wimpod</name>
+    <set>
+      <nature>Adamant</nature>
+      <ability>Wimp Out</ability>
+      <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
+      <poke-ball>Love Ball</poke-ball>
     </set>
   </pokemon>
 </shop>
