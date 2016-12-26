@@ -3,6 +3,21 @@
 <shop>
   <title>For Trade</title>
   <pokemon>
+    <number>767</number>
+    <name>Wimpod</name>
+    <set>
+      <nature>Adamant</nature>
+      <ability>Wimp Out</ability>
+      <egg-move>Aqua Jet</egg-move>
+      <egg-move>Metal Claw</egg-move>
+      <egg-move>Spikes</egg-move>
+      <egg-move>Wide Guard</egg-move>
+      <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
+      <poke-ball>Net Ball</poke-ball>
+      <poke-ball>Love Ball</poke-ball>
+    </set>
+  </pokemon>
+  <pokemon>
     <number>37</number>
     <name>Vulpix</name>
     <set>
@@ -132,6 +147,7 @@
       <poke-ball>Premier Ball</poke-ball>
       <poke-ball>Fast Ball</poke-ball>
       <poke-ball>Level Ball</poke-ball>
+      <poke-ball>Love Ball</poke-ball>
     </set>
   </pokemon>
   <pokemon>
@@ -191,20 +207,6 @@
       <poke-ball>Premier Ball</poke-ball>
       <poke-ball>Friend Ball</poke-ball>
       <poke-ball>Love Ball</poke-ball>
-    </set>
-  </pokemon>
-  <pokemon>
-    <number>767</number>
-    <name>Wimpod</name>
-    <set>
-      <nature>Adamant</nature>
-      <ability>Wimp Out</ability>
-      <egg-move>Aqua Jet</egg-move>
-      <egg-move>Metal Claw</egg-move>
-      <egg-move>Spikes</egg-move>
-      <egg-move>Wide Guard</egg-move>
-      <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
-      <poke-ball>Net Ball</poke-ball>
     </set>
   </pokemon>
   <pokemon>
@@ -460,6 +462,7 @@
       <egg-move>Outrage</egg-move>
       <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
       <poke-ball>Great Ball</poke-ball>
+      <poke-ball>Fast Ball</poke-ball>
       <poke-ball>Love Ball</poke-ball>
     </set>
   </pokemon>
@@ -689,6 +692,7 @@
       <egg-move>Tailwind</egg-move>
       <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
       <poke-ball>Level Ball</poke-ball>
+      <poke-ball>Love Ball</poke-ball>
     </set>
   </pokemon>
   <pokemon>
@@ -732,6 +736,7 @@
       <nature>Jolly</nature>
       <ability hidden="yes">Sheer Force</ability>
       <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
+      <poke-ball>Fast Ball</poke-ball>
       <poke-ball>Friend Ball</poke-ball>
     </set>
   </pokemon>
@@ -1098,7 +1103,6 @@
       <egg-move>Psychic Fangs</egg-move>
       <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
       <poke-ball>Lure Ball</poke-ball>
-      <poke-ball>Fast Ball</poke-ball>
     </set>
   </pokemon>
   <pokemon>
@@ -1140,6 +1144,66 @@
       <egg-move>Ingrain</egg-move>
       <egg-move>Weather Ball</egg-move>
       <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="31" />
+      <poke-ball>Love Ball</poke-ball>
+    </set>
+  </pokemon>
+  <pokemon>
+    <number>425</number>
+    <name>Drifloon</name>
+    <set>
+      <nature>Modest</nature>
+      <ability hidden="yes">Flare Boost</ability>
+      <egg-move>Disable</egg-move>
+      <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="31" />
+      <poke-ball>Love Ball</poke-ball>
+    </set>
+  </pokemon>
+  <pokemon>
+    <number>734</number>
+    <name>Yungoos</name>
+    <set>
+      <nature>Adamant</nature>
+      <ability hidden="yes">Adaptability</ability>
+      <egg-move>Last Resort</egg-move>
+      <egg-move>Revenge</egg-move>
+      <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
+      <poke-ball>Love Ball</poke-ball>
+    </set>
+  </pokemon>
+  <pokemon>
+    <number>235</number>
+    <name>Smeargle</name>
+    <set>
+      <nature>Timid</nature>
+      <ability hidden="yes">Moody</ability>
+      <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="31" />
+      <poke-ball>Level Ball</poke-ball>
+    </set>
+  </pokemon>
+  <pokemon>
+    <number>633</number>
+    <name>Deino</name>
+    <set>
+      <nature>Modest</nature>
+      <ability>Hustle</ability>
+      <egg-move>Fire Fang</egg-move>
+      <egg-move>Ice Fang</egg-move>
+      <egg-move>Thunder Fang</egg-move>
+      <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="31" />
+      <poke-ball>Friend Ball</poke-ball>
+    </set>
+  </pokemon>
+  <pokemon>
+    <number>222</number>
+    <name>Corsola</name>
+    <set>
+      <nature>Careful</nature>
+      <ability hidden="yes">Regenerator</ability>
+      <egg-move>Amnesia</egg-move>
+      <egg-move>Confuse Ray</egg-move>
+      <egg-move>Curse</egg-move>
+      <egg-move>Liquidation</egg-move>
+      <ivs hp="x" atk="x" def="x" spa="x" spd="x" spe="x" />
       <poke-ball>Love Ball</poke-ball>
     </set>
   </pokemon>

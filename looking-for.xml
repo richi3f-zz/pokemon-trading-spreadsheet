@@ -29,11 +29,8 @@
       <nature>Modest</nature>
       <ability>Hustle</ability>
       <egg-move>Head Smash</egg-move>
-      <egg-move>Ice Fang</egg-move>
       <egg-move>Screech</egg-move>
-      <egg-move>Thunder Fang</egg-move>
       <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="31" />
-      <poke-ball>Friend Ball</poke-ball>
       <poke-ball>Love Ball</poke-ball>
     </set>
   </pokemon>
@@ -168,6 +165,20 @@
       <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="31" />
       <poke-ball>Premier Ball</poke-ball>
       <poke-ball>Heal Ball</poke-ball>
+    </set>
+  </pokemon>
+  <pokemon>
+    <number>54</number>
+    <name>Psyduck</name>
+    <set>
+      <nature>Modest</nature>
+      <ability hidden="yes">Swift Swim</ability>
+      <egg-move>Clear Smog</egg-move>
+      <egg-move>Encore</egg-move>
+      <egg-move>Hypnosis</egg-move>
+      <egg-move>Yawn</egg-move>
+      <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="31" />
+      <poke-ball>Lure Ball</poke-ball>
     </set>
   </pokemon>
 </shop>
