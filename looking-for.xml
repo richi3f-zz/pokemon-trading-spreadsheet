@@ -46,7 +46,6 @@
       <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
       <poke-ball>Premier Ball</poke-ball>
       <poke-ball>Level Ball</poke-ball>
-      <poke-ball>Fast Ball</poke-ball>
     </set>
   </pokemon>
   <pokemon>
@@ -57,7 +56,6 @@
       <ability hidden="yes">Pressure</ability>
       <egg-move>Soak</egg-move>
       <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="31" />
-      <poke-ball>Lure Ball</poke-ball>
       <poke-ball>Love Ball</poke-ball>
     </set>
   </pokemon>
@@ -97,13 +95,11 @@
     </set>
   </pokemon>
   <pokemon>
-    <number>128</number>
+    <number>318</number>
     <name>Carvanha</name>
     <set>
       <nature>Jolly</nature>
       <ability hidden="yes">Speed Boost</ability>
-      <egg-move>Ancient Power</egg-move>
-      <egg-move>Double-Edge</egg-move>
       <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
       <poke-ball>Lure Ball</poke-ball>
       <poke-ball>Fast Ball</poke-ball>
@@ -111,37 +107,79 @@
     </set>
   </pokemon>
   <pokemon>
-    <number>128</number>
+    <number>425</number>
     <name>Drifloon</name>
     <set>
       <nature>Modest</nature>
       <ability hidden="yes">Flare Boost</ability>
-      <egg-move>Destiny Bond</egg-move>
       <egg-move>Disable</egg-move>
-      <egg-move>Hypnosis</egg-move>
-      <egg-move>Memento</egg-move>
       <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="31" />
       <poke-ball>Love Ball</poke-ball>
     </set>
   </pokemon>
   <pokemon>
-    <number>781</number>
-    <name>Dhelmise</name>
+    <number>734</number>
+    <name>Yungoos</name>
     <set>
       <nature>Adamant</nature>
-      <ability>Steelworker</ability>
+      <ability hidden="yes">Adaptability</ability>
+      <egg-move>Last Resort</egg-move>
+      <egg-move>Revenge</egg-move>
       <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
-      <poke-ball>Level Ball</poke-ball>
+      <poke-ball>Love Ball</poke-ball>
     </set>
   </pokemon>
   <pokemon>
-    <number>674</number>
-    <name>Pancham</name>
+    <number>52</number>
+    <name>Meowth</name>
     <set>
-      <nature>Adamant</nature>
-      <ability hidden="yes">Scrappy</ability>
+      <form css="meowth-alola">Alola Form</form>
+      <nature>Timid</nature>
+      <ability hidden="yes">Rattled</ability>
+      <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="31" />
+      <poke-ball>Fast Ball</poke-ball>
+    </set>
+  </pokemon>
+  <pokemon>
+    <number>120</number>
+    <name>Staryu</name>
+    <set>
+      <nature>Timid</nature>
+      <ability hidden="yes">Analytic</ability>
+      <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="31" />
+      <poke-ball>Fast Ball</poke-ball>
+    </set>
+  </pokemon>
+  <pokemon>
+    <number>361</number>
+    <name>Snorunt</name>
+    <set>
+      <nature>Timid</nature>
+      <ability hidden="yes">Moody</ability>
+      <egg-move>Switcheroo</egg-move>
+      <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="31" />
+      <poke-ball>Fast Ball</poke-ball>
+    </set>
+  </pokemon>
+  <pokemon>
+    <number>37</number>
+    <name>Vulpix</name>
+    <set>
+      <form css="vulpix-alola">Alola Form</form>
+      <nature>Modest</nature>
+      <ability hidden="yes">Snow Warning</ability>
+      <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="31" />
+      <poke-ball>Fast Ball</poke-ball>
+    </set>
+  </pokemon>
+  <pokemon>
+    <number>443</number>
+    <name>Gible</name>
+    <set>
+      <nature>Jolly</nature>
+      <ability hidden="yes">Rough Skin</ability>
       <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
-      <poke-ball>Love Ball</poke-ball>
+      <poke-ball>Fast Ball</poke-ball>
     </set>
   </pokemon>
 </shop>
