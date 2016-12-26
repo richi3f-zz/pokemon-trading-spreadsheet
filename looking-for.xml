@@ -46,7 +46,6 @@
       <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
       <poke-ball>Premier Ball</poke-ball>
       <poke-ball>Level Ball</poke-ball>
-      <poke-ball>Fast Ball</poke-ball>
     </set>
   </pokemon>
   <pokemon>
@@ -106,29 +105,6 @@
     </set>
   </pokemon>
   <pokemon>
-    <number>425</number>
-    <name>Drifloon</name>
-    <set>
-      <nature>Modest</nature>
-      <ability hidden="yes">Flare Boost</ability>
-      <egg-move>Disable</egg-move>
-      <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="31" />
-      <poke-ball>Love Ball</poke-ball>
-    </set>
-  </pokemon>
-  <pokemon>
-    <number>734</number>
-    <name>Yungoos</name>
-    <set>
-      <nature>Adamant</nature>
-      <ability hidden="yes">Adaptability</ability>
-      <egg-move>Last Resort</egg-move>
-      <egg-move>Revenge</egg-move>
-      <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
-      <poke-ball>Love Ball</poke-ball>
-    </set>
-  </pokemon>
-  <pokemon>
     <number>52</number>
     <name>Meowth</name>
     <set>
@@ -146,6 +122,8 @@
       <nature>Timid</nature>
       <ability hidden="yes">Analytic</ability>
       <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="31" />
+      <poke-ball>Dive Ball</poke-ball>
+      <poke-ball>Net Ball</poke-ball>
       <poke-ball>Fast Ball</poke-ball>
     </set>
   </pokemon>
@@ -172,16 +150,6 @@
     </set>
   </pokemon>
   <pokemon>
-    <number>443</number>
-    <name>Gible</name>
-    <set>
-      <nature>Jolly</nature>
-      <ability hidden="yes">Rough Skin</ability>
-      <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
-      <poke-ball>Fast Ball</poke-ball>
-    </set>
-  </pokemon>
-  <pokemon>
     <number>594</number>
     <name>Alomomola</name>
     <set>
@@ -192,13 +160,14 @@
     </set>
   </pokemon>
   <pokemon>
-    <number>767</number>
-    <name>Wimpod</name>
+    <number>703</number>
+    <name>Carbink</name>
     <set>
-      <nature>Adamant</nature>
-      <ability>Wimp Out</ability>
-      <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
-      <poke-ball>Love Ball</poke-ball>
+      <nature>Calm</nature>
+      <ability hidden="yes">Sturdy</ability>
+      <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="31" />
+      <poke-ball>Premier Ball</poke-ball>
+      <poke-ball>Heal Ball</poke-ball>
     </set>
   </pokemon>
 </shop>
