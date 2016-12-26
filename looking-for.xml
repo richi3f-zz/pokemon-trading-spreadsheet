@@ -217,4 +217,29 @@
       <poke-ball>Heavy Ball</poke-ball>
     </set>
   </pokemon>
+  <pokemon>
+    <number>747</number>
+    <name>Mareanie</name>
+    <set>
+      <nature>Bold</nature>
+      <ability hidden="yes">Regenerator</ability>
+      <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="31" />
+      <poke-ball>Net Ball</poke-ball>
+    </set>
+  </pokemon>
+  <pokemon>
+    <number>371</number>
+    <name>Bagon</name>
+    <set>
+      <nature>Jolly</nature>
+      <ability hidden="yes">Sheer Force</ability>
+      <egg-move>Dragon Dance</egg-move>
+      <egg-move>Endure</egg-move>
+      <egg-move>Hydro Pump</egg-move>
+      <egg-move>Thrash</egg-move>
+      <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
+      <poke-ball>Premier Ball</poke-ball>
+      <poke-ball>Friend Ball</poke-ball>
+    </set>
+  </pokemon>
 </shop>
