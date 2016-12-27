@@ -1208,4 +1208,27 @@
       <poke-ball>Love Ball</poke-ball>
     </set>
   </pokemon>
+  <pokemon>
+    <number>661</number>
+    <name>Fletchling</name>
+    <set>
+      <nature>Jolly</nature>
+      <ability hidden="yes">Gale Wings</ability>
+      <egg-move>Quick Guard</egg-move>
+      <egg-move>Tailwind</egg-move>
+      <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
+      <poke-ball>Fast Ball</poke-ball>
+    </set>
+  </pokemon>
+  <pokemon>
+    <number>661</number>
+    <name>Sableye</name>
+    <set>
+      <nature>Sassy</nature>
+      <ability hidden="yes">Prankster</ability>
+      <egg-move>Recover</egg-move>
+      <ivs hp="x" atk="x" def="x" spa="x" spd="x" spe="x" />
+      <poke-ball>Premier Ball</poke-ball>
+    </set>
+  </pokemon>
 </shop>
