@@ -45,6 +45,7 @@
       <egg-move>Swallow</egg-move>
       <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="31" />
       <poke-ball>Dive Ball</poke-ball>
+      <poke-ball>Net Ball</poke-ball>
       <poke-ball>Heal Ball</poke-ball>
       <poke-ball>Lure Ball</poke-ball>
       <poke-ball>Love Ball</poke-ball>
@@ -915,6 +916,7 @@
       <egg-move>Wide Guard</egg-move>
       <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="31" />
       <poke-ball>Level Ball</poke-ball>
+      <poke-ball>Love Ball</poke-ball>
     </set>
   </pokemon>
   <pokemon>
@@ -1154,7 +1156,10 @@
     <set>
       <nature>Modest</nature>
       <ability hidden="yes">Flare Boost</ability>
-      <egg-move>Disable</egg-move>
+      <egg-move>Destiny Bond</egg-move>
+      <egg-move>Hypnosis</egg-move>
+      <egg-move>Memento</egg-move>
+      <egg-move>Weather Ball</egg-move>
       <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="31" />
       <poke-ball>Love Ball</poke-ball>
     </set>

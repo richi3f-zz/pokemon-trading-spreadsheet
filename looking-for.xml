@@ -80,18 +80,6 @@
     </set>
   </pokemon>
   <pokemon>
-    <number>532</number>
-    <name>Timburr</name>
-    <set>
-      <nature>Adamant</nature>
-      <ability>Guts</ability>
-      <egg-move>Counter</egg-move>
-      <egg-move>Mach Punch</egg-move>
-      <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
-      <poke-ball>Love Ball</poke-ball>
-    </set>
-  </pokemon>
-  <pokemon>
     <number>318</number>
     <name>Carvanha</name>
     <set>
@@ -218,27 +206,12 @@
     </set>
   </pokemon>
   <pokemon>
-    <number>747</number>
-    <name>Mareanie</name>
-    <set>
-      <nature>Bold</nature>
-      <ability hidden="yes">Regenerator</ability>
-      <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="31" />
-      <poke-ball>Net Ball</poke-ball>
-    </set>
-  </pokemon>
-  <pokemon>
     <number>371</number>
     <name>Bagon</name>
     <set>
       <nature>Jolly</nature>
       <ability hidden="yes">Sheer Force</ability>
-      <egg-move>Dragon Dance</egg-move>
-      <egg-move>Endure</egg-move>
-      <egg-move>Hydro Pump</egg-move>
-      <egg-move>Thrash</egg-move>
       <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
-      <poke-ball>Premier Ball</poke-ball>
       <poke-ball>Friend Ball</poke-ball>
     </set>
   </pokemon>
@@ -253,6 +226,16 @@
       <egg-move>Trick</egg-move>
       <ivs hp="x" atk="x" def="x" spa="x" spd="x" spe="x" />
       <poke-ball>Love Ball</poke-ball>
+    </set>
+  </pokemon>
+  <pokemon>
+    <number>129</number>
+    <name>Magikarp</name>
+    <set>
+      <nature>Jolly</nature>
+      <ability hidden="yes">Rattled</ability>
+      <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
+      <poke-ball>Heavy Ball</poke-ball>
     </set>
   </pokemon>
 </shop>
