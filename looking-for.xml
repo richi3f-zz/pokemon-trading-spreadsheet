@@ -38,7 +38,6 @@
     <number>128</number>
     <name>Tauros</name>
     <set>
-      <nature>Jolly</nature>
       <ability hidden="yes">Sheer Force</ability>
       <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
       <poke-ball>Premier Ball</poke-ball>
@@ -57,33 +56,9 @@
     </set>
   </pokemon>
   <pokemon>
-    <number>568</number>
-    <name>Trubbish</name>
-    <set>
-      <nature>Impish</nature>
-      <ability hidden="yes">Aftermath</ability>
-      <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
-      <poke-ball>Love Ball</poke-ball>
-    </set>
-  </pokemon>
-  <pokemon>
-    <number>607</number>
-    <name>Litwick</name>
-    <set>
-      <nature>Timid</nature>
-      <ability>Flash Fire</ability>
-      <egg-move>Acid</egg-move>
-      <egg-move>Acid Armor</egg-move>
-      <egg-move>Clear Smog</egg-move>
-      <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="31" />
-      <poke-ball>Love Ball</poke-ball>
-    </set>
-  </pokemon>
-  <pokemon>
     <number>318</number>
     <name>Carvanha</name>
     <set>
-      <nature>Jolly</nature>
       <ability hidden="yes">Speed Boost</ability>
       <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
       <poke-ball>Love Ball</poke-ball>
@@ -94,7 +69,6 @@
     <name>Meowth</name>
     <set>
       <form css="meowth-alola">Alola Form</form>
-      <nature>Timid</nature>
       <ability hidden="yes">Rattled</ability>
       <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="31" />
       <poke-ball>Fast Ball</poke-ball>
@@ -124,27 +98,6 @@
     </set>
   </pokemon>
   <pokemon>
-    <number>37</number>
-    <name>Vulpix</name>
-    <set>
-      <form css="vulpix-alola">Alola Form</form>
-      <nature>Modest</nature>
-      <ability hidden="yes">Snow Warning</ability>
-      <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="31" />
-      <poke-ball>Fast Ball</poke-ball>
-    </set>
-  </pokemon>
-  <pokemon>
-    <number>594</number>
-    <name>Alomomola</name>
-    <set>
-      <nature>Calm</nature>
-      <ability hidden="yes">Regenerator</ability>
-      <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="31" />
-      <poke-ball>Lure Ball</poke-ball>
-    </set>
-  </pokemon>
-  <pokemon>
     <number>703</number>
     <name>Carbink</name>
     <set>
@@ -159,12 +112,7 @@
     <number>54</number>
     <name>Psyduck</name>
     <set>
-      <nature>Modest</nature>
       <ability hidden="yes">Swift Swim</ability>
-      <egg-move>Clear Smog</egg-move>
-      <egg-move>Encore</egg-move>
-      <egg-move>Hypnosis</egg-move>
-      <egg-move>Yawn</egg-move>
       <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="31" />
       <poke-ball>Lure Ball</poke-ball>
     </set>
@@ -173,26 +121,11 @@
     <number>296</number>
     <name>Makuhita</name>
     <set>
-      <nature>Adamant</nature>
+      <nature>Brave</nature>
       <ability hidden="yes">Sheer Force</ability>
-      <egg-move>Bullet Punch</egg-move>
-      <egg-move>Feint</egg-move>
       <egg-move>Helping Hand</egg-move>
-      <egg-move>Wide Guard</egg-move>
-      <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
-      <poke-ball>Heavy Ball</poke-ball>
+      <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="0" />
       <poke-ball>Love Ball</poke-ball>
-    </set>
-  </pokemon>
-  <pokemon>
-    <number>769</number>
-    <name>Sandygast</name>
-    <set>
-      <nature>Quiet</nature>
-      <ability hidden="yes">Sand Veil</ability>
-      <egg-move>Amnesia</egg-move>
-      <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="0" />
-      <poke-ball>Heavy Ball</poke-ball>
     </set>
   </pokemon>
   <pokemon>
@@ -206,36 +139,21 @@
     </set>
   </pokemon>
   <pokemon>
-    <number>371</number>
-    <name>Bagon</name>
-    <set>
-      <nature>Jolly</nature>
-      <ability hidden="yes">Sheer Force</ability>
-      <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
-      <poke-ball>Friend Ball</poke-ball>
-    </set>
-  </pokemon>
-  <pokemon>
-    <number>661</number>
-    <name>Sableye</name>
-    <set>
-      <nature>Careful</nature>
-      <ability hidden="yes">Prankster</ability>
-      <egg-move>Feint</egg-move>
-      <egg-move>Flatter</egg-move>
-      <egg-move>Trick</egg-move>
-      <ivs hp="x" atk="x" def="x" spa="x" spd="x" spe="x" />
-      <poke-ball>Love Ball</poke-ball>
-    </set>
-  </pokemon>
-  <pokemon>
     <number>129</number>
     <name>Magikarp</name>
     <set>
-      <nature>Jolly</nature>
       <ability hidden="yes">Rattled</ability>
       <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
       <poke-ball>Heavy Ball</poke-ball>
+    </set>
+  </pokemon>
+  <pokemon>
+    <number>546</number>
+    <name>Cottonee</name>
+    <set>
+      <ability hidden="yes">Chlorophyll</ability>
+      <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="31" />
+      <poke-ball>Fast Ball</poke-ball>
     </set>
   </pokemon>
 </shop>

@@ -30,6 +30,7 @@
       <egg-move>Moonblast</egg-move>
       <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="31" />
       <poke-ball>Premier Ball</poke-ball>
+      <poke-ball>Fast Ball</poke-ball>
       <poke-ball>Love Ball</poke-ball>
     </set>
   </pokemon>
@@ -74,6 +75,7 @@
       <egg-move>Quick Attack</egg-move>
       <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
       <poke-ball>Friend Ball</poke-ball>
+      <poke-ball>Love Ball</poke-ball>
     </set>
   </pokemon>
   <pokemon>
@@ -312,6 +314,7 @@
       <ivs hp="31" atk="31" def="31" spa="31" spd="31" spe="x" />
       <poke-ball>Nest Ball</poke-ball>
       <poke-ball>Friend Ball</poke-ball>
+      <poke-ball>Love Ball</poke-ball>
     </set>
   </pokemon>
   <pokemon>
@@ -753,6 +756,7 @@
       <egg-move>Swallow</egg-move>
       <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="0" />
       <poke-ball>Level Ball</poke-ball>
+      <poke-ball>Heavy Ball</poke-ball>
     </set>
   </pokemon>
   <pokemon>
@@ -855,12 +859,13 @@
     <set>
       <nature>Calm</nature>
       <ability hidden="yes">Regenerator</ability>
-      <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="31" />
       <egg-move>Mirror Coat</egg-move>
       <egg-move>Pain Split</egg-move>
       <egg-move>Refresh</egg-move>
       <egg-move>Tickle</egg-move>
+      <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="31" />
       <poke-ball>Love Ball</poke-ball>
+      <poke-ball>Lure Ball</poke-ball>
     </set>
   </pokemon>
   <pokemon>
@@ -869,11 +874,11 @@
     <set>
       <nature>Modest</nature>
       <ability hidden="yes">Sand Force</ability>
-      <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="31" />
       <egg-move>Rollout</egg-move>
       <egg-move>Double-Edge</egg-move>
       <egg-move>Stealth Rock</egg-move>
       <egg-move>Wide Guard</egg-move>
+      <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="31" />
       <poke-ball>Heavy Ball</poke-ball>
     </set>
   </pokemon>
@@ -945,6 +950,7 @@
       <egg-move>Spikes</egg-move>
       <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
       <poke-ball>Friend Ball</poke-ball>
+      <poke-ball>Love Ball</poke-ball>
     </set>
   </pokemon>
   <pokemon>
@@ -1056,7 +1062,6 @@
       <egg-move>Clear Smog</egg-move>
       <egg-move>Curse</egg-move>
       <egg-move>Snore</egg-move>
-      <egg-move></egg-move>
       <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="31" />
       <poke-ball>Lure Ball</poke-ball>
       <poke-ball>Heavy Ball</poke-ball>
@@ -1072,7 +1077,6 @@
       <egg-move>Encore</egg-move>
       <egg-move>Grass Whistle</egg-move>
       <egg-move>Worry Seed</egg-move>
-      <egg-move></egg-move>
       <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="31" />
       <poke-ball>Love Ball</poke-ball>
       <poke-ball>Friend Ball</poke-ball>
@@ -1088,7 +1092,6 @@
       <egg-move>Close Combat</egg-move>
       <egg-move>Flare Blitz</egg-move>
       <egg-move>Morning Sun</egg-move>
-      <egg-move></egg-move>
       <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
       <poke-ball>Fast Ball</poke-ball>
     </set>
@@ -1183,6 +1186,7 @@
       <nature>Timid</nature>
       <ability hidden="yes">Moody</ability>
       <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="31" />
+      <poke-ball>Nest Ball</poke-ball>
       <poke-ball>Level Ball</poke-ball>
     </set>
   </pokemon>
@@ -1226,7 +1230,7 @@
     </set>
   </pokemon>
   <pokemon>
-    <number>661</number>
+    <number>302</number>
     <name>Sableye</name>
     <set>
       <nature>Sassy</nature>
@@ -1234,6 +1238,63 @@
       <egg-move>Recover</egg-move>
       <ivs hp="x" atk="x" def="x" spa="x" spd="x" spe="x" />
       <poke-ball>Premier Ball</poke-ball>
+      <poke-ball>Love Ball</poke-ball>
+    </set>
+  </pokemon>
+  <pokemon>
+    <number>607</number>
+    <name>Litwick</name>
+    <set>
+      <nature>Timid</nature>
+      <ability>Flash Fire</ability>
+      <egg-move>Acid</egg-move>
+      <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="31" />
+      <poke-ball>Love Ball</poke-ball>
+    </set>
+  </pokemon>
+  <pokemon>
+    <number>54</number>
+    <name>Psyduck</name>
+    <set>
+      <nature>Modest</nature>
+      <ability hidden="yes">Swift Swim</ability>
+      <egg-move>Clear Smog</egg-move>
+      <egg-move>Encore</egg-move>
+      <egg-move>Hypnosis</egg-move>
+      <egg-move>Yawn</egg-move>
+      <ivs hp="31" atk="x" def="31" spa="31" spd="31" spe="31" />
+      <poke-ball>Great Ball</poke-ball>
+    </set>
+  </pokemon>
+  <pokemon>
+    <number>371</number>
+    <name>Bagon</name>
+    <set>
+      <nature>Jolly</nature>
+      <ability hidden="yes">Sheer Force</ability>
+      <egg-move>Dragon Dance</egg-move>
+      <egg-move>Dragon Pulse</egg-move>
+      <egg-move>Hydro Pump</egg-move>
+      <egg-move>Thrash</egg-move>
+      <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
+      <poke-ball>Fast Ball</poke-ball>
+      <poke-ball>Friend Ball</poke-ball>
+      <poke-ball>Love Ball</poke-ball>
+    </set>
+  </pokemon>
+  <pokemon>
+    <number>296</number>
+    <name>Makuhita</name>
+    <set>
+      <nature>Adamant</nature>
+      <ability>Guts</ability>
+      <egg-move>Bullet Punch</egg-move>
+      <egg-move>Detect</egg-move>
+      <egg-move>Feint</egg-move>
+      <egg-move>Wide Guard</egg-move>
+      <ivs hp="31" atk="31" def="31" spa="x" spd="31" spe="31" />
+      <poke-ball>Level Ball</poke-ball>
+      <poke-ball>Heavy Ball</poke-ball>
     </set>
   </pokemon>
 </shop>

@@ -187,13 +187,25 @@
             </span>
         </xsl:if>
     </td>
-    <td>
-        <xsl:attribute name="class">
-            <xsl:value-of select="concat('nature ', translate(nature, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'))" />
-        </xsl:attribute>
-        <xsl:value-of select="nature" />
+    <td class="nature">
+        <xsl:choose>
+            <xsl:when test="nature">
+                <xsl:attribute name="class">
+                    <xsl:value-of select="concat('nature ', translate(nature, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'))" />
+                </xsl:attribute>
+                <xsl:value-of select="nature" />
+            </xsl:when>
+            <xsl:otherwise>???</xsl:otherwise>
+        </xsl:choose>
     </td>
-    <td class="ability"><xsl:value-of select="ability" /></td>
+    <td class="ability">
+        <xsl:choose>
+            <xsl:when test="ability">
+                <xsl:value-of select="ability" />
+            </xsl:when>
+            <xsl:otherwise>???</xsl:otherwise>
+        </xsl:choose>
+    </td>
     <xsl:apply-templates select="ivs/@*" />
     <td class="hidden-power">
         <xsl:choose>
@@ -204,7 +216,7 @@
                     </xsl:attribute>
                 </span>
             </xsl:when>
-            <xsl:otherwise>None</xsl:otherwise>
+            <xsl:otherwise>???</xsl:otherwise>
         </xsl:choose>
     </td>
     <td class="egg-moves">
