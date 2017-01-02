@@ -10,10 +10,23 @@ A script made to display Pokémon trading information stored in Google Sheets
 
 ## How to Use
 
-1. Create a copy of this [spreadsheet](https://docs.google.com/spreadsheets/d/1b5QCn3UfQk7wbxzmcX3Yv8on6GREs12_q83TajSF2mQ/edit?usp=sharing) (`File > Make a Copy…`). You may rename and rearrange tabs, but be careful not to edit the columns!
-2. Start filling it with your breedables, shinies, battle-ready Pokémon, or wants.
+### Tumblr
+
+1. Create a copy of this [spreadsheet](https://docs.google.com/spreadsheets/d/1b5QCn3UfQk7wbxzmcX3Yv8on6GREs12_q83TajSF2mQ/edit?usp=sharing) (`File > Make a Copy…`). You may rename and rearrange tabs, but be careful not to edit the columns! 
+2. Fill it with your breedables, shinies, battle-ready Pokémon, or wants.
 3. Make your spreadsheet public (`File > Publish to the web…`).
-4. Clone this repository and edit `config.js` with your spreadsheet's ID and personal information (IGN, FC, etc.).
+4. Create a new Tumblr blog and go to `Account > Edit Appearance > Edit theme > Edit HTML`.
+5. Copy [this](https://raw.githubusercontent.com/richi3f/pokemon-trading-spreadsheet/master/tumblr_theme.html) and then click `Update Preview` followed by `Save`.
+6. Edit the Theme Options with your spreadsheet's ID and personal information (IGN, FC, etc.).
+7. Go to `Advanced Options` and set `Use default mobile theme` to false.
+
+### GitHub Pages
+
+1. Create a copy of this [spreadsheet](https://docs.google.com/spreadsheets/d/1b5QCn3UfQk7wbxzmcX3Yv8on6GREs12_q83TajSF2mQ/edit?usp=sharing) (`File > Make a Copy…`). You may rename and rearrange tabs, but be careful not to edit the columns!
+2. Fill it with your breedables, shinies, battle-ready Pokémon, or wants.
+3. Make your spreadsheet public (`File > Publish to the web…`).
+4. Clone this repository.
+5. Edit `config.js` with your spreadsheet's ID and personal information (IGN, FC, etc.).
 
 ## Demo
 
