@@ -1,86 +1,7 @@
-// Stat Attributes object, used for IVs & EVs
-var StatAttributes = function() {
-    this.hp  = 0;
-    this.atk = 0;
-    this.def = 0;
-    this.spa = 0;
-    this.spd = 0;
-    this.spe = 0;
-}
-// Pokémon object
-var Pokemon = function() {
-    this.dexNo = 0;
-    this.name = "";
-    this.form = "";
-    this.nickname = "";
-    this.ot = "";
-    this.tid = 0;
-    this.level = 1;
-    this.gender = undefined;
-    this.isShiny = false;
-    this.nature = "";
-    this.ability = "";
-    this.ivs = new StatAttributes();
-    this.evs = new StatAttributes();
-    this.hiddenPower = "";
-    this.eggMoves = [];
-    this.balls = [];
-    this.language = "";
-    this.notes = "";
-    this.genderRatio = function() {
-        if (FEMALE_ONLY_POKEMON.indexOf(this.dexNo) > -1) {
-            return "gender-ratio-1-0";
-        } else if (POKEMON_WITH_A_GENDER_RATIO_OF_SEVEN_FEMALES_TO_ONE_MALE.indexOf(this.dexNo) > -1) {
-            return "gender-ratio-7-1";        
-        } else if (POKEMON_WITH_A_GENDER_RATIO_OF_THREE_FEMALES_TO_ONE_MALE.indexOf(this.dexNo) > -1) {
-            return "gender-ratio-3-1";
-        } else if (POKEMON_WITH_A_GENDER_RATIO_OF_ONE_FEMALE_TO_THREE_MALES.indexOf(this.dexNo) > -1) {
-            return "gender-ratio-1-3";
-        } else if (POKEMON_WITH_A_GENDER_RATIO_OF_ONE_FEMALE_TO_SEVEN_MALES.indexOf(this.dexNo) > -1) {
-            return "gender-ratio-1-7";
-        } else if (MALE_ONLY_POKEMON.indexOf(this.dexNo) > -1) {
-            return "gender-ratio-0-1";
-        } else if (GENDERLESS_POKEMON.indexOf(this.dexNo) > -1) {
-            return "gender-ratio-0-0";
-        }    
-        return "gender-ratio-1-1";
-    };
-    this.generation = function() {
-        if (this.dexNo > 151) {
-            if (this.dexNo > 251) {
-                if (this.dexNo > 386) {
-                    if (this.dexNo > 493) {
-                        if (this.dexNo > 649) {
-                            if (this.dexNo > 721) {
-                                return 7;
-                            }
-                            return 6;
-                        }
-                        return 5;
-                    }
-                    return 4;
-                }
-                return 3;
-            }
-            return 2;
-        }
-        return 1; 
-    };
-    this.hasHiddenAbility = function() {
-        if (!(this.ability in HIDDEN_ABILITIES)) {
-            return false;
-        }
-        return HIDDEN_ABILITIES[this.ability].indexOf(this.dexNo) > -1;
-    };
-    this.isBaby = function() {
-      return BABY_POKEMON.indexOf(this.dexNo) > -1;
-    };
-}
 // Constants
-const GENDERS = ["M", "F", "-"];
 const BATTLE_STATS = ["Hit Points","Attack","Defense","Special Attack","Special Defense","Speed"];
 const BATTLE_STATS_ABBR = ["HP","Atk","Def","SpA","SpD","Spe"];
-const LANGUAGES = { "JPN": "Japanese", "ENG": "English", "FRE": "French", "GER": "German", "ITA": "Italian", "KOR": "Korean", "SPA": "Spanish", "CHT": "Traditional Chinese", "CHS": "Simplified Chinese" }
+const LANGUAGES = { "JPN": "Japanese", "ENG": "English", "FRE": "French", "GER": "German", "ITA": "Italian", "KOR": "Korean", "SPA": "Spanish", "CHT": "Traditional Chinese", "CHS": "Simplified Chinese" };
 const BABY_POKEMON = [172,173,174,175,236,238,239,240,298,360,433,438,439,440,446,447,458];
 const FEMALE_ONLY_POKEMON = [29,30,31,113,115,124,241,242,314,380,413,416,440,478,488,548,549,629,630,669,670,671,758,761,762,763];
 const POKEMON_WITH_A_GENDER_RATIO_OF_SEVEN_FEMALES_TO_ONE_MALE = [667,668];
@@ -237,6 +158,84 @@ const HIDDEN_ABILITIES = {
     "Sweet Veil": [742,743,761,762,763],
     "Wonder Skin": [49,300,301,779]
 };
+// Stat Attributes object, used for IVs & EVs
+var StatAttributes = function() {
+    this.hp  = 0;
+    this.atk = 0;
+    this.def = 0;
+    this.spa = 0;
+    this.spd = 0;
+    this.spe = 0;
+};
+// Pokémon object
+var Pokemon = function() {
+    this.dexNo = 0;
+    this.name = "";
+    this.form = "";
+    this.nickname = "";
+    this.ot = "";
+    this.tid = 0;
+    this.level = 1;
+    this.gender = undefined;
+    this.isShiny = false;
+    this.nature = "";
+    this.ability = "";
+    this.ivs = new StatAttributes();
+    this.evs = new StatAttributes();
+    this.hiddenPower = "";
+    this.eggMoves = [];
+    this.balls = [];
+    this.language = "";
+    this.notes = "";
+    this.genderRatio = function() {
+        if (FEMALE_ONLY_POKEMON.indexOf(this.dexNo) > -1) {
+            return "gender-ratio-1-0";
+        } else if (POKEMON_WITH_A_GENDER_RATIO_OF_SEVEN_FEMALES_TO_ONE_MALE.indexOf(this.dexNo) > -1) {
+            return "gender-ratio-7-1";        
+        } else if (POKEMON_WITH_A_GENDER_RATIO_OF_THREE_FEMALES_TO_ONE_MALE.indexOf(this.dexNo) > -1) {
+            return "gender-ratio-3-1";
+        } else if (POKEMON_WITH_A_GENDER_RATIO_OF_ONE_FEMALE_TO_THREE_MALES.indexOf(this.dexNo) > -1) {
+            return "gender-ratio-1-3";
+        } else if (POKEMON_WITH_A_GENDER_RATIO_OF_ONE_FEMALE_TO_SEVEN_MALES.indexOf(this.dexNo) > -1) {
+            return "gender-ratio-1-7";
+        } else if (MALE_ONLY_POKEMON.indexOf(this.dexNo) > -1) {
+            return "gender-ratio-0-1";
+        } else if (GENDERLESS_POKEMON.indexOf(this.dexNo) > -1) {
+            return "gender-ratio-0-0";
+        }    
+        return "gender-ratio-1-1";
+    };
+    this.generation = function() {
+        if (this.dexNo > 151) {
+            if (this.dexNo > 251) {
+                if (this.dexNo > 386) {
+                    if (this.dexNo > 493) {
+                        if (this.dexNo > 649) {
+                            if (this.dexNo > 721) {
+                                return 7;
+                            }
+                            return 6;
+                        }
+                        return 5;
+                    }
+                    return 4;
+                }
+                return 3;
+            }
+            return 2;
+        }
+        return 1; 
+    };
+    this.hasHiddenAbility = function() {
+        if (!(this.ability in HIDDEN_ABILITIES)) {
+            return false;
+        }
+        return HIDDEN_ABILITIES[this.ability].indexOf(this.dexNo) > -1;
+    };
+    this.isBaby = function() {
+      return BABY_POKEMON.indexOf(this.dexNo) > -1;
+    };
+};
 // Functions
 function getSpriteClass(pokemon) {
     var cssClass = pokemon.name;
@@ -315,8 +314,8 @@ function getTags(pokemon) {
 function getData(pokemon) {
     var data = "";
     if (worksheetId == shiniesWorksheet) {
-        Object.keys(pokemon).forEach(function(i, index) {
-            if (!(typeof pokemon[i] === "function")) {
+        Object.keys(pokemon).forEach(function(i) {
+            if (typeof pokemon[i] !== "function") {
                 if (typeof pokemon[i] === "object") {
                     
                 } else {
@@ -329,7 +328,7 @@ function getData(pokemon) {
     }
     return data;
 }
-function filterPokemon(option, checked) {
+function filterPokemon() {
     // hide all Pokémon
     $("tbody tr").addClass("filtered");
     // get selected generations
@@ -494,9 +493,9 @@ $(document).ready(function() {
             // Name
             row += "<td class=\"name\">" + (pokemon.isShiny ? "Shiny " : '') + pokemon.name;
             if (pokemon.gender == "F") {
-                 row += " <span class=\"gender female\" title=\"Female\">♀</span>";
+                 row += " <span class=\"gender female\" title=\"Female\">&#x2640;</span>";
             } else if (pokemon.gender == "M") {
-                 row += " <span class=\"gender male\" title=\"Male\">♂</span>";
+                 row += " <span class=\"gender male\" title=\"Male\">&#x2642;</span>";
             }
             if (pokemon.form) {
                 row += "<br><span class=\"form\">" + pokemon.form + "</span>";
@@ -507,36 +506,37 @@ $(document).ready(function() {
             // Ability
             row += "<td class=\"ability\">" + pokemon.ability + "</td>";
             // IVs & EVs
+            var statAttribute;
             for (i = 0; i < BATTLE_STATS.length; i++) {
-                var iv = pokemon.ivs[BATTLE_STATS_ABBR[i].toLowerCase()];
-                if (isNaN(iv)) {
-                    switch (iv) {
+                statAttribute = pokemon.ivs[BATTLE_STATS_ABBR[i].toLowerCase()];
+                if (isNaN(statAttribute)) {
+                    switch (statAttribute) {
                         case "2x":
-                            iv = "<abbr title=\"Any even value\">" + iv;
+                            statAttribute = "<abbr title=\"Any even value\">" + statAttribute;
                             break;
                         case "2x+1":
-                            iv = "<abbr title=\"Any odd value\">" + iv;
+                            statAttribute = "<abbr title=\"Any odd value\">" + statAttribute;
                             break;
                         default:
-                            iv = "<abbr title=\"Any value\">" + iv;
+                            statAttribute = "<abbr title=\"Any value\">" + statAttribute;
                             break;
                     }
-                    iv += "</abbr>";
+                    statAttribute += "</abbr>";
                 }
-                row += "<td class=\"" + BATTLE_STATS_ABBR[i].toLowerCase() + "\">" + iv + "</td>";
+                row += "<td class=\"" + BATTLE_STATS_ABBR[i].toLowerCase() + "\">" + statAttribute + "</td>";
             }
             if (worksheetId == shiniesWorksheet) {
                 var formattedIvs = [];
                 for (i = 0; i < BATTLE_STATS.length; i++) {
-                    var iv = pokemon.ivs[BATTLE_STATS_ABBR[i].toLowerCase()];
-                    formattedIvs.push("<abbr title=\"" + BATTLE_STATS[i] + " IV\">" + iv + "</abbr>");
+                    statAttribute = pokemon.ivs[BATTLE_STATS_ABBR[i].toLowerCase()];
+                    formattedIvs.push("<abbr title=\"" + BATTLE_STATS[i] + " IV\">" + statAttribute + "</abbr>");
                 }
                 row += "<td class=\"ivs hidden\">" + formattedIvs.join('/') + "</td>";
                 var formattedEvs = [];
                 for (i = 0; i < BATTLE_STATS.length; i++) {
-                    var ev = pokemon.evs[BATTLE_STATS_ABBR[i].toLowerCase()];
-                    if (ev) {
-                        formattedEvs.push("<abbr title=\"" + BATTLE_STATS[i] + " EV\">" + ev + " " + BATTLE_STATS_ABBR[i] + "</abbr>");
+                    statAttribute = pokemon.evs[BATTLE_STATS_ABBR[i].toLowerCase()];
+                    if (statAttribute) {
+                        formattedEvs.push("<abbr title=\"" + BATTLE_STATS[i] + " EV\">" + statAttribute + " " + BATTLE_STATS_ABBR[i] + "</abbr>");
                     }
                 }
                 formattedEvs = formattedEvs.join(' / ');
@@ -595,9 +595,9 @@ $(document).ready(function() {
                 $pokemonInfo.find(".name").text(name);
                 var gender = $this.data("gender");
                 if (gender == "F") {
-                    $pokemonInfo.find(".gender").text('♀').attr("class", "gender female");
+                    $pokemonInfo.find(".gender").html("&#x2640;").attr("class", "gender female");
                 } else if (gender == "M") {
-                    $pokemonInfo.find(".gender").text('♂').attr("class", "gender male");
+                    $pokemonInfo.find(".gender").html("&#x2642;").attr("class", "gender male");
                 } else {
                     $pokemonInfo.find(".gender").text('').attr("class", "gender");
                 }
@@ -647,7 +647,7 @@ $(document).ready(function() {
                 // Notes
                 var notes = $this.data("notes");
                 if (notes) {
-                    $("#pokemon-info").append("<p class=\"notes\">" + notes + "</p>")
+                    $("#pokemon-info").append("<p class=\"notes\">" + notes + "</p>");
                 }
                 // Unhide modal
                 $("#modal").removeClass("hidden");
