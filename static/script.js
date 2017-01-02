@@ -364,7 +364,7 @@ if (!isNaN(hash) && hash) {
 
 var spreadsheetUrl = "https://spreadsheets.google.com/feeds/list/" + spreadsheetId + "/" + worksheetId + "/public/values?alt=json";
 $(document).ready(function() {
-    $("title").prepend(inGameName + "'s ");
+    $("title").text(inGameName + "'s Pokémon Trading Sheet");
     $("header h1").prepend("<a href=\"" + contactUrl + "\">" + inGameName + "</a>");
     if (friendCode || inGameName) {
         var trainerInfo = "";
