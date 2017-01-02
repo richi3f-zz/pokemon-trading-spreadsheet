@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="{Favicon}">
+    <title>{Title}</title>
+    <link rel="stylesheet" href="http://static.tumblr.com/28amrxm/I8Soj63cz/bootstrap.min.css">
+    <link rel="stylesheet" href="http://static.tumblr.com/28amrxm/OOgoj63ml/style.css">
+    
+    <meta name="text:Spreadsheet ID" content="">
+    <meta name="text:Breedables Worksheet Number" content="1">
+    <meta name="text:Shinies Worksheet Number" content="2">
+    <meta name="text:Wants Worksheet Number" content="3">
+    <meta name="text:IGN" content="">
+    <meta name="text:FC" content="">
+    <meta name="text:Contact URL" content="">
+    <meta name="image:Trainer Icon" content="">
+    
+    {block:Description}
+    <meta name="description" content="{MetaDescription}">
+    {/block:Description}
+    <style>
+    {CustomCSS}
+    </style>
+</head>
+
+<body>
+
+<article>
+    <div id="loader">
+        <img src="http://static.tumblr.com/28amrxm/aucoj63gg/pokeball-white.png">
+        <img src="http://static.tumblr.com/28amrxm/xLjoj63fz/bg.png" class="hidden">
+        <img src="http://static.tumblr.com/28amrxm/g8boj63g7/itemsprites.png" class="hidden">
+        <img src="http://static.tumblr.com/28amrxm/y5Zoj63gb/menusprites.png" class="hidden">
+        <img src="http://static.tumblr.com/28amrxm/6Mgoj63lm/types.png" class="hidden">
+    </div>
+    <header>
+        <h1>'s Pokémon Trading Sheet</h1>
+        <div id="trainer-info">
+        </div>
+        <nav>
+            <ul>
+                <li><abbr title="For Trade">FT</abbr>
+                    <ul>
+                        <li><a href="#" data-worksheetid="breedablesWorksheet">Breedables</a></li><!--
+                        --><li><a href="#" data-worksheetid="shiniesWorksheet">Shinies</a></li>
+                    </ul>
+                </li><!--
+                --><li><a href="#" data-worksheetid="wantsWorksheet"><abbr title="Looking For">LF</abbr></a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="filters">
+        <h3>Filters</h3>
+        <div class="filter">
+            <label for="gen-filter">Generation</label>
+            <select id="gen-filter" multiple="multiple">
+                <option value="gen1">Generation I</option>
+                <option value="gen2">Generation II</option>
+                <option value="gen3">Generation III</option>
+                <option value="gen4">Generation IV</option>
+                <option value="gen5">Generation V</option>
+                <option value="gen6">Generation VI</option>
+                <option value="gen7">Generation VII</option>
+            </select>
+        </div><!--
+        --><div class="filter">
+            <label for="ball-filter">Poké Ball</label>
+            <select id="ball-filter" multiple="multiple">
+                <option value="poke-ball">Poké Ball</option>
+                <option value="great-ball">Great Ball</option>
+                <option value="ultra-ball">Ultra Ball</option>
+                <option value="safari-ball">Safari Ball</option>
+                <option value="net-ball">Net Ball</option>
+                <option value="dive-ball">Dive Ball</option>
+                <option value="nest-ball">Nest Ball</option>
+                <option value="repeat-ball">Repeat Ball</option>
+                <option value="timer-ball">Timer Ball</option>
+                <option value="luxury-ball">Luxury Ball</option>
+                <option value="premier-ball">Premier Ball</option>
+                <option value="dusk-ball">Dusk Ball</option>
+                <option value="heal-ball">Heal Ball</option>
+                <option value="quick-ball">Quick Ball</option>
+                <option value="fast-ball">Fast Ball</option>
+                <option value="level-ball">Level Ball</option>
+                <option value="lure-ball">Lure Ball</option>
+                <option value="heavy-ball">Heavy Ball</option>
+                <option value="love-ball">Love Ball</option>
+                <option value="friend-ball">Friend Ball</option>
+                <option value="moon-ball">Moon Ball</option>
+                <option value="sport-ball">Sport Ball</option>
+                <option value="dream-ball">Dream Ball</option>
+                <option value="beast-ball">Beast Ball</option>
+            </select>
+        </div><!--
+        --><div class="filter">
+            <label for="ratio-filter">Gender Ratio</label>
+            <select id="ratio-filter" multiple="multiple">
+                <option value="gender-ratio-1-0">Female Only</option>
+                <option value="gender-ratio-7-1">7 ♀ : 1 ♂</option>
+                <option value="gender-ratio-3-1">3 ♀ : 1 ♂</option>
+                <option value="gender-ratio-1-1">1 ♀ : 1 ♂</option>
+                <option value="gender-ratio-1-3">1 ♀ : 3 ♂</option>
+                <option value="gender-ratio-1-7">1 ♀ : 7 ♂</option>
+                <option value="gender-ratio-0-1">Male Only</option>
+                <option value="gender-ratio-0-0">Genderless</option>
+            </select>
+        </div>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th class="name" colspan="2" rowspan="2">Pokémon</th>
+                <th class="nature" rowspan="2">Nature</th>
+                <th class="ability" rowspan="2">Ability</th>
+                <th class="ivs" colspan="6"><abbr title="Individual Values">IVs</abbr></th>
+                <th class="hidden-power" rowspan="2">Hidden Power</th>
+                <th class="egg-moves" rowspan="2">Egg Moves</th>
+                <th class="poke-balls" rowspan="2">Poké Ball</th>
+            </tr>
+            <tr>
+                <th class="hp"><abbr title="Hit Points">HP</abbr></th>
+                <th class="atk"><abbr title="Attack">Atk</abbr></th>
+                <th class="def"><abbr title="Defense">Def</abbr></th>
+                <th class="spa"><abbr title="Special Attack">SpA</abbr></th>
+                <th class="spd"><abbr title="Special Defense">SpD</abbr></th>
+                <th class="spe"><abbr title="Speed">Spe</abbr></th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <footer role="contentinfo">
+        <p>
+            © of <a href="http://twitter.com/richi3f">richi3f</a>, <time datetime="2017">2017</time><br>
+            Bootstrap is © of Twitter, <time datetime="2017">2017</time><br>
+            <a href="http://davidstutz.github.io/bootstrap-multiselect/">Bootstrap Multiselect</a> is © of <a href="http://davidstutz.de/">David Stutz</a>, <time datetime="2012">2012</time>-<time datetime="2014">2014</time><br>
+            Animated models extracted by <a href="http://www.pkparaiso.com/">Pokémon Paraíso</a><br>
+            Pokémon is © of Nintendo, <time datetime="1995">1995</time>-<time datetime="2017">2017</time>
+        </p>
+    </footer>
+    <div id="modal" class="hidden">
+        <div id="pokemon-info">
+            <figure>
+                <span class="item-sprite friend-ball">Lure Ball</span>
+            </figure>
+            <h1>
+                <span class="name"></span> <span class="gender"></span> <span class="level"></span>
+            </h1>
+            <span class="language" title=""></span>
+            <dl>
+                <dt class="trainer"><abbr title="Original Trainer">OT</abbr></dt><!--
+                --><dd></dd>
+                <dt class="nature">Nature</dt><!--
+                --><dd></dd>
+                <dt class="ability">Ability</dt><!--
+                --><dd></dd>
+                <dt class="ivs"><abbr title="Individual Values">IVs</abbr></dt><!--
+                --><dd></dd>
+                <dt class="evs"><abbr title="Effort Values">EVs</abbr></dt><!--
+                --><dd></dd>
+            </dl>
+            <ul class="egg-moves">
+            </ul>
+        </div>
+    </div>
+</article>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="http://static.tumblr.com/28amrxm/7Kdoj63or/bootstrap.multiselect.js"></script>
+<script>
+var spreadsheetId = "{text:Spreadsheet ID}";
+var breedablesWorksheet = {text:Breedables Worksheet Number};
+var shiniesWorksheet = {text:Shinies Worksheet Number};
+var wantsWorksheet = {text:Wants Worksheet Number};
+var friendCode = "{text:FC}";
+var inGameName = "{text:IGN}";
+var contactUrl = "{text:Contact URL}";
+var trainerIconUrl = "{image:Trainer Icon}";
+</script>
+<script src="http://static.tumblr.com/28amrxm/n7noj64pt/script.js"></script>
+
+</body>
+</html>
