@@ -33,10 +33,6 @@ footer,header,hgroup,menu,nav,section {
     display:block;
 }
 
-nav ul {
-    list-style:none;
-}
-
 abbr[title] {
     border-bottom: none;
 	text-decoration: none;
@@ -58,6 +54,44 @@ input, select {
     abbr[title], dfn[title] {
         cursor:help;
     }
+    #loader{
+        position:fixed;
+        left:0;
+        top:0;
+        width:100%;
+        height:100%;
+        z-index:9999;
+        background:#43b2e0
+    }
+    #loader img{
+        width:48px; height:48px;
+        position:absolute;
+        top:50%;
+        left:50%;
+        margin:-24px 0 0 -24px;
+        -webkit-transition:opacity .2s;
+        transition:opacity .2s;
+        -webkit-animation-duration:.8s;
+        animation-duration:.8s;
+        -webkit-animation-name:spin;
+        animation-name:spin;
+        -webkit-animation-iteration-count:infinite;
+        animation-iteration-count:infinite;
+        -webkit-animation-timing-function:ease-in-out;
+        animation-timing-function:ease-in-out
+    }
+    @-webkit-keyframes spin{
+        0%{
+            -webkit-transform:rotate(0deg); }
+        100%{
+            -webkit-transform:rotate(360deg); } }
+    @keyframes spin{
+        0%{
+            -webkit-transform:rotate(0deg);
+            transform:rotate(0deg); }
+        100%{
+            -webkit-transform:rotate(360deg);
+            transform:rotate(360deg); } }
 }
 
 /* Body */
@@ -69,7 +103,7 @@ article {
 
 h1{
     color:#ff69b4;
-    font-size:2em;
+    font-size:1.5em;
     font-weight:700;
     text-align:center;
     margin:0 0 1em
@@ -82,6 +116,89 @@ h1 a {
 
 h1 a:focus, h1 a:hover {
     color:#4d6ad8;
+}
+
+#trainer-info {
+    width: 14em;
+    margin: 0 auto 1em
+}
+#trainer-info img{
+    float:left;
+    margin:0 0.5em 0 0
+}
+#trainer-info dl {
+    margin-top: 1px
+}
+#trainer-info dt, #trainer-info dd {
+    display:inline-block
+}
+#trainer-info dt {
+    width:2.5em
+}
+#trainer-info dt:after {
+    content:":"
+}
+#trainer-info dd {
+    width:8em;
+    font-weight:400
+}
+
+nav ul {
+    clear: left;
+    list-style:none;
+    margin:0 0 2em;
+    font-weight:700;
+    text-align:center;
+}
+
+nav ul li {
+    display:inline-block;
+    vertical-align: middle;
+    position:relative
+}
+
+nav > ul > li:first-child abbr {
+    vertical-align:middle;
+}
+
+nav > ul > li:first-child abbr::after {
+    content:":";
+}
+
+nav ul li a {
+    display:inline-block;
+    margin:0 0.5em 0 0;
+    background-color:#4d6ad8;
+    color:#f0f0f0;
+    padding:0.5em 1em;
+    border-radius:0.25em;
+    line-height: 1.45;
+    width:7.5em
+}
+nav ul li a:hover {
+    color:#f0f0f0;
+}
+nav ul li.current::after {
+    width: 0;
+    height: 0;
+    border-left: .75em solid transparent;
+    border-right: .75em solid transparent;
+    border-top: .75em solid #4d6ad8;
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 2.4375em;
+    left: 3em;
+}
+nav ul ul {
+    margin: 0 0 0 0.5em;
+    display: inline-block;
+}
+
+nav > ul > li:last-child::before {
+    content: "|";
+    display: inline-block;
+    margin: 0 0.5em 0 0;
 }
 
 h2{
@@ -152,7 +269,13 @@ td.hidden-power { width: 3.125em; }
 td.name, td.nature, td.ability, td.egg-moves { text-align: left; }
 td.egg-moves { line-height: 1.45; }
 
-td.name .form { font-size:0.75em }
+.gender{
+    font-family:"Apple Color Emoji","Segoe UI Emoji","NotoColorEmoji","Segoe UI Symbol","Android Emoji","EmojiSymbols"
+}
+.gender.female { color:#f6807a }
+.gender.male { color:#499fff }
+
+td.name .form,td.name .nickname { font-size:0.75em }
 
 tr:hover td {
     background-color: rgba(67,178,224,0.5);
@@ -348,7 +471,7 @@ td.rows4 .item-sprite.row3 { margin: 0; }
 .menu-sprite.seaking{background-position:-240px -120px}
 .menu-sprite.staryu{background-position:-270px -120px}
 .menu-sprite.starmie{background-position:-300px -120px}
-.menu-sprite.mr-mime{background-position:-330px -120px}
+.menu-sprite.mr_mime{background-position:-330px -120px}
 .menu-sprite.scyther{background-position:-360px -120px}
 .menu-sprite.jynx{background-position:-390px -120px}
 .menu-sprite.electabuzz{background-position:-420px -120px}
@@ -739,7 +862,7 @@ td.rows4 .item-sprite.row3 { margin: 0; }
 .menu-sprite.bronzor{background-position:-60px -480px}
 .menu-sprite.bronzong{background-position:-90px -480px}
 .menu-sprite.bonsly{background-position:-120px -480px}
-.menu-sprite.mime-jr{background-position:-150px -480px}
+.menu-sprite.mime_jr{background-position:-150px -480px}
 .menu-sprite.happiny{background-position:-180px -480px}
 .menu-sprite.chatot{background-position:-210px -480px}
 .menu-sprite.spiritomb{background-position:-240px -480px}
@@ -1109,10 +1232,10 @@ tr:hover .menu-sprite.greninja-ash{background-position:-270px -900px}
 .menu-sprite.vikavolt{background-position:-590px -870px}
 .menu-sprite.crabrawler{background-position:-930px -420px}
 .menu-sprite.crabominable{background-position:-860px -870px}
+.menu-sprite.oricorio{background-position:-930px -480px}
 .menu-sprite.oricorio-pom-pom{background-position:-900px -450px}
-.menu-sprite.oricorio-pa-u{background-position:-930px -450px}
+.menu-sprite.oricorio-pau{background-position:-930px -450px}
 .menu-sprite.oricorio-sensu{background-position:-900px -480px}
-.menu-sprite.oricorio-baile{background-position:-930px -480px}
 .menu-sprite.cutiefly{background-position:-620px -870px}
 .menu-sprite.ribombee{background-position:-900px -510px}
 .menu-sprite.rockruff{background-position:-650px -870px}
@@ -1167,10 +1290,10 @@ tr:hover .menu-sprite.wishiwashi,
 .menu-sprite.jangmo-o{background-position:-300px -900px}
 .menu-sprite.hakamo-o{background-position:-330px -900px}
 .menu-sprite.kommo-o{background-position:-900px -750px}
-.menu-sprite.tapu-koko{background-position:-180px -900px}
-.menu-sprite.tapu-lele{background-position:-930px -750px}
-.menu-sprite.tapu-bulu{background-position:-900px -780px}
-.menu-sprite.tapu-fini{background-position:-930px -780px}
+.menu-sprite.tapu_koko{background-position:-180px -900px}
+.menu-sprite.tapu_lele{background-position:-930px -750px}
+.menu-sprite.tapu_bulu{background-position:-900px -780px}
+.menu-sprite.tapu_fini{background-position:-930px -780px}
 .menu-sprite.cosmog{background-position:-900px -810px}
 .menu-sprite.cosmoem{background-position:-930px -810px}
 .menu-sprite.solgaleo{background-position:-210px -900px}
@@ -1272,36 +1395,36 @@ span.hidden-power{
 .hidden-power.steel{background-position:-100px -90px}
 
 .item-sprite{
-	width:1.5em;height:1.5em;
-	margin: 0.5em 0.1875em;
-	background-image:url(balls.png);
-    background-position:-72px 0
+	width:1.625em;height:1.625em;
+	margin: 0.375em 0.125em;
+	background-image:url(itemsprites.png)
 }
-.item-sprite.ultra-ball{background-position:-24px 0}
-.item-sprite.great-ball{background-position:-48px 0}
-.item-sprite.master-ball{background-position:0 0}
-.item-sprite.safari-ball{background-position:-96px 0}
-.item-sprite.net-ball{background-position:-120px 0}
-.item-sprite.dive-ball{background-position:0 -24px}
-.item-sprite.nest-ball{background-position:-24px -24px}
-.item-sprite.repeat-ball{background-position:-48px -24px}
-.item-sprite.timer-ball{background-position:-72px -24px}
-.item-sprite.luxury-ball{background-position:-96px -24px}
-.item-sprite.premier-ball{background-position:-120px -24px}
-.item-sprite.dusk-ball{background-position:0 -48px}
-.item-sprite.heal-ball{background-position:-24px -48px}
-.item-sprite.quick-ball{background-position:-48px -48px}
-.item-sprite.cherish-ball{background-position:-72px -48px}
-.item-sprite.fast-ball{background-position:-96px -48px}
-.item-sprite.level-ball{background-position:-120px -48px}
-.item-sprite.lure-ball{background-position:0 -72px}
-.item-sprite.heavy-ball{background-position:-24px -72px}
-.item-sprite.love-ball{background-position:-48px -72px}
-.item-sprite.friend-ball{background-position:-72px -72px}
-.item-sprite.moon-ball{background-position:-96px -72px}
-.item-sprite.sport-ball{background-position:-120px -72px}
-.item-sprite.dream-ball{background-position:0 -96px}
-.item-sprite.beast-ball{background-position:-24px -96px}
+.item-sprite.master-ball{background-position:-26px 0}
+.item-sprite.ultra-ball{background-position:-52px 0}
+.item-sprite.great-ball{background-position:-78px 0}
+.item-sprite.poke-ball{background-position:-104px 0}
+.item-sprite.safari-ball{background-position:-130px 0}
+.item-sprite.net-ball{background-position:-156px 0}
+.item-sprite.dive-ball{background-position:-182px 0}
+.item-sprite.nest-ball{background-position:-208px 0}
+.item-sprite.repeat-ball{background-position:-234px 0}
+.item-sprite.timer-ball{background-position:-260px 0}
+.item-sprite.luxury-ball{background-position:-286px 0}
+.item-sprite.premier-ball{background-position:-312px 0}
+.item-sprite.dusk-ball{background-position:-338px 0}
+.item-sprite.heal-ball{background-position:-364px 0}
+.item-sprite.quick-ball{background-position:-390px 0}
+.item-sprite.cherish-ball{background-position:-416px 0}
+.item-sprite.fast-ball{background-position:-416px -260px}
+.item-sprite.level-ball{background-position:-442px -260px}
+.item-sprite.lure-ball{background-position:-468px -260px}
+.item-sprite.heavy-ball{background-position:-494px -260px}
+.item-sprite.love-ball{background-position:0 -286px}
+.item-sprite.friend-ball{background-position:-26px -286px}
+.item-sprite.moon-ball{background-position:-52px -286px}
+.item-sprite.sport-ball{background-position:-78px -286px}
+.item-sprite.dream-ball{background-position:-416px -312px}
+.item-sprite.beast-ball{background-position:-312px -442px}
 
 /* Footer */
 [role="contentinfo"] {
@@ -1414,4 +1537,105 @@ span.hidden-power{
 .form-inline .multiselect-container li a label.radio input[type=radio]{
     margin-left:-20px;
     margin-right:0
+}
+
+body.shiny tbody tr {
+    cursor: pointer
+}
+
+.hidden{
+    display:none
+}
+
+#modal {
+    position:fixed;
+    top:0;left:0;
+    z-index:3000;
+    height:100%;
+    width:100%;
+    background-color:#333;
+    background-color:rgba(0,0,0,0.75);
+}
+
+#pokemon-info {
+    background: url(bg.png);
+    width: 28em;
+    padding: 1em;
+    border: 0.0625em solid #333;
+    position: absolute;
+    top:50%;left:50%;
+    margin-left:-14em;
+    margin-top:-10.1875em
+}
+#pokemon-info h1 {    
+    color: #333;
+    font-size: 1em;
+    line-height: 1.875;
+    margin: 0.25em 0;
+    text-align: left
+}
+#pokemon-info h1 .menu-sprite {
+    vertical-align: middle;    
+}
+#pokemon-info h1 .level{
+    font-weight:400;
+    font-size:0.75em
+}
+#pokemon-info dl {
+    width: 18em;
+}
+#pokemon-info dt, #pokemon-info dd {
+    display:inline-block;
+    margin:0 0 0.375em
+}
+#pokemon-info dt {
+    font-weight: 700;
+    width: 5em;
+}
+#pokemon-info dd {
+    width: 13em
+}
+#pokemon-info figure {
+    background: url(pokeball-grey.png) no-repeat center center;
+    text-align: center;
+    line-height: 10em;
+    width: 11.25em;
+    height: 11.25em;
+    top: 1em;
+    right: 1em;
+    position: absolute;
+}
+#pokemon-info figure .model {
+    vertical-align: middle;
+    max-width:11.25em
+}
+#pokemon-info figure .item-sprite {
+    position: absolute;
+    bottom: 0;
+    right: 0.5em;
+}
+#pokemon-info ul {
+    list-style: none;
+    clear: right;
+}
+#pokemon-info li {
+    display: inline-block;
+    width: 12.9375em;
+}
+#pokemon-info li::before {content: "~ ";}
+
+#pokemon-info .language{
+    color:#fff;
+    background-color:#505050;
+    border-radius:0.143em;
+    padding:0.214em;
+    font-size:0.875em;
+    line-height:1;
+    position: absolute;
+    top: 1em;
+    right: 1em;
+}
+#pokemon-info .notes {
+    font-size:0.75em;
+    margin:1.667em 0 0
 }
