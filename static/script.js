@@ -10,6 +10,8 @@ const POKEMON_WITH_A_GENDER_RATIO_OF_ONE_FEMALE_TO_THREE_MALES = [58,59,63,64,65
 const POKEMON_WITH_A_GENDER_RATIO_OF_ONE_FEMALE_TO_SEVEN_MALES = [1,2,3,4,5,6,7,8,9,133,134,135,136,138,139,140,141,142,143,152,153,154,155,156,157,158,159,160,175,176,196,197,252,253,254,255,256,257,258,259,260,345,346,347,348,369,387,388,389,390,391,392,393,394,395,408,409,410,411,415,446,447,448,468,470,471,495,496,497,498,499,500,501,502,503,511,512,513,514,515,516,564,565,566,567,570,571,650,651,652,653,654,655,656,657,658,696,697,698,699,700,722,723,724,725,726,727,728,729,730,757];
 const MALE_ONLY_POKEMON = [32,33,34,106,107,128,236,237,313,381,414,475,538,539,627,628,641,642,645];
 const GENDERLESS_POKEMON = [81,82,100,101,120,121,132,137,144,145,146,150,151,201,233,243,244,245,249,250,251,292,337,338,343,344,374,375,376,377,378,379,382,383,384,385,386,436,437,462,474,479,480,481,482,483,484,486,487,489,490,491,492,493,494,599,600,601,615,622,623,638,639,640,643,644,646,647,648,649,703,716,717,718,719,720,721,772,773,774,781,785,786,787,788,789,790,791,792,793,794,795,796,797,798,799,800,801,802];
+const POKEMON_WITH_GENDER_DIFFERENCES = [3,12,19,20,25,26,29,32,41,42,44,45,64,65,84,85,97,111,112,118,119,123,129,130,154,165,166,178,185,186,190,194,195,198,202,203,207,208,212,214,215,217,221,224,229,232,396,397,398,399,400,401,402,403,404,405,407,415,417,418,419,424,443,444,445,449,450,453,454,456,457,459,460,461,464,465,473,521,592,593,668,678];
+const TAPUS = [785,786,787,788];
 const HIDDEN_ABILITIES = {
     "Lightning Rod": [25,26,118,119,172,311],
     "Sheer Force": [31,34,98,99,128,158,159,160,208,296,297,303,328,371,408,409,645,733],
@@ -233,7 +235,7 @@ var Pokemon = function() {
         return HIDDEN_ABILITIES[this.ability].indexOf(this.dexNo) > -1;
     };
     this.isBaby = function() {
-      return BABY_POKEMON.indexOf(this.dexNo) > -1;
+        return BABY_POKEMON.indexOf(this.dexNo) > -1;
     };
 };
 // Functions
@@ -290,8 +292,40 @@ function getSpriteClass(pokemon) {
                 break;
         }
     }
-    cssClass = cssClass.toLowerCase().replace(' ', '_').replace('\'', '').replace('.', '_').replace(':', '-').replace('%', '');
+    cssClass = cssClass.toLowerCase().replace(' ', '_').replace('\'', '').replace('.', '').replace(':', '').replace('%', '');
     return cssClass.toLowerCase();
+}
+function getModelUrl(dexNo, spriteClass, gender, isShiny) {
+    var modelUrl = "http://www.pkparaiso.com/imagenes/";
+    if (dexNo > 721 || spriteClass.endsWith("-alola") || spriteClass.endsWith("-10")) {
+        modelUrl += "sol-luna";
+    } else {
+        modelUrl += "xy";
+    }
+    modelUrl += "/sprites/animados" + (isShiny ? "-shiny" : '') + "/" + spriteClass
+    if (POKEMON_WITH_GENDER_DIFFERENCES.indexOf(dexNo) > -1) {
+        if (gender == "F") {
+            if (dexNo == 29) {
+                modelUrl += "_f";
+            } else {
+                modelUrl += "-f";
+            }
+        } else {
+            modelUrl  = modelUrl.replace("-male", '');
+            if (dexNo == 32) {
+                modelUrl += "_m";
+            }
+        }
+    } else {
+        if (TAPUS.indexOf(dexNo) > -1) {
+            modelUrl  = modelUrl.replace("_", '');
+        } else if (dexNo == 122) {
+            modelUrl  = modelUrl.replace("mr", "mr.");
+        } else if (dexNo == 772) {
+            modelUrl  = modelUrl.replace("-", '');
+        }
+    }
+    return modelUrl  + ".gif";;
 }
 function getTags(pokemon) {
     var tags = [];
@@ -491,7 +525,7 @@ $(document).ready(function() {
             // Sprite
             row += "<td class=\"sprite\"><span class=\"menu-sprite " + getSpriteClass(pokemon) + "\" title=\"" + pokemon.name + "\">" + pokemon.dexNo + "</span></td>";
             // Name
-            row += "<td class=\"name\">" + (pokemon.isShiny ? "Shiny " : '') + pokemon.name;
+            row += "<td class=\"name\">" + (pokemon.isShiny ? "Shiny " : '') + (pokemon.dexNo == 29 || pokemon.dexNo == 32 ? "Nidoran" : pokemon.name);
             if (pokemon.gender == "F") {
                  row += " <span class=\"gender female\" title=\"Female\">&#x2640;</span>";
             } else if (pokemon.gender == "M") {
@@ -585,9 +619,10 @@ $(document).ready(function() {
             $("tr").click(function() {
                 var $this = $(this);
                 var $pokemonInfo = $("#pokemon-info");
+                var dexNo = Number($this.data("dexno"));
                 var isShiny = $this.data("isshiny");
                 // Name, Nickname, Sex & Level
-                var name = (isShiny ? "Shiny " : '') + $this.data("name");
+                var name = (isShiny ? "Shiny " : '') + (dexNo == 29 || dexNo == 32 ? "Nidoran" : $this.data("name"));
                 var nickname = $this.data("nickname");
                 if (nickname) {
                     name = nickname + " (" + name + ")";
@@ -608,16 +643,9 @@ $(document).ready(function() {
                 $("#pokemon-info h1").prepend("<span class=\"menu-sprite " + spriteClass + "\">" + $this.data("dexno") + "</span>");
                 // Pokémon Model
                 var generation = Number($this.data("generation"));
-                var modelUrl = "http://www.pkparaiso.com/imagenes/";                
-                if (generation > 6 || spriteClass.endsWith("-alola") || spriteClass.endsWith("-10")) {
-                    modelUrl += "sol-luna";
-                } else {
-                    modelUrl += "xy";
-                }
-                modelUrl += "/sprites/animados" + (isShiny ? "-shiny" : '') + "/" + spriteClass + ".gif";
                 $(new Image())
                     .attr("class", "model")
-                    .attr("src", modelUrl)
+                    .attr("src", getModelUrl(dexNo, spriteClass, gender, isShiny))
                     .appendTo($("#pokemon-info figure")).fadeIn();
                 // Trainer
                 $pokemonInfo.find(".trainer").next().text($this.data("ot") + " (" + $this.data("tid") + ")");

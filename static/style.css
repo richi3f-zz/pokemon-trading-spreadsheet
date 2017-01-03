@@ -269,7 +269,7 @@ td.hidden-power { width: 3.125em; }
 td.name, td.nature, td.ability, td.egg-moves { text-align: left; }
 td.egg-moves { line-height: 1.45; }
 
-td.sprite{max-width:2.5em}
+td.sprite{width:3.5em;max-width:3.5em}
 
 .gender{
     font-family:"Apple Color Emoji","Segoe UI Emoji","NotoColorEmoji","Segoe UI Symbol","Android Emoji","EmojiSymbols"
@@ -1271,7 +1271,7 @@ tr:hover .menu-sprite.wishiwashi,
 .menu-sprite.sandygast{background-position:-450px -900px}
 .menu-sprite.palossand{background-position:-480px -900px}
 .menu-sprite.pyukumuku{background-position:-900px -660px}
-.menu-sprite.type-null{background-position:-930px -660px}
+.menu-sprite.type_null{background-position:-930px -660px}
 .menu-sprite.silvally{background-position:-900px -690px}
 .menu-sprite.minior{background-position:-930px -690px}
 .menu-sprite.minior:hover,
