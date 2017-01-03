@@ -269,6 +269,8 @@ td.hidden-power { width: 3.125em; }
 td.name, td.nature, td.ability, td.egg-moves { text-align: left; }
 td.egg-moves { line-height: 1.45; }
 
+td.sprite{max-width:2.5em}
+
 .gender{
     font-family:"Apple Color Emoji","Segoe UI Emoji","NotoColorEmoji","Segoe UI Symbol","Android Emoji","EmojiSymbols"
 }
