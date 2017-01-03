@@ -27,6 +27,7 @@ A script made to display Pokémon trading information stored in Google Sheets
 3. Make your spreadsheet public (`File > Publish to the web…`).
 4. Clone this repository.
 5. Edit `config.js` with your spreadsheet's ID and personal information (IGN, FC, etc.).
+6. Go to `Settings` and set the `Source` to `master branch` under the GitHub Pages header.
 
 ## Demo
 
