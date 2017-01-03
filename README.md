@@ -29,13 +29,17 @@ A script made to display Pokémon trading information stored in Google Sheets
 5. Edit `config.js` with your spreadsheet's ID and personal information (IGN, FC, etc.).
 6. Go to `Settings` and set the `Source` to `master branch` under the GitHub Pages header.
 
+## How to Update
+
+If files have been updated, you will need to replace files on your end with the new ones. For Tumblr users, this means copying again the [theme](https://raw.githubusercontent.com/richi3f/pokemon-trading-spreadsheet/master/tumblr_theme.html). Those using GitHub Pages will have to download the files I have edited and upload them to their repository.
+
 ## Demo
 
 [Google Document](https://docs.google.com/spreadsheets/d/1P9wMb9e0YbhcOua9RQeRCJjllf_L77uV-7i4Q0Yor0o/edit?usp=sharing) → [Result](https://richi3f.github.io/pokemon-trading-spreadsheet/)
 
 ## Changelog
 
-* `2016.1.3.0` Fixed Pokémon model for those with special characters in their name.
+* `2016.1.3.0` Fixed Pokémon model for those with special characters in their name. Also added support for Pokémon with models with gender differences.
 * `2016.1.2.0` Initial release.
 
 Pokémon is &copy; of Nintendo, 1995-2017.
