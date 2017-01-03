@@ -33,4 +33,9 @@ A script made to display Pokémon trading information stored in Google Sheets
 
 [Google Document](https://docs.google.com/spreadsheets/d/1P9wMb9e0YbhcOua9RQeRCJjllf_L77uV-7i4Q0Yor0o/edit?usp=sharing) → [Result](https://richi3f.github.io/pokemon-trading-spreadsheet/)
 
+## Changelog
+
+* `2016.1.3.0` Fixed Pokémon model for those with special characters in their name.
+* `2016.1.2.0` Initial release.
+
 Pokémon is &copy; of Nintendo, 1995-2017.
