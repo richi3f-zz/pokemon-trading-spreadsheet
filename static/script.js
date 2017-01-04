@@ -455,7 +455,8 @@ $(document).ready(function() {
                 if (!(textContains(title, "config") ||
                       textContains(title, "template") ||
                       textContains(title, "item") ||
-                      textContains(title, "database"))) {
+                      textContains(title, "database") ||
+                      title == "DB")) {
                     $("#tabs-list").append("<li><a href=\"#"+thisId+"\" " + (thisId == worksheetId ? "class=\"current\"" : "") + ">"+title+"</a></li>");
                 }
             });
