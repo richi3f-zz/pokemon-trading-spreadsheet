@@ -162,14 +162,14 @@ const HIDDEN_ABILITIES = {
 };
 // Default values for config stuff:
 var spreadsheetId = window.location.search.substring(1);
-var breedablesWorksheet = 2;
-var shiniesWorksheet = 3;
-var wantsWorksheet = 4;
-var friendCode = "4597-0550-9417";
-var inGameName = "Richie";
-var contactUrl = "http://reddit.com/u/richi3f";
+var breedablesWorksheet = 1;
+var shiniesWorksheet = 2;
+var wantsWorksheet = 3;
+var friendCode = "xxxx-xxxx-xxxx";
+var inGameName = "Unknown";
+var contactUrl = "http://reddit.com/u/unknown";
 var trainerIconUrl = "https://n-3ds1-pgl-trainericon.pokemon-gl.com/d315dac0-ae8f-11e6-a3fc-06af8a77a80d.png";
-var worksheetId = 2;
+var worksheetId = breedablesWorksheet;
 // Stat Attributes object, used for IVs & EVs
 var StatAttributes = function() {
     this.hp  = 0;
@@ -406,13 +406,15 @@ function getSpreedsheetUrl(spreadsheetId, worksheetId) {
 $(document).ready(function() {
     $.getJSON(getSpreedsheetUrl(spreadsheetId, 1), function(data) {
         var entry = data.feed.entry[0]
-        breedablesWorksheet = entry.gsx$breedablesworksheet.$t;
-        shiniesWorksheet = entry.gsx$shiniesworksheet.$t;
-        wantsWorksheet = entry.gsx$wantsworksheet.$t;
-        friendCode = entry.gsx$friendcode.$t;
-        inGameName = entry.gsx$ingamename.$t;
-        contactUrl = entry.gsx$contacturl.$t;
-        trainerIconUrl = entry.gsx$trainericonurl.$t;
+        if(entry.gsx$breedablesworksheet){
+            breedablesWorksheet = entry.gsx$breedablesworksheet.$t;
+            shiniesWorksheet = entry.gsx$shiniesworksheet.$t;
+            wantsWorksheet = entry.gsx$wantsworksheet.$t;
+            friendCode = entry.gsx$friendcode.$t;
+            inGameName = entry.gsx$ingamename.$t;
+            contactUrl = entry.gsx$contacturl.$t;
+            trainerIconUrl = entry.gsx$trainericonurl.$t;
+        }
         //Magic
         var hash = window.location.hash.slice(-1);
         worksheetId = breedablesWorksheet;
