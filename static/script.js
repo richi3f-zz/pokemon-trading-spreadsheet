@@ -160,6 +160,16 @@ const HIDDEN_ABILITIES = {
     "Sweet Veil": [742,743,761,762,763],
     "Wonder Skin": [49,300,301,779]
 };
+// Default values for config stuff:
+var spreadsheetId = window.location.search.substring(1);
+var breedablesWorksheet = 2;
+var shiniesWorksheet = 3;
+var wantsWorksheet = 4;
+var friendCode = "4597-0550-9417";
+var inGameName = "Richie";
+var contactUrl = "http://reddit.com/u/richi3f";
+var trainerIconUrl = "https://n-3ds1-pgl-trainericon.pokemon-gl.com/d315dac0-ae8f-11e6-a3fc-06af8a77a80d.png";
+var worksheetId = 2;
 // Stat Attributes object, used for IVs & EVs
 var StatAttributes = function() {
     this.hp  = 0;
@@ -388,15 +398,32 @@ function filterPokemon() {
         }
     });
 }
-// Magic
-var hash = window.location.hash.slice(-1);
-var worksheetId = 1;
-if (!isNaN(hash) && hash) {
-    worksheetId = hash;
+
+function getSpreedsheetUrl(spreadsheetId, worksheetId) {
+    return "https://spreadsheets.google.com/feeds/list/" + spreadsheetId + "/" + worksheetId + "/public/values?alt=json";
 }
 
-var spreadsheetUrl = "https://spreadsheets.google.com/feeds/list/" + spreadsheetId + "/" + worksheetId + "/public/values?alt=json";
 $(document).ready(function() {
+    $.getJSON(getSpreedsheetUrl(spreadsheetId, 1), function(data) {
+        var entry = data.feed.entry[0]
+        breedablesWorksheet = entry.gsx$breedablesworksheet.$t;
+        shiniesWorksheet = entry.gsx$shiniesworksheet.$t;
+        wantsWorksheet = entry.gsx$wantsworksheet.$t;
+        friendCode = entry.gsx$friendcode.$t;
+        inGameName = entry.gsx$ingamename.$t;
+        contactUrl = entry.gsx$contacturl.$t;
+        trainerIconUrl = entry.gsx$trainericonurl.$t;
+        //Magic
+        var hash = window.location.hash.slice(-1);
+        worksheetId = breedablesWorksheet;
+        if (!isNaN(hash) && hash) {
+            worksheetId = hash;
+        }
+        doThings();
+    });
+});
+
+function doThings(){
     $("title").text(inGameName + "'s Pokémon Trading Sheet");
     $("header h1").prepend("<a href=\"" + contactUrl + "\">" + inGameName + "</a>");
     if (friendCode || inGameName) {
@@ -417,7 +444,7 @@ $(document).ready(function() {
         trainerInfo += "</dl>";
         $("#trainer-info").prepend(trainerInfo);
     }
-    $.getJSON(spreadsheetUrl, function(data) {
+    $.getJSON(getSpreedsheetUrl(spreadsheetId, worksheetId), function(data) {
         var entry = data.feed.entry;
         $(entry).each(function(){
             var pokemon = new Pokemon();
@@ -719,4 +746,4 @@ $(document).ready(function() {
             location.reload();
         });
     });
-});
+}
