@@ -457,7 +457,7 @@ $(document).ready(function() {
                       textContains(title, "item") ||
                       textContains(title, "database") ||
                       title == "DB")) {
-                    $("#tabs-list").append("<li><a href=\"#"+thisId+"\" " + (thisId == worksheetId ? "class=\"current\"" : "") + ">"+title+"</a></li>");
+                    $("#tabs-list").append("<li " + (thisId == worksheetId ? "class=\"current\"" : "") + "><a href=\"#"+thisId+"\">"+title+"</a></li>");
                 }
             });
 
