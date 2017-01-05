@@ -57,8 +57,8 @@ If there's been an update, you will need to replace files on your end with the n
 
 ## Changelog
 
-* `2016.1.4.0` Added support for more than 3 tabs (thanks to [Armienn](https://github.com/Armienn)). Added extra filters and fixed Hidden Abilities of Pokémon with an Alola Form.
-* `2016.1.3.0` Fixed Pokémon model for those with special characters in their name. Also added support for Pokémon with models with gender differences.
-* `2016.1.2.0` Initial release.
+* `2017.1.4.0` Added support for more than 3 tabs (thanks to [Armienn](https://github.com/Armienn)). Added extra filters and fixed Hidden Abilities of Pokémon with an Alola Form.
+* `2017.1.3.0` Fixed Pokémon model for those with special characters in their name. Also added support for Pokémon with models with gender differences.
+* `2017.1.2.0` Initial release.
 
 Pokémon is &copy; of Nintendo, 1995-2017.
