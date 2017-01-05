@@ -427,7 +427,7 @@ function sheetIsForIndividualPokemon(entry) {
         entry.gsx$notes ? true : false;
 }
 // Default values for config stuff
-spreadsheetId = spreadsheetId || window.location.search.substring(1);
+spreadsheetId = window.location.search.substring(1) || spreadsheetId;
 var worksheetId = 1;
 var isForIndividualPokemon = false;
 
@@ -436,10 +436,10 @@ $(document).ready(function() {
         // read config worksheet if exists
         var entry = data.feed.entry[0];
         if (entry.gsx$ingamename) {
-            friendCode = friendCode || entry.gsx$friendcode.$t;
-            inGameName = inGameName || entry.gsx$ingamename.$t;
-            contactUrl = contactUrl || entry.gsx$contacturl.$t;
-            trainerIconUrl = trainerIconUrl || entry.gsx$trainericonurl.$t;
+            friendCode = entry.gsx$friendcode.$t || friendCode;
+            inGameName = entry.gsx$ingamename.$t || inGameName;
+            contactUrl = entry.gsx$contacturl.$t || contactUrl;
+            trainerIconUrl = entry.gsx$trainericonurl.$t || trainerIconUrl;
             worksheetId = 2;
         }
         // get worksheet from URL, otherwise it defaults to 1st sheet
