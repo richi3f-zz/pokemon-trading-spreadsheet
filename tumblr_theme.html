@@ -6,12 +6,9 @@
     <link rel="shortcut icon" href="{Favicon}">
     <title>{Title}</title>
     <link rel="stylesheet" href="http://static.tumblr.com/28amrxm/I8Soj63cz/bootstrap.min.css">
-    <link rel="stylesheet" href="http://static.tumblr.com/28amrxm/gfnoj6xnx/style.css">
+    <link rel="stylesheet" href="http://static.tumblr.com/28amrxm/bCEojafof/style.css">
     
     <meta name="text:Spreadsheet ID" content="">
-    <meta name="text:Breedables Worksheet Number" content="1">
-    <meta name="text:Shinies Worksheet Number" content="2">
-    <meta name="text:Wants Worksheet Number" content="3">
     <meta name="text:IGN" content="">
     <meta name="text:FC" content="">
     <meta name="text:Contact URL" content="">
@@ -41,13 +38,8 @@
         </div>
         <nav>
             <ul>
-                <li><abbr title="For Trade">FT</abbr>
-                    <ul>
-                        <li><a href="#" data-worksheetid="breedablesWorksheet">Breedables</a></li><!--
-                        --><li><a href="#" data-worksheetid="shiniesWorksheet">Shinies</a></li>
-                    </ul>
-                </li><!--
-                --><li><a href="#" data-worksheetid="wantsWorksheet"><abbr title="Looking For">LF</abbr></a></li>
+                <li id="for-trade"><abbr title="For Trade">FT</abbr><ul></ul>
+                <li id="looking-for"><abbr title="Looking For">LF</abbr><ul></ul>
             </ul>
         </nav>
     </header>
@@ -106,6 +98,14 @@
                 <option value="gender-ratio-0-1">Male Only</option>
                 <option value="gender-ratio-0-0">Genderless</option>
             </select>
+        </div><!--
+        --><div class="filter">
+            <label for="misc-filter"><abbr title="Miscellaneous">Misc.</abbr></label>
+            <select id="misc-filter" multiple="multiple">
+                <option value="baby">Baby Only</option>
+                <option value="hidden-ability">Hidden Ability Only</option>
+                <option value="shiny">Shiny Only</option>
+            </select>
         </div>
     </div>
     <table>
@@ -142,9 +142,7 @@
     </footer>
     <div id="modal" class="hidden">
         <div id="pokemon-info">
-            <figure>
-                <span class="item-sprite"></span>
-            </figure>
+            <figure></figure>
             <h1>
                 <span class="name"></span> <span class="gender"></span> <span class="level"></span>
             </h1>
@@ -171,15 +169,12 @@
 <script src="http://static.tumblr.com/28amrxm/7Kdoj63or/bootstrap.multiselect.js"></script>
 <script>
 var spreadsheetId = "{text:Spreadsheet ID}";
-var breedablesWorksheet = {text:Breedables Worksheet Number};
-var shiniesWorksheet = {text:Shinies Worksheet Number};
-var wantsWorksheet = {text:Wants Worksheet Number};
 var friendCode = "{text:FC}";
 var inGameName = "{text:IGN}";
 var contactUrl = "{text:Contact URL}";
 var trainerIconUrl = "{image:Trainer Icon}";
 </script>
-<script src="http://static.tumblr.com/28amrxm/n7koj6xo5/script.js"></script>
+<script src="http://static.tumblr.com/28amrxm/xzLojafnb/script.js"></script>
 
 </body>
 </html>
