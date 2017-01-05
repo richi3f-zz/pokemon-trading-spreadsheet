@@ -6,6 +6,7 @@
     <title>Pokémon Trading Spreadsheet</title>
     <link rel="stylesheet" href="static/bootstrap.min.css">
     <link rel="stylesheet" href="static/style.css">
+    <script src="static/config.js"></script>
 </head>
 
 <body>
@@ -23,7 +24,9 @@
         <div id="trainer-info">
         </div>
         <nav>
-            <ul id="tabs-list">
+            <ul>
+                <li id="for-trade"><abbr title="For Trade">FT</abbr><ul></ul>
+                <li id="looking-for"><abbr title="Looking For">LF</abbr><ul></ul>
             </ul>
         </nav>
     </header>
@@ -81,6 +84,14 @@
                 <option value="gender-ratio-1-7">1 ♀ : 7 ♂</option>
                 <option value="gender-ratio-0-1">Male Only</option>
                 <option value="gender-ratio-0-0">Genderless</option>
+            </select>
+        </div><!--
+        --><div class="filter">
+            <label for="misc-filter"><abbr title="Miscellaneous">Misc.</abbr></label>
+            <select id="misc-filter" multiple="multiple">
+                <option value="baby">Baby Only</option>
+                <option value="hidden-ability">Hidden Ability Only</option>
+                <option value="shiny">Shiny Only</option>
             </select>
         </div>
     </div>
