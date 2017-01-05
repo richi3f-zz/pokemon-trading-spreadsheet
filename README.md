@@ -20,17 +20,19 @@ A script made to display Pokémon trading information stored in Google Sheets
 2. Fill your copy of the spreadsheet with your Pokémon.
 3. Make your spreadsheet public (`File > Publish to the web…`).
 
+See [Demo](#demo) below if you're unsure of how to fill the spreadsheet.
+
 ### Method 1: Beginner
 
-Find the URL of your sheet and paste it here: https://richi3f.github.io/pokemon-trading-spreadsheet/?spreadsheet-id
+Find the URL of your sheet and paste it here: `https://pokemon-trading-spreadsheet.tumblr.com/?spreadsheet-id`
 
-Example: https://richi3f.github.io/pokemon-trading-spreadsheet/?1P9wMb9e0YbhcOua9RQeRCJjllf_L77uV-7i4Q0Yor0o
+Example: `https://pokemon-trading-spreadsheet.tumblr.com/?1P9wMb9e0YbhcOua9RQeRCJjllf_L77uV-7i4Q0Yor0o`
 
 That's it! Share the resulting link with your potential trade partners.
 
 ### Method 2: Advanced
 
-Use any of the following if you want a custom URL (that does not include my name) or want to make changes to script/styling.
+Use any of the following if you want a custom URL or want to make changes to the script/styling.
 
 #### Method 2A: Tumblr
 
