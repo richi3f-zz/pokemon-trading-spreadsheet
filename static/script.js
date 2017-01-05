@@ -582,7 +582,7 @@ function displayPokemon(){
             // Sprite
             row += "<td class=\"sprite\"><span class=\"menu-sprite " + getSpriteClass(pokemon) + "\" title=\"" + pokemon.name + "\">" + pokemon.dexNo + "</span></td>";
             // Name
-            row += "<td class=\"name\">" + (pokemon.isShiny ? "Shiny " : '') + (pokemon.dexNo == 29 || pokemon.dexNo == 32 ? "Nidoran" : pokemon.name);
+            row += "<td class=\"name\">" + (pokemon.dexNo == 29 || pokemon.dexNo == 32 ? "Nidoran" : pokemon.name);
             if (pokemon.gender == "F") {
                  row += " <span class=\"gender female\" title=\"Female\">&#x2640;</span>";
             } else if (pokemon.gender == "M") {
@@ -678,8 +678,9 @@ function displayPokemon(){
                 var $pokemonInfo = $("#pokemon-info");
                 var dexNo = Number($this.data("dexno"));
                 var isShiny = $this.data("isshiny");
+                if (isShiny) $pokemonInfo.addClass("shiny");
                 // Name, Nickname, Sex & Level
-                var name = (isShiny ? "Shiny " : '') + (dexNo == 29 || dexNo == 32 ? "Nidoran" : $this.data("name"));
+                var name = dexNo == 29 || dexNo == 32 ? "Nidoran" : $this.data("name");
                 var nickname = $this.data("nickname");
                 if (nickname) {
                     name = nickname + " (" + name + ")";
@@ -743,6 +744,7 @@ function displayPokemon(){
                 $("#pokemon-info figure img").remove();
                 $("#pokemon-info ul li").remove();
                 $("#pokemon-info .notes").remove();
+                $("#pokemon-info").removeClass("shiny");
                 $("#modal").addClass("hidden");
             });
             $("#pokemon-info").click(function(e) {
