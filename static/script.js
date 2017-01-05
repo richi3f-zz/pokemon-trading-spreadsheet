@@ -160,6 +160,14 @@ const HIDDEN_ABILITIES = {
     "Sweet Veil": [742,743,761,762,763],
     "Wonder Skin": [49,300,301,779]
 };
+// Default values for config stuff:
+var spreadsheetId = window.location.search.substring(1);
+var friendCode = "xxxx-xxxx-xxxx";
+var inGameName = "Unknown";
+var contactUrl = "http://reddit.com/u/unknown";
+var trainerIconUrl = "https://n-3ds1-pgl-trainericon.pokemon-gl.com/d315dac0-ae8f-11e6-a3fc-06af8a77a80d.png";
+var worksheetId = 2;
+var isForIndividualPokemon = false;
 // Stat Attributes object, used for IVs & EVs
 var StatAttributes = function() {
     this.hp  = 0;
@@ -347,7 +355,7 @@ function getTags(pokemon) {
 }
 function getData(pokemon) {
     var data = "";
-    if (worksheetId == shiniesWorksheet) {
+    if (isForIndividualPokemon) {
         Object.keys(pokemon).forEach(function(i) {
             if (typeof pokemon[i] !== "function") {
                 if (typeof pokemon[i] === "object") {
@@ -388,15 +396,82 @@ function filterPokemon() {
         }
     });
 }
-// Magic
-var hash = window.location.hash.slice(-1);
-var worksheetId = 1;
-if (!isNaN(hash) && hash) {
-    worksheetId = hash;
+
+function getWorksheetUrl(spreadsheetId, worksheetId) {
+    return "https://spreadsheets.google.com/feeds/list/" + spreadsheetId + "/" + worksheetId + "/public/values?alt=json";
 }
 
-var spreadsheetUrl = "https://spreadsheets.google.com/feeds/list/" + spreadsheetId + "/" + worksheetId + "/public/values?alt=json";
+function getSpreadsheetUrl(spreadsheetId) {
+    return "https://spreadsheets.google.com/feeds/worksheets/" + spreadsheetId + "/public/basic?alt=json";
+}
+
+function getValue(field) {
+    if (field) return field.$t;
+    return undefined;
+}
+
+function textContains(text, subtext) {
+    return text.toLowerCase().indexOf(subtext) != -1;
+}
+
+function sheetIsForIndividualPokemon(entry) {
+    return entry.gsx$nickname ||
+        entry.gsx$ot ||
+        entry.gsx$tid ||
+        entry.gsx$lv ||
+        entry.gsx$hpev ||
+        entry.gsx$atkev ||
+        entry.gsx$defev ||
+        entry.gsx$spaev ||
+        entry.gsx$spdev ||
+        entry.gsx$speev ||
+        entry.gsx$ball ||
+        entry.gsx$lang ||
+        entry.gsx$notes ? true : false;
+}
+
 $(document).ready(function() {
+    $.getJSON(getWorksheetUrl(spreadsheetId, 1), function(data) {
+        var entry = data.feed.entry[0]
+        worksheetId = 1;
+        if(entry.gsx$ingamename){
+            friendCode = entry.gsx$friendcode.$t;
+            inGameName = entry.gsx$ingamename.$t;
+            contactUrl = entry.gsx$contacturl.$t;
+            trainerIconUrl = entry.gsx$trainericonurl.$t;
+            worksheetId = 2;
+        }
+        //Magic
+        var hash = window.location.hash.slice(-1);
+        if (!isNaN(hash) && hash) {
+            worksheetId = hash;
+        }
+        doThings();
+        $.getJSON(getSpreadsheetUrl(spreadsheetId), function(data) {
+            var entry = data.feed.entry;
+            $(entry).each(function(index){
+                var title = getValue(this.title);
+                var thisId = index + 1;
+                if (!(textContains(title, "config") ||
+                      textContains(title, "template") ||
+                      textContains(title, "item") ||
+                      textContains(title, "database") ||
+                      title == "DB")) {
+                    $("#tabs-list").append("<li " + (thisId == worksheetId ? "class=\"current\"" : "") + "><a href=\"#"+thisId+"\">"+title+"</a></li>");
+                }
+            });
+
+            $("nav a").each(function() {
+                $(this).click(function() {
+                    window.location.hash = this.hash;
+                    location.reload();
+                });
+            });
+        });
+    });
+});
+
+function doThings(){
     $("title").text(inGameName + "'s Pokémon Trading Sheet");
     $("header h1").prepend("<a href=\"" + contactUrl + "\">" + inGameName + "</a>");
     if (friendCode || inGameName) {
@@ -417,109 +492,85 @@ $(document).ready(function() {
         trainerInfo += "</dl>";
         $("#trainer-info").prepend(trainerInfo);
     }
-    $.getJSON(spreadsheetUrl, function(data) {
+    $.getJSON(getWorksheetUrl(spreadsheetId, worksheetId), function(data) {
         var entry = data.feed.entry;
+        if (entry && entry[0]) {
+            isForIndividualPokemon = sheetIsForIndividualPokemon(entry[0]);
+        }
         $(entry).each(function(){
             var pokemon = new Pokemon();
-            pokemon.dexNo = Number(this.gsx$dexno.$t);
-            pokemon.name = this.gsx$name.$t;
-            pokemon.form = this.gsx$form.$t;
-            pokemon.nature = this.gsx$nature.$t;
-            pokemon.ability = this.gsx$ability.$t;
-            pokemon.ivs.hp = this.gsx$hpiv.$t || "x";
-            pokemon.ivs.atk = this.gsx$atkiv.$t || "x";
-            pokemon.ivs.def = this.gsx$defiv.$t || "x";
-            pokemon.ivs.spa = this.gsx$spaiv.$t || "x";
-            pokemon.ivs.spd = this.gsx$spdiv.$t || "x";
-            pokemon.ivs.spe = this.gsx$speiv.$t || "x";
-            pokemon.hiddenPower = this.gsx$hiddenpower.$t;
-            pokemon.eggMoves = [this.gsx$eggmove1.$t, this.gsx$eggmove2.$t, this.gsx$eggmove3.$t, this.gsx$eggmove4.$t].filter(function(e){return e;});
-            if (worksheetId != breedablesWorksheet) {
-                pokemon.gender = this.gsx$sex.$t;
-                switch (pokemon.genderRatio()) {
-                    case "gender-ratio-1-0":
-                        pokemon.gender = 'F';
-                        break;
-                    case "gender-ratio-0-1":
-                        pokemon.gender = 'M';
-                        break;
-                    case "gender-ratio-0-0":
-                        pokemon.gender = '-';
-                        break;
-                }
-                pokemon.isShiny = this.gsx$shiny.$t;
-                if (worksheetId == shiniesWorksheet) {
-                    pokemon.nickname = this.gsx$nickname.$t;
-                    pokemon.ot = this.gsx$ot.$t;
-                    pokemon.tid = this.gsx$tid.$t;
-                    pokemon.level = this.gsx$lv.$t;
-                    pokemon.evs.hp = this.gsx$hpev.$t;
-                    pokemon.evs.atk = this.gsx$atkev.$t;
-                    pokemon.evs.def = this.gsx$defev.$t;
-                    pokemon.evs.spa = this.gsx$spaev.$t;
-                    pokemon.evs.spd = this.gsx$spdev.$t;
-                    pokemon.evs.spe = this.gsx$speev.$t;
-                    pokemon.balls.push(this.gsx$ball.$t);
-                    pokemon.language = this.gsx$lang.$t;
-                    pokemon.notes = (this.gsx$notes) ? this.gsx$notes.$t : "";
-                } else {
-                    if (this.gsx$_dcgjs) pokemon.balls.push("Poké Ball");
-                    if (this.gsx$_ddv49) pokemon.balls.push("Great Ball");
-                    if (this.gsx$_d415a) pokemon.balls.push("Ultra Ball");
-                    if (this.gsx$_d5fpr) pokemon.balls.push("Master Ball");
-                    if (this.gsx$_d6ua4) pokemon.balls.push("Safari Ball");
-                    if (this.gsx$_d88ul) pokemon.balls.push("Level Ball");
-                    if (this.gsx$_dkvya) pokemon.balls.push("Lure Ball");
-                    if (this.gsx$_dmair) pokemon.balls.push("Moon Ball");
-                    if (this.gsx$_dnp34) pokemon.balls.push("Friend Ball");
-                    if (this.gsx$_dp3nl) pokemon.balls.push("Love Ball");
-                    if (this.gsx$_df9om) pokemon.balls.push("Heavy Ball");
-                    if (this.gsx$_dgo93) pokemon.balls.push("Fast Ball");
-                    if (this.gsx$_di2tg) pokemon.balls.push("Sport Ball");
-                    if (this.gsx$_djhdx) pokemon.balls.push("Premier Ball");
-                    if (this.gsx$_dw4je) pokemon.balls.push("Repeat Ball");
-                    if (this.gsx$_dxj3v) pokemon.balls.push("Timer Ball");
-                    if (this.gsx$_dyxo8) pokemon.balls.push("Nest Ball");
-                    if (this.gsx$_e0c8p) pokemon.balls.push("Net Ball");
-                    if (this.gsx$_dqi9q) pokemon.balls.push("Dive Ball");
-                    if (this.gsx$_drwu7) pokemon.balls.push("Luxury Ball");
-                    if (this.gsx$_dtbek) pokemon.balls.push("Heal Ball");
-                    if (this.gsx$_dupz1) pokemon.balls.push("Quick Ball");
-                    if (this.gsx$_e7d2q) pokemon.balls.push("Dusk Ball");
-                    if (this.gsx$_e8rn7) pokemon.balls.push("Cherish Ball");
-                    if (this.gsx$_ea67k) pokemon.balls.push("Dream Ball");
-                    if (this.gsx$_ebks1) pokemon.balls.push("Beast Ball");
-
-                }
+            pokemon.dexNo = Number(getValue(this.gsx$dexno));
+            pokemon.name = getValue(this.gsx$name);
+            pokemon.form = getValue(this.gsx$form);
+            pokemon.nature = getValue(this.gsx$nature);
+            pokemon.ability = getValue(this.gsx$ability);
+            pokemon.ivs.hp = getValue(this.gsx$hpiv) || "x";
+            pokemon.ivs.atk = getValue(this.gsx$atkiv) || "x";
+            pokemon.ivs.def = getValue(this.gsx$defiv) || "x";
+            pokemon.ivs.spa = getValue(this.gsx$spaiv) || "x";
+            pokemon.ivs.spd = getValue(this.gsx$spdiv) || "x";
+            pokemon.ivs.spe = getValue(this.gsx$speiv) || "x";
+            pokemon.hiddenPower = getValue(this.gsx$hiddenpower);
+            pokemon.eggMoves = [
+                getValue(this.gsx$eggmove1),
+                getValue(this.gsx$eggmove2),
+                getValue(this.gsx$eggmove3),
+                getValue(this.gsx$eggmove4)
+                ].filter(function(e){return e;});
+            pokemon.gender = getValue(this.gsx$sex);
+            switch (pokemon.genderRatio()) {
+                case "gender-ratio-1-0":
+                    pokemon.gender = 'F';
+                    break;
+                case "gender-ratio-0-1":
+                    pokemon.gender = 'M';
+                    break;
+                case "gender-ratio-0-0":
+                    pokemon.gender = '-';
+                    break;
             }
-            else {
-                if (this.gsx$_d9ney) pokemon.balls.push("Poké Ball");
-                if (this.gsx$_db1zf) pokemon.balls.push("Great Ball");
-                if (this.gsx$_dcgjs) pokemon.balls.push("Ultra Ball");
-                if (this.gsx$_ddv49) pokemon.balls.push("Master Ball");
-                if (this.gsx$_d415a) pokemon.balls.push("Safari Ball");
-                if (this.gsx$_d5fpr) pokemon.balls.push("Level Ball");
-                if (this.gsx$_d6ua4) pokemon.balls.push("Lure Ball");
-                if (this.gsx$_d88ul) pokemon.balls.push("Moon Ball");
-                if (this.gsx$_dkvya) pokemon.balls.push("Friend Ball");
-                if (this.gsx$_dmair) pokemon.balls.push("Love Ball");
-                if (this.gsx$_dnp34) pokemon.balls.push("Heavy Ball");
-                if (this.gsx$_dp3nl) pokemon.balls.push("Fast Ball");
-                if (this.gsx$_df9om) pokemon.balls.push("Sport Ball");
-                if (this.gsx$_dgo93) pokemon.balls.push("Premier Ball");
-                if (this.gsx$_di2tg) pokemon.balls.push("Repeat Ball");
-                if (this.gsx$_djhdx) pokemon.balls.push("Timer Ball");
-                if (this.gsx$_dw4je) pokemon.balls.push("Nest Ball");
-                if (this.gsx$_dxj3v) pokemon.balls.push("Net Ball");
-                if (this.gsx$_dyxo8) pokemon.balls.push("Dive Ball");
-                if (this.gsx$_e0c8p) pokemon.balls.push("Luxury Ball");
-                if (this.gsx$_dqi9q) pokemon.balls.push("Heal Ball");
-                if (this.gsx$_drwu7) pokemon.balls.push("Quick Ball");
-                if (this.gsx$_dtbek) pokemon.balls.push("Dusk Ball");
-                if (this.gsx$_dupz1) pokemon.balls.push("Cherish Ball");
-                if (this.gsx$_e7d2q) pokemon.balls.push("Dream Ball");
-                if (this.gsx$_e8rn7) pokemon.balls.push("Beast Ball");
+            pokemon.isShiny = getValue(this.gsx$shiny);
+            pokemon.nickname = getValue(this.gsx$nickname);
+            pokemon.ot = getValue(this.gsx$ot);
+            pokemon.tid = getValue(this.gsx$tid);
+            pokemon.level = getValue(this.gsx$lv);
+            pokemon.evs.hp = getValue(this.gsx$hpev);
+            pokemon.evs.atk = getValue(this.gsx$atkev);
+            pokemon.evs.def = getValue(this.gsx$defev);
+            pokemon.evs.spa = getValue(this.gsx$spaev);
+            pokemon.evs.spd = getValue(this.gsx$spdev);
+            pokemon.evs.spe = getValue(this.gsx$speev);
+            if (getValue(this.gsx$ball)) {
+                pokemon.balls.push(getValue(this.gsx$ball));
             }
+            pokemon.language = getValue(this.gsx$lang);
+            pokemon.notes = getValue(this.gsx$notes);
+            if (this.gsx$_dcgjs) pokemon.balls.push("Poké Ball");
+            if (this.gsx$_ddv49) pokemon.balls.push("Great Ball");
+            if (this.gsx$_d415a) pokemon.balls.push("Ultra Ball");
+            if (this.gsx$_d5fpr) pokemon.balls.push("Master Ball");
+            if (this.gsx$_d6ua4) pokemon.balls.push("Safari Ball");
+            if (this.gsx$_d88ul) pokemon.balls.push("Level Ball");
+            if (this.gsx$_dkvya) pokemon.balls.push("Lure Ball");
+            if (this.gsx$_dmair) pokemon.balls.push("Moon Ball");
+            if (this.gsx$_dnp34) pokemon.balls.push("Friend Ball");
+            if (this.gsx$_dp3nl) pokemon.balls.push("Love Ball");
+            if (this.gsx$_df9om) pokemon.balls.push("Heavy Ball");
+            if (this.gsx$_dgo93) pokemon.balls.push("Fast Ball");
+            if (this.gsx$_di2tg) pokemon.balls.push("Sport Ball");
+            if (this.gsx$_djhdx) pokemon.balls.push("Premier Ball");
+            if (this.gsx$_dw4je) pokemon.balls.push("Repeat Ball");
+            if (this.gsx$_dxj3v) pokemon.balls.push("Timer Ball");
+            if (this.gsx$_dyxo8) pokemon.balls.push("Nest Ball");
+            if (this.gsx$_e0c8p) pokemon.balls.push("Net Ball");
+            if (this.gsx$_dqi9q) pokemon.balls.push("Dive Ball");
+            if (this.gsx$_drwu7) pokemon.balls.push("Luxury Ball");
+            if (this.gsx$_dtbek) pokemon.balls.push("Heal Ball");
+            if (this.gsx$_dupz1) pokemon.balls.push("Quick Ball");
+            if (this.gsx$_e7d2q) pokemon.balls.push("Dusk Ball");
+            if (this.gsx$_e8rn7) pokemon.balls.push("Cherish Ball");
+            if (this.gsx$_ea67k) pokemon.balls.push("Dream Ball");
+            if (this.gsx$_ebks1) pokemon.balls.push("Beast Ball");
             
             var row = "<tr class=\"" + getTags(pokemon) + "\"" + getData(pokemon) + ">";
             // Sprite
@@ -559,7 +610,7 @@ $(document).ready(function() {
                 }
                 row += "<td class=\"" + BATTLE_STATS_ABBR[i].toLowerCase() + "\">" + statAttribute + "</td>";
             }
-            if (worksheetId == shiniesWorksheet) {
+            if (isForIndividualPokemon) {
                 var formattedIvs = [];
                 for (i = 0; i < BATTLE_STATS.length; i++) {
                     statAttribute = pokemon.ivs[BATTLE_STATS_ABBR[i].toLowerCase()];
@@ -613,7 +664,7 @@ $(document).ready(function() {
             $(this).find(".sprite").removeClass("up");
             clearInterval(handle);
         });
-        if (worksheetId == shiniesWorksheet) {
+        if (isForIndividualPokemon) {
             $("body").addClass("shiny");
             // Show modal
             $("tr").click(function() {
@@ -704,19 +755,4 @@ $(document).ready(function() {
     });
     $("select").multiselect("selectAll", false);
     $("select").multiselect('updateButtonText');
-    $("nav a").each(function() {
-        var $this = $(this);
-        var linkedWorksheetId = window[$this.data("worksheetid")];
-        $this.attr("href", "#" + linkedWorksheetId);
-        if (linkedWorksheetId < 0) {
-            $this.addClass("hidden");
-        }
-        if (worksheetId == linkedWorksheetId) {
-            $this.parent().addClass("current");
-        }
-        $(this).click(function() {
-            window.location.hash = this.hash;
-            location.reload();
-        });
-    });
-});
+}
