@@ -383,6 +383,9 @@ function filterPokemon() {
     // show Pokémon that have at least one class of each array (generations, balls, ratios)
     $("tbody tr").each(function() {
         var $this = $(this);
+        var name = $this.find(".name").text().toLowerCase();
+        var query = $("#search-bar").val().toLowerCase();
+        if (name.indexOf(query) == -1) return;
         if (showOnlyBabyPokemon && !$this.hasClass("baby")) return;
         if (showOnlyPokemonWithHiddenAbility && !$this.hasClass("hidden-ability")) return;
         if (showOnlyShinyPokemon && !$this.hasClass("shiny")) return;
@@ -789,6 +792,7 @@ function displayPokemon(){
         onChange: filterPokemon,
         onSelectAll: filterPokemon
     });
+    $("#search-bar").on("input", filterPokemon);
     $("select:not(#misc-filter)").multiselect("selectAll", false);
     $("select").multiselect('updateButtonText');
 }
