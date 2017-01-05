@@ -157,11 +157,11 @@ nav ul li {
     position:relative
 }
 
-nav > ul > li:first-child abbr {
+nav > ul > li abbr {
     vertical-align:middle;
 }
 
-nav > ul > li:first-child abbr::after {
+nav > ul > li abbr::after {
     content:":";
 }
 
