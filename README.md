@@ -10,28 +10,46 @@ A script made to display Pokémon trading information stored in Google Sheets
 
 ## How to Use
 
-### Tumblr
+### Preparation
 
-1. Create a copy of this [spreadsheet](https://docs.google.com/spreadsheets/d/1b5QCn3UfQk7wbxzmcX3Yv8on6GREs12_q83TajSF2mQ/edit?usp=sharing) (`File > Make a Copy…`). You may rename and rearrange tabs, but be careful not to edit the columns! 
-2. Fill it with your breedables, shinies, battle-ready Pokémon, or wants.
+1. Create a copy of this [spreadsheet](https://docs.google.com/spreadsheets/d/1djWEDpw4w0aLrurcnxkLupkzfB1Gw0_SHB8zZWY3Sts/edit?usp=sharing) (`File > Make a Copy…`).
+  * Be careful not to edit the 1st row (headers) of any sheet! 
+  * Name your sheets in the following format "FT:Name of my sheet" or "LF:Name of another sheet". They will be sorted by the script.
+  * You may duplicate the "TEMPLATE" sheets (up to a maximum of 8 tabs).
+  * Do not move or rename the "CONFIG" or "DB" sheets.
+2. Fill your copy of the spreadsheet with your Pokémon.
 3. Make your spreadsheet public (`File > Publish to the web…`).
-4. Create a new Tumblr blog and go to `Account > Edit Appearance > Edit theme > Edit HTML`.
-5. Copy [this](https://raw.githubusercontent.com/richi3f/pokemon-trading-spreadsheet/master/tumblr_theme.html) and then click `Update Preview` followed by `Save`.
-6. Edit the Theme Options with your spreadsheet's ID and personal information (IGN, FC, etc.).
-7. Go to `Advanced Options` and set `Use default mobile theme` to false.
 
-### GitHub Pages
+### Method 1: Beginner
 
-1. Create a copy of this [spreadsheet](https://docs.google.com/spreadsheets/d/1b5QCn3UfQk7wbxzmcX3Yv8on6GREs12_q83TajSF2mQ/edit?usp=sharing) (`File > Make a Copy…`). You may rename and rearrange tabs, but be careful not to edit the columns!
-2. Fill it with your breedables, shinies, battle-ready Pokémon, or wants.
-3. Make your spreadsheet public (`File > Publish to the web…`).
-4. Clone this repository.
-5. Edit `config.js` with your spreadsheet's ID and personal information (IGN, FC, etc.).
-6. Go to `Settings` and set the `Source` to `master branch` under the GitHub Pages header.
+Find the URL of your sheet and paste it here: https://richi3f.github.io/pokemon-trading-spreadsheet/?spreadsheet-id
 
-## How to Update
+Example: https://richi3f.github.io/pokemon-trading-spreadsheet/?1P9wMb9e0YbhcOua9RQeRCJjllf_L77uV-7i4Q0Yor0o
 
-If files have been updated, you will need to replace files on your end with the new ones. For Tumblr users, this means copying again the [theme](https://raw.githubusercontent.com/richi3f/pokemon-trading-spreadsheet/master/tumblr_theme.html). Those using GitHub Pages will have to download the files I have edited and upload them to their repository.
+That's it! Share the resulting link with your potential trade partners.
+
+### Method 2: Advanced
+
+Use any of the following if you want a custom URL (that does not include my name) or want to make changes to script/styling.
+
+#### Method 2A: Tumblr
+
+1. Create a new Tumblr blog and go to `Account > Edit Appearance > Edit theme > Edit HTML`.
+2. Copy [this](https://raw.githubusercontent.com/richi3f/pokemon-trading-spreadsheet/master/tumblr_theme.html) and then click `Update Preview` followed by `Save`.
+3. Edit the Theme Options with your spreadsheet's ID and personal information.
+4. Go to `Advanced Options` and set `Use default mobile theme` to false.
+
+#### Method 2B: GitHub Pages
+
+1. Clone this repository.
+2. Edit `config.js` with your spreadsheet's ID and personal information.
+3. Go to `Settings` and set the `Source` to `master branch` under the GitHub Pages header.
+
+#### Method 2: How to Update
+
+This is only for those using **Method 2**. If you're using Mehtod 1, any changes here will be reflected automatically.
+
+If there's been an update, you will need to replace files on your end with the new ones. For Tumblr users, this means copying again the [theme](https://raw.githubusercontent.com/richi3f/pokemon-trading-spreadsheet/master/tumblr_theme.html). Those using GitHub Pages will have to download the files I have edited and upload them to their repository.
 
 ## Demo
 
@@ -39,6 +57,7 @@ If files have been updated, you will need to replace files on your end with the 
 
 ## Changelog
 
+* `2016.1.4.0` Added support for more than 3 tabs (thanks to [Armienn](https://github.com/Armienn)). Added extra filters and fixed Hidden Abilities of Pokémon with an Alola Form.
 * `2016.1.3.0` Fixed Pokémon model for those with special characters in their name. Also added support for Pokémon with models with gender differences.
 * `2016.1.2.0` Initial release.
 
