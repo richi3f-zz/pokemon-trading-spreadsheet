@@ -17,10 +17,9 @@ const HIDDEN_ABILITIES = {
     "Sheer Force": [31,34,98,99,128,158,159,160,208,296,297,303,328,371,408,409,645,733],
     "Natural Cure": [764],
     "Sand Veil": [74,75,76,231,232,246,618,769,770],
-    "Thick Fat": [19,20,220,221,473,498,499],
-    "Snow Warning": [37,38,698,699],
+    "Thick Fat": [220,221,473,498,499],
+    "Snow Warning": [698,699],
     "Symbiosis": [669,670,671,765],
-    "Galvanize": [74,75,76],
     "Magic Guard": [63,64,65],
     "Reckless": [111,112,396,397,398,464,500,619,620],
     "Clear Body": [599,600,601],
@@ -67,8 +66,6 @@ const HIDDEN_ABILITIES = {
     "Unburden": [106,252,253,254,617,684,685],
     "Sniper": [15,21,22,167,168],
     "Run Away": [10,13,43,48,265,290,401,506],
-    "Slush Rush": [27,28],
-    "Power of Alchemy": [88,89],
     "Insomnia": [225,710,711],
     "Technician": [122,286,402,407,439],
     "Swift Swim": [54,55,60,61,62,347,348,564,565,614],
@@ -100,7 +97,7 @@ const HIDDEN_ABILITIES = {
     "Hustle": [19,20,29,30,32,33,415,627],
     "White Smoke": [631],
     "Shadow Tag": [574,575,576],
-    "Rattled": [52,53,129,165,185,206,209,210,261,293,366,438,613],
+    "Rattled": [129,165,185,206,209,210,261,293,366,438,613],
     "Flame Body": [77,78,146],
     "Motor Drive": [587],
     "Skill Link": [190,424,572,573],
@@ -127,7 +124,6 @@ const HIDDEN_ABILITIES = {
     "Defiant": [56,57,83,393,394,395,432,628,641,642,766],
     "Anger Point": [323,551,552,553,739,740],
     "Analytic": [81,82,120,121,137,233,462,474,504,505,605,606],
-    "Surge Surfer*": [26],
     "Justified": [58,59,359,448,475],
     "Multiscale": [149,249],
     "Magic Bounce": [177,178,196],
@@ -139,7 +135,7 @@ const HIDDEN_ABILITIES = {
     "Drought": [37,38],
     "Water Absorb": [170,171,331,332,535,536,537,751,752],
     "Ice Body": [86,87,378,471],
-    "Rock Head": [105,697],
+    "Rock Head": [697],
     "Flare Boost": [425,426],
     "Iron Barbs*": [597],
     "Pixilate": [700],
@@ -160,14 +156,18 @@ const HIDDEN_ABILITIES = {
     "Sweet Veil": [742,743,761,762,763],
     "Wonder Skin": [49,300,301,779]
 };
-// Default values for config stuff:
-var spreadsheetId = window.location.search.substring(1);
-var friendCode = "xxxx-xxxx-xxxx";
-var inGameName = "Unknown";
-var contactUrl = "http://reddit.com/u/unknown";
-var trainerIconUrl = "https://n-3ds1-pgl-trainericon.pokemon-gl.com/d315dac0-ae8f-11e6-a3fc-06af8a77a80d.png";
-var worksheetId = 2;
-var isForIndividualPokemon = false;
+const ALOLAN_HIDDEN_ABILITIES = {
+    "Thick Fat": [19,20],
+    "Surge Surfer*": [26],
+    "Slush Rush": [27,28],
+    "Snow Warning": [37,38],
+    "Sand Force": [50,51],
+    "Rattled": [52,53],
+    "Galvanize": [74,75,76],
+    "Power of Alchemy": [88,89],
+    "Harvest": [103],
+    "Rock Head": [105]
+};
 // Stat Attributes object, used for IVs & EVs
 var StatAttributes = function() {
     this.hp  = 0;
@@ -237,10 +237,10 @@ var Pokemon = function() {
         return 1; 
     };
     this.hasHiddenAbility = function() {
-        if (!(this.ability in HIDDEN_ABILITIES)) {
-            return false;
+        if (this.form == "Alola Form") {
+            return this.ability in ALOLAN_HIDDEN_ABILITIES && ALOLAN_HIDDEN_ABILITIES[this.ability].indexOf(this.dexNo) > -1;
         }
-        return HIDDEN_ABILITIES[this.ability].indexOf(this.dexNo) > -1;
+        return this.ability in HIDDEN_ABILITIES && HIDDEN_ABILITIES[this.ability].indexOf(this.dexNo) > -1;
     };
     this.isBaby = function() {
         return BABY_POKEMON.indexOf(this.dexNo) > -1;
@@ -313,41 +313,29 @@ function getModelUrl(dexNo, spriteClass, gender, isShiny) {
     modelUrl += "/sprites/animados" + (isShiny ? "-shiny" : '') + "/" + spriteClass
     if (POKEMON_WITH_GENDER_DIFFERENCES.indexOf(dexNo) > -1) {
         if (gender == "F") {
-            if (dexNo == 29) {
-                modelUrl += "_f";
-            } else {
-                modelUrl += "-f";
-            }
+            modelUrl += dexNo == 29 ? "_f" : "-f";
         } else {
             modelUrl  = modelUrl.replace("-male", '');
-            if (dexNo == 32) {
-                modelUrl += "_m";
-            }
+            if (dexNo == 32) modelUrl += "_m";
         }
     } else {
         if (TAPUS.indexOf(dexNo) > -1) {
             modelUrl  = modelUrl.replace("_", '');
-        } else if (dexNo == 122) {
+        } else if (dexNo == 122) { // Mr. Mime
             modelUrl  = modelUrl.replace("mr", "mr.");
-        } else if (dexNo == 772) {
+        } else if (dexNo == 772) { // Type: Null
             modelUrl  = modelUrl.replace("-", '');
         }
     }
-    return modelUrl  + ".gif";;
+    return modelUrl  + ".gif";
 }
 function getTags(pokemon) {
     var tags = [];
     tags.push("gen" + pokemon.generation());
     tags.push(pokemon.genderRatio());
-    if (pokemon.isBaby()) {
-        tags.push("baby");
-    }
-    if (pokemon.hasHiddenAbility()) {
-        tags.push("hidden-ability");
-    }
-    if (pokemon.isShiny) {
-        tags.push("shiny");
-    }
+    if (pokemon.isBaby()) tags.push("baby");
+    if (pokemon.hasHiddenAbility()) tags.push("hidden-ability");
+    if (pokemon.isShiny) tags.push("shiny");
     for (i = 0; i < pokemon.balls.length; i++) {
         tags.push(pokemon.balls[i].toLowerCase().replace(' ', '-').replace('é', 'e'));
     }
@@ -388,32 +376,41 @@ function filterPokemon() {
     $("#ball-filter option:selected").each(function() {
         balls[i++] = "." + $(this).val();
     });
+    // get misc filters
+    var showOnlyBabyPokemon = $("#misc-filter [value='baby']:selected").length > 0;
+    var showOnlyPokemonWithHiddenAbility = $("#misc-filter [value='hidden-ability']:selected").length > 0;
+    var showOnlyShinyPokemon = $("#misc-filter [value='shiny']:selected").length > 0;
     // show Pokémon that have at least one class of each array (generations, balls, ratios)
     $("tbody tr").each(function() {
         var $this = $(this);
+        if (showOnlyBabyPokemon && !$this.hasClass("baby")) return;
+        if (showOnlyPokemonWithHiddenAbility && !$this.hasClass("hidden-ability")) return;
+        if (showOnlyShinyPokemon && !$this.hasClass("shiny")) return;
         if ($this.is(gens.join(',')) && $this.is(ratios.join(',')) && $this.is(balls.join(','))) {
-            $(this).removeClass("filtered");
+            $this.removeClass("filtered");
         }
     });
 }
-
 function getWorksheetUrl(spreadsheetId, worksheetId) {
     return "https://spreadsheets.google.com/feeds/list/" + spreadsheetId + "/" + worksheetId + "/public/values?alt=json";
 }
-
 function getSpreadsheetUrl(spreadsheetId) {
     return "https://spreadsheets.google.com/feeds/worksheets/" + spreadsheetId + "/public/basic?alt=json";
 }
-
 function getValue(field) {
     if (field) return field.$t;
     return undefined;
 }
-
-function textContains(text, subtext) {
-    return text.toLowerCase().indexOf(subtext) != -1;
+function isInBlacklist(title) {
+    var blacklist = ["template", "config", "item", "database"];
+    title = title.toLowerCase();
+    for (i = 0; i < blacklist.length; i++) {
+        if (title.indexOf(blacklist[i]) > -1) {
+            return true;
+        }
+    }
+    return title == "db";
 }
-
 function sheetIsForIndividualPokemon(entry) {
     return entry.gsx$nickname ||
         entry.gsx$ot ||
@@ -429,38 +426,67 @@ function sheetIsForIndividualPokemon(entry) {
         entry.gsx$lang ||
         entry.gsx$notes ? true : false;
 }
+// Default values for config stuff
+spreadsheetId = spreadsheetId || window.location.search.substring(1);
+var worksheetId = 1;
+var isForIndividualPokemon = false;
 
 $(document).ready(function() {
     $.getJSON(getWorksheetUrl(spreadsheetId, 1), function(data) {
-        var entry = data.feed.entry[0]
-        worksheetId = 1;
-        if(entry.gsx$ingamename){
-            friendCode = entry.gsx$friendcode.$t;
-            inGameName = entry.gsx$ingamename.$t;
-            contactUrl = entry.gsx$contacturl.$t;
-            trainerIconUrl = entry.gsx$trainericonurl.$t;
+        // read config worksheet if exists
+        var entry = data.feed.entry[0];
+        if (entry.gsx$ingamename) {
+            friendCode = friendCode || entry.gsx$friendcode.$t;
+            inGameName = inGameName || entry.gsx$ingamename.$t;
+            contactUrl = contactUrl || entry.gsx$contacturl.$t;
+            trainerIconUrl = trainerIconUrl || entry.gsx$trainericonurl.$t;
             worksheetId = 2;
         }
-        //Magic
+        // get worksheet from URL, otherwise it defaults to 1st sheet
         var hash = window.location.hash.slice(-1);
         if (!isNaN(hash) && hash) {
             worksheetId = hash;
         }
-        doThings();
+        // display trainer info
+        $("title").text(inGameName + "'s Pokémon Trading Sheet");
+        $("header h1").prepend("<a href=\"" + contactUrl + "\">" + inGameName + "</a>");
+        if (friendCode || inGameName) {
+            var trainerInfo = "";
+            if (!trainerIconUrl) {
+                trainerIconUrl = "static/blank.gif";
+            }
+            trainerInfo += "<img src=\"" + trainerIconUrl + "\" alt=\"\" width=\"48\" height=\"48\">";
+            trainerInfo += "<dl>";
+            if (inGameName) {
+                trainerInfo += "<dt><abbr title=\"In-Game Name\">IGN</abbr></dt>";
+                trainerInfo += "<dd>" + inGameName + "</dd>";
+            }
+            if (friendCode) {
+                trainerInfo += "<dt><abbr title=\"Friend Code\">FC</abbr></dt>";
+                trainerInfo += "<dd>" + friendCode + "</dd>";
+            }
+            trainerInfo += "</dl>";
+            $("#trainer-info").prepend(trainerInfo);
+        }
+        // display Pokémon
+        displayPokemon();
+        // add button links to other tabs
         $.getJSON(getSpreadsheetUrl(spreadsheetId), function(data) {
             var entry = data.feed.entry;
             $(entry).each(function(index){
                 var title = getValue(this.title);
                 var thisId = index + 1;
-                if (!(textContains(title, "config") ||
-                      textContains(title, "template") ||
-                      textContains(title, "item") ||
-                      textContains(title, "database") ||
-                      title == "DB")) {
-                    $("#tabs-list").append("<li " + (thisId == worksheetId ? "class=\"current\"" : "") + "><a href=\"#"+thisId+"\">"+title+"</a></li>");
+                var $parent;
+                if (title.startsWith("LF:")) {
+                    $parent = $("#looking-for");
+                } else if (title.startsWith("FT:")) {
+                    $parent = $("#for-trade");
+                }
+                if ($parent) {
+                    $parent.append("<li " + (thisId == worksheetId ? "class=\"current\"" : '') + "><a href=\"#" + thisId + "\">" + title.slice(3) +"</a></li>");
                 }
             });
-
+            // make each button reload the page on click
             $("nav a").each(function() {
                 $(this).click(function() {
                     window.location.hash = this.hash;
@@ -471,27 +497,7 @@ $(document).ready(function() {
     });
 });
 
-function doThings(){
-    $("title").text(inGameName + "'s Pokémon Trading Sheet");
-    $("header h1").prepend("<a href=\"" + contactUrl + "\">" + inGameName + "</a>");
-    if (friendCode || inGameName) {
-        var trainerInfo = "";
-        if (!trainerIconUrl) {
-            trainerIconUrl = "static/blank.gif";
-        }
-        trainerInfo += "<img src=\"" + trainerIconUrl + "\" alt=\"\" width=\"48\" height=\"48\">";
-        trainerInfo += "<dl>";
-        if (inGameName) {
-            trainerInfo += "<dt><abbr title=\"In-Game Name\">IGN</abbr></dt>";
-            trainerInfo += "<dd>" + inGameName + "</dd>";
-        }
-        if (friendCode) {
-            trainerInfo += "<dt><abbr title=\"Friend Code\">FC</abbr></dt>";
-            trainerInfo += "<dd>" + friendCode + "</dd>";
-        }
-        trainerInfo += "</dl>";
-        $("#trainer-info").prepend(trainerInfo);
-    }
+function displayPokemon(){
     $.getJSON(getWorksheetUrl(spreadsheetId, worksheetId), function(data) {
         var entry = data.feed.entry;
         if (entry && entry[0]) {
@@ -746,13 +752,13 @@ function doThings(){
     });
     $("select").multiselect({
         buttonWidth: '140px',
-        numberDisplayed: 1,
+        numberDisplayed: 0,
         includeSelectAllOption: true,
         maxHeight: 420,
         enableClickableOptGroups: true,
         onChange: filterPokemon,
         onSelectAll: filterPokemon
     });
-    $("select").multiselect("selectAll", false);
+    $("select:not(#misc-filter)").multiselect("selectAll", false);
     $("select").multiselect('updateButtonText');
 }
