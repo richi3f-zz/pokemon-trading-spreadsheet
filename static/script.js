@@ -383,6 +383,9 @@ function filterPokemon() {
     // show Pokémon that have at least one class of each array (generations, balls, ratios)
     $("tbody tr").each(function() {
         var $this = $(this);
+        var name = $this.find(".name").text().toLowerCase();
+        var query = $("#search-bar").val().toLowerCase();
+        if (name.indexOf(query) == -1) return;
         if (showOnlyBabyPokemon && !$this.hasClass("baby")) return;
         if (showOnlyPokemonWithHiddenAbility && !$this.hasClass("hidden-ability")) return;
         if (showOnlyShinyPokemon && !$this.hasClass("shiny")) return;
@@ -473,19 +476,47 @@ $(document).ready(function() {
         // add button links to other tabs
         $.getJSON(getSpreadsheetUrl(spreadsheetId), function(data) {
             var entry = data.feed.entry;
+            var FTtabs = [];
+            var LFtabs = [];
+            var NFTtabs = [];
             $(entry).each(function(index){
                 var title = getValue(this.title);
                 var thisId = index + 1;
+                var list;
                 var $parent;
                 if (title.startsWith("LF:")) {
-                    $parent = $("#looking-for");
+                    list = LFtabs;
+                    title = title.slice(3);
                 } else if (title.startsWith("FT:")) {
-                    $parent = $("#for-trade");
+                    list = FTtabs;
+                    title = title.slice(3);
+                } else if (title.startsWith("NFT:")) {
+                    list = NFTtabs;
+                    title = title.slice(4);
                 }
-                if ($parent) {
-                    $parent.append("<li " + (thisId == worksheetId ? "class=\"current\"" : '') + "><a href=\"#" + thisId + "\">" + title.slice(3) +"</a></li>");
+                if (list) {
+                    list.push("<li " + (thisId == worksheetId ? "class=\"current\"" : '') + "><a href=\"#" + thisId + "\">" + title +"</a></li>");
                 }
             });
+            $(FTtabs).each(function(){
+                $("#for-trade").append(this);
+            });
+            if(FTtabs.length == 0) {
+                $("#for-trade").remove()
+            }
+            $(LFtabs).each(function(){
+                $("#looking-for").append(this);
+            });
+            if(LFtabs.length == 0) {
+                $("#looking-for").remove()
+            }
+            $(NFTtabs).each(function(){
+                $("#not-for-trade").append(this);
+            });
+            if(NFTtabs.length == 0) {
+                $("#not-for-trade").remove()
+            }
+
             // make each button reload the page on click
             $("nav a").each(function() {
                 $(this).click(function() {
@@ -761,6 +792,7 @@ function displayPokemon(){
         onChange: filterPokemon,
         onSelectAll: filterPokemon
     });
+    $("#search-bar").on("input", filterPokemon);
     $("select:not(#misc-filter)").multiselect("selectAll", false);
     $("select").multiselect('updateButtonText');
 }
