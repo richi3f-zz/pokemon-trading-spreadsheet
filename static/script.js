@@ -886,7 +886,7 @@ function getRedditPokemonTable() {
 ---|---|----|----|----|----
 `;
     $(pokemons).each(function(){
-        table += (this.isShiny ? "★ " : "") + this.name + (this.form ? " - " + this.form : "") + (this.amount ? " (" + this.amount + ")" : "") + "| " +
+        table += (this.isShiny ? "★ " : "") + this.name + (this.gender == "M" ? "♂" : (this.gender == "F" ? "♀" : "")) + (this.form ? " - " + this.form : "") + (this.amount ? " (" + this.amount + ")" : "") + "| " +
             this.ability + "| " + this.nature + "| " +
             this.ivs.hp + "/" + this.ivs.atk + "/" + this.ivs.def + "/" + 
             this.ivs.spa + "/" + this.ivs.spd + "/" + this.ivs.spe + "| ";
