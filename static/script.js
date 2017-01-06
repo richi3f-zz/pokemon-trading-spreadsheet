@@ -5,6 +5,7 @@ const BATTLE_STATS = ["Hit Points","Attack","Defense","Special Attack","Special 
 const BATTLE_STATS_ABBR = ["HP","Atk","Def","SpA","SpD","Spe"];
 const LANGUAGES = { "JPN": "Japanese", "ENG": "English", "FRE": "French", "GER": "German", "ITA": "Italian", "KOR": "Korean", "SPA": "Spanish", "CHT": "Traditional Chinese", "CHS": "Simplified Chinese" };
 const BABY_POKEMON = [172,173,174,175,236,238,239,240,298,360,433,438,439,440,446,447,458];
+const LEGENDARY_POKEMON = [144,145,146,150,151,243,244,245,249,250,251,377,378,379,380,381,382,383,384,385,386,480,481,482,483,484,485,486,487,488,489,490,491,492,493,494,638,639,640,641,642,643,644,645,646,647,648,649,716,717,718,719,720,721,785,786,787,788,789,790,791,792,793,794,795,796,797,798,799,800,801,802];
 const FEMALE_ONLY_POKEMON = [29,30,31,113,115,124,241,242,314,380,413,416,440,478,488,548,549,629,630,669,670,671,758,761,762,763];
 const POKEMON_WITH_A_GENDER_RATIO_OF_SEVEN_FEMALES_TO_ONE_MALE = [667,668];
 const POKEMON_WITH_A_GENDER_RATIO_OF_THREE_FEMALES_TO_ONE_MALE = [35,36,37,38,39,40,173,174,209,210,222,298,300,301,370,431,432,572,573,574,575,576,741,764];
@@ -248,6 +249,9 @@ var Pokemon = function() {
     this.isBaby = function() {
         return BABY_POKEMON.indexOf(this.dexNo) > -1;
     };
+    this.isLegendary = function() {
+        return LEGENDARY_POKEMON.indexOf(this.dexNo) > -1;
+    };
 };
 // Functions
 function getSpriteClass(pokemon) {
@@ -337,6 +341,8 @@ function getTags(pokemon) {
     tags.push("gen" + pokemon.generation());
     tags.push(pokemon.genderRatio());
     if (pokemon.isBaby()) tags.push("baby");
+    else if (pokemon.isLegendary()) tags.push("legendary");
+    else tags.push("normal");
     if (pokemon.hasHiddenAbility()) tags.push("hidden-ability");
     if (pokemon.isShiny) tags.push("shiny");
     for (i = 0; i < pokemon.balls.length; i++) {
@@ -379,6 +385,11 @@ function filterPokemon() {
     $("#ball-filter option:selected").each(function() {
         balls[i++] = "." + $(this).val();
     });
+    // get selected categories
+    var categories = []; i = 0;
+    $("#category-filter option:selected").each(function() {
+        categories[i++] = "." + $(this).val();
+    });
     // get misc filters
     var showOnlyBabyPokemon = $("#misc-filter [value='baby']:selected").length > 0;
     var showOnlyPokemonWithHiddenAbility = $("#misc-filter [value='hidden-ability']:selected").length > 0;
@@ -392,7 +403,7 @@ function filterPokemon() {
         if (showOnlyBabyPokemon && !$this.hasClass("baby")) return;
         if (showOnlyPokemonWithHiddenAbility && !$this.hasClass("hidden-ability")) return;
         if (showOnlyShinyPokemon && !$this.hasClass("shiny")) return;
-        if ($this.is(gens.join(',')) && $this.is(ratios.join(',')) && $this.is(balls.join(','))) {
+        if ($this.is(gens.join(',')) && $this.is(ratios.join(',')) && $this.is(balls.join(',')) && $this.is(categories.join(','))) {
             $this.removeClass("filtered");
         }
     });

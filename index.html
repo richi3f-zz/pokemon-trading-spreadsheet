@@ -30,6 +30,10 @@
     <div id="filters">
         <h3>Filters</h3>
         <div class="filter">
+            <label for="search-bar">Search</label>
+            <input id="search-bar" type="search">
+        </div><!--
+        --><div class="filter">
             <label for="gen-filter">Generation</label>
             <select id="gen-filter" multiple="multiple">
                 <option value="gen1">Generation I</option>
@@ -84,16 +88,20 @@
             </select>
         </div><!--
         --><div class="filter">
+            <label for="category-filter">Category</label>
+            <select id="category-filter" multiple="multiple">
+                <option value="baby">Baby Pokémon</option>
+                <option value="normal">Normal Pokémon</option>
+                <option value="legendary">Legendary Pokémon</option>
+            </select>
+        </div><!--
+        --><div class="filter">
             <label for="misc-filter"><abbr title="Miscellaneous">Misc.</abbr></label>
             <select id="misc-filter" multiple="multiple">
                 <option value="baby">Baby Only</option>
                 <option value="hidden-ability">Hidden Ability Only</option>
                 <option value="shiny">Shiny Only</option>
             </select>
-        </div><!--
-        --><div class="filter">
-            <label for="search-bar">Search</label>
-            <input id="search-bar" type="search">
         </div><!--
         --><div class="filter">
             <label for="mode-filter">Mode</label>
