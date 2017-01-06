@@ -469,7 +469,7 @@ $(document).ready(function() {
         }
         // display trainer info
         $("title").text(inGameName + "'s Pokémon Trading Sheet");
-        $("header h1").prepend("<a href=\"" + contactUrl + "\">" + inGameName + "</a>");
+        $("header h1").prepend("<a href=\"" + contactUrl + "\">" + inGameName + "</a>'s Pokémon Trading <a href=\"https://docs.google.com/spreadsheets/d/" + spreadsheetId + "\">Sheet</a>");
         if (friendCode || inGameName) {
             var trainerInfo = "";
             if (!trainerIconUrl) {
