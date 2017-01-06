@@ -6,18 +6,27 @@
     <link rel="shortcut icon" href="{Favicon}">
     <title>{Title}</title>
     <link rel="stylesheet" href="http://static.tumblr.com/28amrxm/I8Soj63cz/bootstrap.min.css">
-    <link rel="stylesheet" href="http://static.tumblr.com/28amrxm/Qlqojakua/style.css">
+    <link rel="stylesheet" href="http://static.tumblr.com/28amrxm/mO6ojc60u/style.css">
     
     <meta name="text:Spreadsheet ID" content="">
     <meta name="text:IGN" content="">
     <meta name="text:FC" content="">
     <meta name="text:Contact URL" content="">
     <meta name="image:Trainer Icon" content="">
+
+    <meta name="color:Header" content="#ff69b4">
+    <meta name="color:Button" content="#4d6ad8">
+    <meta name="color:Button Text" content="#f0f0f0">
     
     {block:Description}
     <meta name="description" content="{MetaDescription}">
     {/block:Description}
     <style>
+    h1 { color:{color:Header} }
+    h1 a { color:{color:Header} }
+    h1 a:hover, h1 a:focus { color:{color:Button} }
+    nav ul li a { background-color:{color:Button}; color:{color:Button Text} }
+    nav ul li.current::after { border-top-color:{color:Button} }
     {CustomCSS}
     </style>
 </head>
@@ -40,6 +49,7 @@
             <ul>
                 <li id="for-trade"><abbr title="For Trade">FT</abbr><ul></ul>
                 <li id="looking-for"><abbr title="Looking For">LF</abbr><ul></ul>
+                <li id="not-for-trade"><abbr title="Not For Trade">NFT</abbr><ul></ul>
             </ul>
         </nav>
     </header>
@@ -106,6 +116,10 @@
                 <option value="hidden-ability">Hidden Ability Only</option>
                 <option value="shiny">Shiny Only</option>
             </select>
+        </div><!--
+        --><div class="filter">
+            <label for="search-bar">Search</label>
+            <input id="search-bar" type="search">
         </div>
     </div>
     <table>
@@ -174,7 +188,7 @@ var inGameName = "{text:IGN}";
 var contactUrl = "{text:Contact URL}";
 var trainerIconUrl = "{image:Trainer Icon}";
 </script>
-<script src="http://static.tumblr.com/28amrxm/L4mojakqu/script.js"></script>
+<script src="http://static.tumblr.com/28amrxm/yV0ojc5j8/script.js"></script>
 
 </body>
 </html>
