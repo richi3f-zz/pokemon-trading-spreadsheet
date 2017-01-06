@@ -168,6 +168,7 @@ const ALOLAN_HIDDEN_ABILITIES = {
     "Harvest": [103],
     "Rock Head": [105]
 };
+const TAB_NAMES = { "FT": "For Trade", "LF": "Looking For", "NFT": "Not For Trade", "?": "Other" };
 // Stat Attributes object, used for IVs & EVs
 var StatAttributes = function() {
     this.hp  = 0;
@@ -476,47 +477,24 @@ $(document).ready(function() {
         // add button links to other tabs
         $.getJSON(getSpreadsheetUrl(spreadsheetId), function(data) {
             var entry = data.feed.entry;
-            var FTtabs = [];
-            var LFtabs = [];
-            var NFTtabs = [];
+            var tabs = { "FT": "", "LF": "", "NFT": "", "?": "" };
             $(entry).each(function(index){
                 var title = getValue(this.title);
                 var thisId = index + 1;
-                var list;
-                var $parent;
-                if (title.startsWith("LF:")) {
-                    list = LFtabs;
-                    title = title.slice(3);
-                } else if (title.startsWith("FT:")) {
-                    list = FTtabs;
-                    title = title.slice(3);
+                var tab = "<li" + (thisId == worksheetId ? " class=\"current\"" : '') + "><a href=\"#" + thisId + "\">";
+                if (title.startsWith("FT:")) {
+                    tabs["FT"] += tab + title.slice(3) + "</a>";
+                } else if (title.startsWith("LF:")) {
+                    tabs["LF"] += tab + title.slice(3) + "</a>";
                 } else if (title.startsWith("NFT:")) {
-                    list = NFTtabs;
-                    title = title.slice(4);
-                }
-                if (list) {
-                    list.push("<li " + (thisId == worksheetId ? "class=\"current\"" : '') + "><a href=\"#" + thisId + "\">" + title +"</a></li>");
+                    tabs["NFT"] += tab + title.slice(4) + "</a>";
+                } else if (!isInBlacklist(title)) {
+                    tabs["?"] += tab + title + "</a>";
                 }
             });
-            $(FTtabs).each(function(){
-                $("#for-trade").append(this);
+            Object.keys(tabs).forEach(function(i) {
+                if (tabs[i]) $("nav > ul").append("<li><abbr title=\"" + TAB_NAMES[i] + "\">" + i + "</abbr><ul>" + tabs[i] + "</ul>");
             });
-            if(FTtabs.length == 0) {
-                $("#for-trade").remove()
-            }
-            $(LFtabs).each(function(){
-                $("#looking-for").append(this);
-            });
-            if(LFtabs.length == 0) {
-                $("#looking-for").remove()
-            }
-            $(NFTtabs).each(function(){
-                $("#not-for-trade").append(this);
-            });
-            if(NFTtabs.length == 0) {
-                $("#not-for-trade").remove()
-            }
-
             // make each button reload the page on click
             $("nav a").each(function() {
                 $(this).click(function() {
