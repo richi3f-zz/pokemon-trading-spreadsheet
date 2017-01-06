@@ -671,6 +671,9 @@ function displayPokemon(){
     case "show-missing-families":
         pokemons = getMissing(loadedPokemons, true);
         break;
+    default:
+        pokemons = loadedPokemons;
+        break;
     }
     $(pokemons).each(function(){
         var pokemon = this;
