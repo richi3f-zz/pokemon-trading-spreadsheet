@@ -679,7 +679,9 @@ function displayPokemon(){
         var pokemon = this;
         var row = "<tr class=\"" + getTags(pokemon) + "\"" + getData(pokemon) + ">";
         // Sprite
-        row += "<td class=\"sprite\"><span class=\"menu-sprite " + getSpriteClass(pokemon) + "\" title=\"" + pokemon.name + "\">" + pokemon.dexNo + "</span></td>";
+        row += "<td class=\"sprite\"><a href=\"http://pokemondb.net/pokedex/" +
+            POKEMON_NAMES[pokemon.dexNo-1].replace(" ","-").replace("é","e").replace(".","").replace("♀","-f").replace("♂","-m") +
+            "\"><span class=\"menu-sprite " + getSpriteClass(pokemon) + "\" title=\"" + pokemon.name + "\">" + pokemon.dexNo + "</span></a></td>";
         // Name
         row += "<td class=\"name\">" + (pokemon.dexNo == 29 || pokemon.dexNo == 32 ? "Nidoran" : pokemon.name) + (pokemon.amount ? " (" + pokemon.amount + ")" : "");
         if (pokemon.gender == "F") {
