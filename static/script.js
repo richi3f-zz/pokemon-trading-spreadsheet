@@ -595,7 +595,7 @@ function loadPokemon(entries){
         if (getValue(this.gsx$cherish)) pokemon.balls.push("Cherish Ball");
         if (getValue(this.gsx$dream)) pokemon.balls.push("Dream Ball");
         if (getValue(this.gsx$beast)) pokemon.balls.push("Beast Ball");
-        if(pokemon.balls.length == 0) {
+        if(pokemon.balls.length == 0) { // backwards compatibility
             if (this.gsx$_dcgjs) pokemon.balls.push("Poké Ball");
             if (this.gsx$_ddv49) pokemon.balls.push("Great Ball");
             if (this.gsx$_d415a) pokemon.balls.push("Ultra Ball");
