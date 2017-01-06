@@ -1654,3 +1654,35 @@ body.shiny tbody tr {
     font-size:0.75em;
     margin:1.667em 0 0
 }
+
+#copy {
+    position:fixed;
+    top:0;left:0;
+    z-index:3000;
+    height:100%;
+    width:100%;
+    background-color:#333;
+    background-color:rgba(0,0,0,0.75);
+}
+
+#table-info {
+    background: url(bg.png);
+    width: 28em;
+    padding: 1em;
+    border: 0.0625em solid #333;
+    position: absolute;
+    top:50%;left:50%;
+    margin-left:-14em;
+    margin-top:-10.1875em
+}
+#table-info h1 {    
+    color: #333;
+    font-size: 1em;
+    line-height: 1.875;
+    margin: 0.25em 0;
+    text-align: left
+}
+#table-info textarea {   
+    width: 26em;
+    height: 20em;
+}

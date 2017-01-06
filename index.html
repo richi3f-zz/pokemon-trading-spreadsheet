@@ -110,6 +110,9 @@
                 <option value="show-missing">Show Missing Pokémon</option>
                 <option value="show-missing-families">Show Missing Pokémon Families</option>
             </select>
+        </div><!--
+        --><div class="filter">
+            <button id="copy-table" title="Generates a nicely formatted table for use on reddit">Reddit copy</button>
         </div>
     </div>
     <table>
@@ -165,6 +168,12 @@
             </dl>
             <ul class="egg-moves">
             </ul>
+        </div>
+    </div>
+    <div id="copy" class="hidden">
+        <div id="table-info">
+            <h1>Ctrl+C to copy</h1>
+            <textarea id="pokemon-copy-table"></textarea>
         </div>
     </div>
 </article>
