@@ -553,6 +553,7 @@ function loadPokemon(entries){
                 pokemon.gender = '-';
                 break;
         }
+        pokemon.amount = getValue(this.gsx$amount);
         pokemon.isShiny = getValue(this.gsx$shiny);
         pokemon.nickname = getValue(this.gsx$nickname);
         pokemon.ot = getValue(this.gsx$ot);
@@ -673,7 +674,7 @@ function displayPokemon(){
             // Sprite
             row += "<td class=\"sprite\"><span class=\"menu-sprite " + getSpriteClass(pokemon) + "\" title=\"" + pokemon.name + "\">" + pokemon.dexNo + "</span></td>";
             // Name
-            row += "<td class=\"name\">" + (pokemon.dexNo == 29 || pokemon.dexNo == 32 ? "Nidoran" : pokemon.name);
+            row += "<td class=\"name\">" + (pokemon.dexNo == 29 || pokemon.dexNo == 32 ? "Nidoran" : pokemon.name) + (pokemon.amount ? " (" + pokemon.amount + ")" : "");
             if (pokemon.gender == "F") {
                  row += " <span class=\"gender female\" title=\"Female\">&#x2640;</span>";
             } else if (pokemon.gender == "M") {
