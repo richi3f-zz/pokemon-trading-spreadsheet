@@ -311,7 +311,7 @@ function getModelUrl(dexNo, spriteClass, gender, isShiny) {
         modelUrl += "xy";
     }
     modelUrl += "/sprites/animados" + (isShiny ? "-shiny" : '') + "/" + spriteClass
-    if (POKEMON_WITH_GENDER_DIFFERENCES.indexOf(dexNo) > -1) {
+    if (POKEMON_WITH_GENDER_DIFFERENCES.indexOf(dexNo) > -1 && spriteClass.indexOf("-alola") == -1) {
         if (gender == "F") {
             modelUrl += dexNo == 29 ? "_f" : "-f";
         } else {
