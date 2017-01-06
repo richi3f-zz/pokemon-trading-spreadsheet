@@ -626,7 +626,7 @@ function displayPokemon(){
             // Nature
             row += "<td class=\"nature " + pokemon.nature.toLowerCase() + "\">" + pokemon.nature + "</td>";
             // Ability
-            row += "<td class=\"ability\">" + pokemon.ability + "</td>";
+            row += "<td class=\"ability\">" + (pokemon.ability.endsWith('*') ? pokemon.ability.slice(0,-1) : pokemon.ability) + "</td>";
             // IVs & EVs
             var statAttribute;
             for (i = 0; i < BATTLE_STATS.length; i++) {
@@ -740,7 +740,8 @@ function displayPokemon(){
                 $pokemonInfo.find(".trainer").next().text($this.data("ot") + " (" + $this.data("tid") + ")");
                 // Nature & Ability
                 $pokemonInfo.find(".nature").next().text($this.data("nature"));
-                $pokemonInfo.find(".ability").next().text($this.data("ability"));
+                var ability = $this.data("ability");
+                $pokemonInfo.find(".ability").next().text(ability.endsWith('*') ? ability.slice(0,-1) : ability);
                 // Language
                 var language = $this.data("language");
                 $pokemonInfo.find(".language").text(language).attr("title", LANGUAGES[language]);
