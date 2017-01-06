@@ -4,9 +4,10 @@ A script made to display Pokémon trading information stored in Google Sheets
 
 ## Features
 
-* Filter Pokémon by generation, gender ratio & Poké Ball
-* Display breedables, valuable Pokémon (e.g., shinies or RNGs) and wants
+* Display breedables, valuable Pokémon (e.g., shinies or RNGs), wants or your NFT collection
 * Faster loading than sharing a Google Sheets document
+* Filter Pokémon by generation, gender ratio, Poké Ball, shinyness or HA
+* Search for Pokémon (thanks to [Armienn](https://github.com/Armienn))
 
 ## How to Use
 
@@ -14,7 +15,7 @@ A script made to display Pokémon trading information stored in Google Sheets
 
 1. Create a copy of this [spreadsheet](https://docs.google.com/spreadsheets/d/1djWEDpw4w0aLrurcnxkLupkzfB1Gw0_SHB8zZWY3Sts/edit?usp=sharing) (`File > Make a Copy…`).
   * Be careful not to edit the 1st row (headers) of any sheet! 
-  * Name your sheets in the following format "FT:Name of my sheet" or "LF:Name of another sheet". They will be sorted by the script.
+  * Name your sheets in the following format "FT:Name of my sheet", "LF:Name of another sheet" or "NFT:Yet another sheet". They will be sorted by the script.
   * You may duplicate the "TEMPLATE" sheets (up to a maximum of 8 tabs).
   * Do not move or rename the "CONFIG" or "DB" sheets.
 2. Fill your copy of the spreadsheet with your Pokémon.
@@ -40,12 +41,13 @@ Use any of the following methods if you want a custom URL or want to make change
 2. Copy [this](https://raw.githubusercontent.com/richi3f/pokemon-trading-spreadsheet/master/tumblr_theme.html) and then click `Update Preview` followed by `Save`.
 3. Edit the Theme Options with your spreadsheet's ID and personal information.
 4. Go to `Advanced Options` and set `Use default mobile theme` to false.
+5. Click `Exit` and you're set to share your Tumblr link.
 
 #### Method 2B: GitHub Pages
 
 1. Clone this repository.
 2. Edit `config.js` with your spreadsheet's ID and personal information.
-3. Go to `Settings` and set the `Source` to `master branch` under the GitHub Pages header.
+3. Publish ~~or perish~~ (go to `Settings` and set the `Source` to `master branch` under the GitHub Pages header).
 
 #### Method 2: How to Update
 
@@ -59,6 +61,7 @@ If there's been an update, you will need to replace files on your end with the n
 
 ## Changelog
 
+* `2017.1.5.0` Added a search bar and support for NFT tabs (once again, thank you to [Armienn](https://github.com/Armienn)). Fixed Alolan Raichu's model and added minor customization to Tumblr theme.
 * `2017.1.4.0` Added support for more than 3 tabs (thanks to [Armienn](https://github.com/Armienn)). Added extra filters and fixed Hidden Abilities of Pokémon with an Alola Form.
 * `2017.1.3.0` Fixed Pokémon model for those with special characters in their name. Also added support for Pokémon with models with gender differences.
 * `2017.1.2.0` Initial release.
