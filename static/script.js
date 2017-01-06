@@ -890,7 +890,7 @@ function getRedditPokemonTable() {
         });
         table += "| "
         $(this.balls).each(function(i){
-            table += "[](/" + this.replace(" ","").toLowerCase() + ") ";
+            table += "[](/" + this.replace(" ","").replace("é","e").toLowerCase() + ") ";
         });
         table += "\n";
     });
