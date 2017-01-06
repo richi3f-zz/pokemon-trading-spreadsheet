@@ -476,45 +476,40 @@ $(document).ready(function() {
         // add button links to other tabs
         $.getJSON(getSpreadsheetUrl(spreadsheetId), function(data) {
             var entry = data.feed.entry;
-            var FTtabs = [];
-            var LFtabs = [];
-            var NFTtabs = [];
+            var tabs = {
+                FT: {id:"for-trade", entries: []},
+                LF: {id:"looking-for", entries: []},
+                NFT: {id:"not-for-trade", entries: []},
+                Other: {id:"other", entries: []},
+            }
             $(entry).each(function(index){
                 var title = getValue(this.title);
                 var thisId = index + 1;
                 var list;
                 var $parent;
                 if (title.startsWith("LF:")) {
-                    list = LFtabs;
+                    list = tabs.LF.entries;
                     title = title.slice(3);
                 } else if (title.startsWith("FT:")) {
-                    list = FTtabs;
+                    list = tabs.FT.entries;
                     title = title.slice(3);
                 } else if (title.startsWith("NFT:")) {
-                    list = NFTtabs;
+                    list = tabs.NFT.entries;
                     title = title.slice(4);
+                } else if (!isInBlacklist(title)) {
+                    list = tabs.Other.entries;
                 }
                 if (list) {
                     list.push("<li " + (thisId == worksheetId ? "class=\"current\"" : '') + "><a href=\"#" + thisId + "\">" + title +"</a></li>");
                 }
             });
-            $(FTtabs).each(function(){
-                $("#for-trade").append(this);
-            });
-            if(FTtabs.length == 0) {
-                $("#for-trade").remove()
-            }
-            $(LFtabs).each(function(){
-                $("#looking-for").append(this);
-            });
-            if(LFtabs.length == 0) {
-                $("#looking-for").remove()
-            }
-            $(NFTtabs).each(function(){
-                $("#not-for-trade").append(this);
-            });
-            if(NFTtabs.length == 0) {
-                $("#not-for-trade").remove()
+            for(var key in tabs){
+                $(tabs[key].entries).each(function(){
+                    $("#"+tabs[key].id).append(this);
+                });
+                if(tabs[key].entries.length == 0) {
+                    $("#"+tabs[key].id).remove();
+                }
             }
 
             // make each button reload the page on click
