@@ -886,7 +886,8 @@ function getRedditPokemonTable() {
 ---|---|----|----|----|----
 `;
     $(pokemons).each(function(){
-        table += this.name + "| " + this.ability + "| " + this.nature + "| " +
+        table += (this.isShiny ? "★ " : "") + this.name + (this.form ? " - " + this.form : "") + (this.amount ? " (" + this.amount + ")" : "") + "| " +
+            this.ability + "| " + this.nature + "| " +
             this.ivs.hp + "/" + this.ivs.atk + "/" + this.ivs.def + "/" + 
             this.ivs.spa + "/" + this.ivs.spd + "/" + this.ivs.spe + "| ";
         var moves = this.eggMoves
