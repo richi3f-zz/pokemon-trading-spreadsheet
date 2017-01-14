@@ -807,7 +807,7 @@ function displayPokemon(){
                 .attr("src", getModelUrl(dexNo, spriteClass, gender, isShiny))
                 .appendTo($("#pokemon-info figure")).fadeIn();
             // Trainer
-            $pokemonInfo.find(".trainer").next().text($this.data("ot") + " (" + $this.data("tid") + ")");
+            $pokemonInfo.find(".trainer").next().text($this.data("ot") + " (" + prependZeroes($this.data("tid")) + ")");
             // Nature & Ability
             $pokemonInfo.find(".nature").next().text($this.data("nature"));
             var ability = $this.data("ability");
@@ -902,4 +902,11 @@ function getRedditPokemonTable() {
     });
     $("#copy").removeClass("hidden");
     $("#pokemon-copy-table").val(table);
+}
+function prependZeroes(number, characters){
+    number = number.toString()
+    while(number.length < characters){
+        number = "0" + number
+    }
+    return number
 }
