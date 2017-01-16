@@ -20,7 +20,7 @@
         <img src="static/types.png" class="hidden">
     </div>
     <header>
-        <h1>'s Pokémon Trading Sheet</h1>
+        <h1></h1>
         <div id="trainer-info">
         </div>
         <nav>
@@ -30,6 +30,10 @@
     <div id="filters">
         <h3>Filters</h3>
         <div class="filter">
+            <label for="search-bar">Search</label>
+            <input id="search-bar" type="search">
+        </div><!--
+        --><div class="filter">
             <label for="gen-filter">Generation</label>
             <select id="gen-filter" multiple="multiple">
                 <option value="gen1">Generation I</option>
@@ -84,6 +88,14 @@
             </select>
         </div><!--
         --><div class="filter">
+            <label for="category-filter">Category</label>
+            <select id="category-filter" multiple="multiple">
+                <option value="baby">Baby Pokémon</option>
+                <option value="normal">Normal Pokémon</option>
+                <option value="legendary">Legendary Pokémon</option>
+            </select>
+        </div><!--
+        --><div class="filter">
             <label for="misc-filter"><abbr title="Miscellaneous">Misc.</abbr></label>
             <select id="misc-filter" multiple="multiple">
                 <option value="baby">Baby Only</option>
@@ -92,8 +104,15 @@
             </select>
         </div><!--
         --><div class="filter">
-            <label for="search-bar">Search</label>
-            <input id="search-bar" type="search">
+            <label for="mode-filter">Mode</label>
+            <select id="mode-filter">
+                <option value="normal" selected>Normal</option>
+                <option value="show-missing">Show Missing Pokémon</option>
+                <option value="show-missing-families">Show Missing Pokémon Families</option>
+            </select>
+        </div><!--
+        --><div class="filter">
+            <button id="copy-table" title="Generates a nicely formatted table for use on reddit">Reddit copy</button>
         </div>
     </div>
     <table>
@@ -149,6 +168,12 @@
             </dl>
             <ul class="egg-moves">
             </ul>
+        </div>
+    </div>
+    <div id="copy" class="hidden">
+        <div id="table-info">
+            <h1>Ctrl+A to select everything, Ctrl+C to copy</h1>
+            <textarea id="pokemon-copy-table"></textarea>
         </div>
     </div>
 </article>

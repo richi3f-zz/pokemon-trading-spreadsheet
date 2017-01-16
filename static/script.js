@@ -1,8 +1,11 @@
 // Constants
+const POKEMON_NAMES = ["Bulbasaur","Ivysaur","Venusaur","Charmander","Charmeleon","Charizard","Squirtle","Wartortle","Blastoise","Caterpie","Metapod","Butterfree","Weedle","Kakuna","Beedrill","Pidgey","Pidgeotto","Pidgeot","Rattata","Raticate","Spearow","Fearow","Ekans","Arbok","Pikachu","Raichu","Sandshrew","Sandslash","Nidoran♀","Nidorina","Nidoqueen","Nidoran♂","Nidorino","Nidoking","Clefairy","Clefable","Vulpix","Ninetales","Jigglypuff","Wigglytuff","Zubat","Golbat","Oddish","Gloom","Vileplume","Paras","Parasect","Venonat","Venomoth","Diglett","Dugtrio","Meowth","Persian","Psyduck","Golduck","Mankey","Primeape","Growlithe","Arcanine","Poliwag","Poliwhirl","Poliwrath","Abra","Kadabra","Alakazam","Machop","Machoke","Machamp","Bellsprout","Weepinbell","Victreebel","Tentacool","Tentacruel","Geodude","Graveler","Golem","Ponyta","Rapidash","Slowpoke","Slowbro","Magnemite","Magneton","Farfetch'd","Doduo","Dodrio","Seel","Dewgong","Grimer","Muk","Shellder","Cloyster","Gastly","Haunter","Gengar","Onix","Drowzee","Hypno","Krabby","Kingler","Voltorb","Electrode","Exeggcute","Exeggutor","Cubone","Marowak","Hitmonlee","Hitmonchan","Lickitung","Koffing","Weezing","Rhyhorn","Rhydon","Chansey","Tangela","Kangaskhan","Horsea","Seadra","Goldeen","Seaking","Staryu","Starmie","Mr. Mime","Scyther","Jynx","Electabuzz","Magmar","Pinsir","Tauros","Magikarp","Gyarados","Lapras","Ditto","Eevee","Vaporeon","Jolteon","Flareon","Porygon","Omanyte","Omastar","Kabuto","Kabutops","Aerodactyl","Snorlax","Articuno","Zapdos","Moltres","Dratini","Dragonair","Dragonite","Mewtwo","Mew","Chikorita","Bayleef","Meganium","Cyndaquil","Quilava","Typhlosion","Totodile","Croconaw","Feraligatr","Sentret","Furret","Hoothoot","Noctowl","Ledyba","Ledian","Spinarak","Ariados","Crobat","Chinchou","Lanturn","Pichu","Cleffa","Igglybuff","Togepi","Togetic","Natu","Xatu","Mareep","Flaaffy","Ampharos","Bellossom","Marill","Azumarill","Sudowoodo","Politoed","Hoppip","Skiploom","Jumpluff","Aipom","Sunkern","Sunflora","Yanma","Wooper","Quagsire","Espeon","Umbreon","Murkrow","Slowking","Misdreavus","Unown","Wobbuffet","Girafarig","Pineco","Forretress","Dunsparce","Gligar","Steelix","Snubbull","Granbull","Qwilfish","Scizor","Shuckle","Heracross","Sneasel","Teddiursa","Ursaring","Slugma","Magcargo","Swinub","Piloswine","Corsola","Remoraid","Octillery","Delibird","Mantine","Skarmory","Houndour","Houndoom","Kingdra","Phanpy","Donphan","Porygon2","Stantler","Smeargle","Tyrogue","Hitmontop","Smoochum","Elekid","Magby","Miltank","Blissey","Raikou","Entei","Suicune","Larvitar","Pupitar","Tyranitar","Lugia","Ho-Oh","Celebi","Treecko","Grovyle","Sceptile","Torchic","Combusken","Blaziken","Mudkip","Marshtomp","Swampert","Poochyena","Mightyena","Zigzagoon","Linoone","Wurmple","Silcoon","Beautifly","Cascoon","Dustox","Lotad","Lombre","Ludicolo","Seedot","Nuzleaf","Shiftry","Taillow","Swellow","Wingull","Pelipper","Ralts","Kirlia","Gardevoir","Surskit","Masquerain","Shroomish","Breloom","Slakoth","Vigoroth","Slaking","Nincada","Ninjask","Shedinja","Whismur","Loudred","Exploud","Makuhita","Hariyama","Azurill","Nosepass","Skitty","Delcatty","Sableye","Mawile","Aron","Lairon","Aggron","Meditite","Medicham","Electrike","Manectric","Plusle","Minun","Volbeat","Illumise","Roselia","Gulpin","Swalot","Carvanha","Sharpedo","Wailmer","Wailord","Numel","Camerupt","Torkoal","Spoink","Grumpig","Spinda","Trapinch","Vibrava","Flygon","Cacnea","Cacturne","Swablu","Altaria","Zangoose","Seviper","Lunatone","Solrock","Barboach","Whiscash","Corphish","Crawdaunt","Baltoy","Claydol","Lileep","Cradily","Anorith","Armaldo","Feebas","Milotic","Castform","Kecleon","Shuppet","Banette","Duskull","Dusclops","Tropius","Chimecho","Absol","Wynaut","Snorunt","Glalie","Spheal","Sealeo","Walrein","Clamperl","Huntail","Gorebyss","Relicanth","Luvdisc","Bagon","Shelgon","Salamence","Beldum","Metang","Metagross","Regirock","Regice","Registeel","Latias","Latios","Kyogre","Groudon","Rayquaza","Jirachi","Deoxys","Turtwig","Grotle","Torterra","Chimchar","Monferno","Infernape","Piplup","Prinplup","Empoleon","Starly","Staravia","Staraptor","Bidoof","Bibarel","Kricketot","Kricketune","Shinx","Luxio","Luxray","Budew","Roserade","Cranidos","Rampardos","Shieldon","Bastiodon","Burmy","Wormadam","Mothim","Combee","Vespiquen","Pachirisu","Buizel","Floatzel","Cherubi","Cherrim","Shellos","Gastrodon","Ambipom","Drifloon","Drifblim","Buneary","Lopunny","Mismagius","Honchkrow","Glameow","Purugly","Chingling","Stunky","Skuntank","Bronzor","Bronzong","Bonsly","Mime Jr.","Happiny","Chatot","Spiritomb","Gible","Gabite","Garchomp","Munchlax","Riolu","Lucario","Hippopotas","Hippowdon","Skorupi","Drapion","Croagunk","Toxicroak","Carnivine","Finneon","Lumineon","Mantyke","Snover","Abomasnow","Weavile","Magnezone","Lickilicky","Rhyperior","Tangrowth","Electivire","Magmortar","Togekiss","Yanmega","Leafeon","Glaceon","Gliscor","Mamoswine","Porygon-Z","Gallade","Probopass","Dusknoir","Froslass","Rotom","Uxie","Mesprit","Azelf","Dialga","Palkia","Heatran","Regigigas","Giratina","Cresselia","Phione","Manaphy","Darkrai","Shaymin","Arceus","Victini","Snivy","Servine","Serperior","Tepig","Pignite","Emboar","Oshawott","Dewott","Samurott","Patrat","Watchog","Lillipup","Herdier","Stoutland","Purrloin","Liepard","Pansage","Simisage","Pansear","Simisear","Panpour","Simipour","Munna","Musharna","Pidove","Tranquill","Unfezant","Blitzle","Zebstrika","Roggenrola","Boldore","Gigalith","Woobat","Swoobat","Drilbur","Excadrill","Audino","Timburr","Gurdurr","Conkeldurr","Tympole","Palpitoad","Seismitoad","Throh","Sawk","Sewaddle","Swadloon","Leavanny","Venipede","Whirlipede","Scolipede","Cottonee","Whimsicott","Petilil","Lilligant","Basculin","Sandile","Krokorok","Krookodile","Darumaka","Darmanitan","Maractus","Dwebble","Crustle","Scraggy","Scrafty","Sigilyph","Yamask","Cofagrigus","Tirtouga","Carracosta","Archen","Archeops","Trubbish","Garbodor","Zorua","Zoroark","Minccino","Cinccino","Gothita","Gothorita","Gothitelle","Solosis","Duosion","Reuniclus","Ducklett","Swanna","Vanillite","Vanillish","Vanilluxe","Deerling","Sawsbuck","Emolga","Karrablast","Escavalier","Foongus","Amoonguss","Frillish","Jellicent","Alomomola","Joltik","Galvantula","Ferroseed","Ferrothorn","Klink","Klang","Klinklang","Tynamo","Eelektrik","Eelektross","Elgyem","Beheeyem","Litwick","Lampent","Chandelure","Axew","Fraxure","Haxorus","Cubchoo","Beartic","Cryogonal","Shelmet","Accelgor","Stunfisk","Mienfoo","Mienshao","Druddigon","Golett","Golurk","Pawniard","Bisharp","Bouffalant","Rufflet","Braviary","Vullaby","Mandibuzz","Heatmor","Durant","Deino","Zweilous","Hydreigon","Larvesta","Volcarona","Cobalion","Terrakion","Virizion","Tornadus","Thundurus","Reshiram","Zekrom","Landorus","Kyurem","Keldeo","Meloetta","Genesect","Chespin","Quilladin","Chesnaught","Fennekin","Braixen","Delphox","Froakie","Frogadier","Greninja","Bunnelby","Diggersby","Fletchling","Fletchinder","Talonflame","Scatterbug","Spewpa","Vivillon","Litleo","Pyroar","Flabébé","Floette","Florges","Skiddo","Gogoat","Pancham","Pangoro","Furfrou","Espurr","Meowstic","Honedge","Doublade","Aegislash","Spritzee","Aromatisse","Swirlix","Slurpuff","Inkay","Malamar","Binacle","Barbaracle","Skrelp","Dragalge","Clauncher","Clawitzer","Helioptile","Heliolisk","Tyrunt","Tyrantrum","Amaura","Aurorus","Sylveon","Hawlucha","Dedenne","Carbink","Goomy","Sliggoo","Goodra","Klefki","Phantump","Trevenant","Pumpkaboo","Gourgeist","Bergmite","Avalugg","Noibat","Noivern","Xerneas","Yveltal","Zygarde","Diancie","Hoopa","Volcanion","Rowlet","Dartrix","Decidueye","Litten","Torracat","Incineroar","Popplio","Brionne","Primarina","Pikipek","Trumbeak","Toucannon","Yungoos","Gumshoos","Grubbin","Charjabug","Vikavolt","Crabrawler","Crabominable","Oricorio","Cutiefly","Ribombee","Rockruff","Lycanroc","Wishiwashi","Mareanie","Toxapex","Mudbray","Mudsdale","Dewpider","Araquanid","Fomantis","Lurantis","Morelull","Shiinotic","Salandit","Salazzle","Stufful","Bewear","Bounsweet","Steenee","Tsareena","Comfey","Oranguru","Passimian","Wimpod","Golisopod","Sandygast","Palossand","Pyukumuku","Type: Null","Silvally","Minior","Komala","Turtonator","Togedemaru","Mimikyu","Bruxish","Drampa","Dhelmise","Jangmo-o","Hakamo-o","Kommo-o","Tapu Koko","Tapu Lele","Tapu Bulu","Tapu Fini","Cosmog","Cosmoem","Solgaleo","Lunala","Nihilego","Buzzwole","Pheromosa","Xurkitree","Celesteela","Kartana","Guzzlord","Necrozma","Magearna","Marshadow"];
+const POKEMON_FAMILIES = ["Bulbasaur","Bulbasaur","Bulbasaur","Charmander","Charmander","Charmander","Squirtle","Squirtle","Squirtle","Caterpie","Caterpie","Caterpie","Weedle","Weedle","Weedle","Pidgey","Pidgey","Pidgey","Rattata","Rattata","Spearow","Spearow","Ekans","Ekans","Pikachu","Pikachu","Sandshrew","Sandshrew","Nidoran♀","Nidoran♀","Nidoran♀","Nidoran♀","Nidoran♀","Nidoran♀","Clefairy","Clefairy","Vulpix","Vulpix","Jigglypuff","Jigglypuff","Zubat","Zubat","Oddish","Oddish","Oddish","Paras","Paras","Venonat","Venonat","Diglett","Diglett","Meowth","Meowth","Psyduck","Psyduck","Mankey","Mankey","Growlithe","Growlithe","Poliwag","Poliwag","Poliwag","Abra","Abra","Abra","Machop","Machop","Machop","Bellsprout","Bellsprout","Bellsprout","Tentacool","Tentacool","Geodude","Geodude","Geodude","Ponyta","Ponyta","Slowpoke","Slowpoke","Magnemite","Magnemite","Farfetch'd","Doduo","Doduo","Seel","Seel","Grimer","Grimer","Shellder","Shellder","Gastly","Gastly","Gastly","Onix","Drowzee","Drowzee","Krabby","Krabby","Voltorb","Voltorb","Exeggcute","Exeggcute","Cubone","Cubone","Hitmonlee","Hitmonlee","Lickitung","Koffing","Koffing","Rhyhorn","Rhyhorn","Chansey","Tangela","Kangaskhan","Horsea","Horsea","Goldeen","Goldeen","Staryu","Staryu","Mr. Mime","Scyther","Jynx","Electabuzz","Magmar","Pinsir","Tauros","Magikarp","Magikarp","Lapras","Ditto","Eevee","Eevee","Eevee","Eevee","Porygon","Omanyte","Omanyte","Kabuto","Kabuto","Aerodactyl","Snorlax","Articuno","Zapdos","Moltres","Dratini","Dratini","Dratini","Mewtwo","Mew","Chikorita","Chikorita","Chikorita","Cyndaquil","Cyndaquil","Cyndaquil","Totodile","Totodile","Totodile","Sentret","Sentret","Hoothoot","Hoothoot","Ledyba","Ledyba","Spinarak","Spinarak","Zubat","Chinchou","Chinchou","Pikachu","Clefairy","Jigglypuff","Togepi","Togepi","Natu","Natu","Mareep","Mareep","Mareep","Oddish","Marill","Marill","Sudowoodo","Poliwag","Hoppip","Hoppip","Hoppip","Aipom","Sunkern","Sunkern","Yanma","Wooper","Wooper","Eevee","Eevee","Murkrow","Slowpoke","Misdreavus","Unown","Wobbuffet","Girafarig","Pineco","Pineco","Dunsparce","Gligar","Onix","Snubbull","Snubbull","Qwilfish","Scyther","Shuckle","Heracross","Sneasel","Teddiursa","Teddiursa","Slugma","Slugma","Swinub","Swinub","Corsola","Remoraid","Remoraid","Delibird","Mantine","Skarmory","Houndour","Houndour","Horsea","Phanpy","Phanpy","Porygon","Stantler","Smeargle","Hitmonlee","Hitmonlee","Jynx","Electabuzz","Magmar","Miltank","Chansey","Raikou","Entei","Suicune","Larvitar","Larvitar","Larvitar","Lugia","Ho-Oh","Celebi","Treecko","Treecko","Treecko","Torchic","Torchic","Torchic","Mudkip","Mudkip","Mudkip","Poochyena","Poochyena","Zigzagoon","Zigzagoon","Wurmple","Wurmple","Wurmple","Wurmple","Wurmple","Lotad","Lotad","Lotad","Seedot","Seedot","Seedot","Taillow","Taillow","Wingull","Wingull","Ralts","Ralts","Ralts","Surskit","Surskit","Shroomish","Shroomish","Slakoth","Slakoth","Slakoth","Nincada","Nincada","Nincada","Whismur","Whismur","Whismur","Makuhita","Makuhita","Marill","Nosepass","Skitty","Skitty","Sableye","Mawile","Aron","Aron","Aron","Meditite","Meditite","Electrike","Electrike","Plusle","Minun","Volbeat","Volbeat","Roselia","Gulpin","Gulpin","Carvanha","Carvanha","Wailmer","Wailmer","Numel","Numel","Torkoal","Spoink","Spoink","Spinda","Trapinch","Trapinch","Trapinch","Cacnea","Cacnea","Swablu","Swablu","Zangoose","Seviper","Lunatone","Solrock","Barboach","Barboach","Corphish","Corphish","Baltoy","Baltoy","Lileep","Lileep","Anorith","Anorith","Feebas","Feebas","Castform","Kecleon","Shuppet","Shuppet","Duskull","Duskull","Tropius","Chimecho","Absol","Wobbuffet","Snorunt","Snorunt","Spheal","Spheal","Spheal","Clamperl","Clamperl","Clamperl","Relicanth","Luvdisc","Bagon","Bagon","Bagon","Beldum","Beldum","Beldum","Regirock","Regice","Registeel","Latias","Latios","Kyogre","Groudon","Rayquaza","Jirachi","Deoxys","Turtwig","Turtwig","Turtwig","Chimchar","Chimchar","Chimchar","Piplup","Piplup","Piplup","Starly","Starly","Starly","Bidoof","Bidoof","Kricketot","Kricketot","Shinx","Shinx","Shinx","Roselia","Roselia","Cranidos","Cranidos","Shieldon","Shieldon","Burmy","Burmy","Burmy","Combee","Combee","Pachirisu","Buizel","Buizel","Cherubi","Cherubi","Shellos","Shellos","Aipom","Drifloon","Drifloon","Buneary","Buneary","Misdreavus","Murkrow","Glameow","Glameow","Chimecho","Stunky","Stunky","Bronzor","Bronzor","Sudowoodo","Mr. Mime","Chansey","Chatot","Spiritomb","Gible","Gible","Gible","Snorlax","Riolu","Riolu","Hippopotas","Hippopotas","Skorupi","Skorupi","Croagunk","Croagunk","Carnivine","Finneon","Finneon","Mantine","Snover","Snover","Sneasel","Magnemite","Lickitung","Rhyhorn","Tangela","Electabuzz","Magmar","Togepi","Yanma","Eevee","Eevee","Gligar","Swinub","Porygon","Ralts","Nosepass","Duskull","Snorunt","Rotom","Uxie","Mesprit","Azelf","Dialga","Palkia","Heatran","Regigigas","Giratina","Cresselia","Phione","Manaphy","Darkrai","Shaymin","Arceus","Victini","Snivy","Snivy","Snivy","Tepig","Tepig","Tepig","Oshawott","Oshawott","Oshawott","Patrat","Patrat","Lillipup","Lillipup","Lillipup","Purrloin","Purrloin","Pansage","Pansage","Pansear","Pansear","Panpour","Panpour","Munna","Munna","Pidove","Pidove","Pidove","Blitzle","Blitzle","Roggenrola","Roggenrola","Roggenrola","Woobat","Woobat","Drilbur","Drilbur","Audino","Timburr","Timburr","Timburr","Tympole","Tympole","Tympole","Throh","Sawk","Sewaddle","Sewaddle","Sewaddle","Venipede","Venipede","Venipede","Cottonee","Cottonee","Petilil","Petilil","Basculin","Sandile","Sandile","Sandile","Darumaka","Darumaka","Maractus","Dwebble","Dwebble","Scraggy","Scraggy","Sigilyph","Yamask","Yamask","Tirtouga","Tirtouga","Archen","Archen","Trubbish","Trubbish","Zorua","Zorua","Minccino","Minccino","Gothita","Gothita","Gothita","Solosis","Solosis","Solosis","Ducklett","Ducklett","Vanillite","Vanillite","Vanillite","Deerling","Deerling","Emolga","Karrablast","Karrablast","Foongus","Foongus","Frillish","Frillish","Alomomola","Joltik","Joltik","Ferroseed","Ferroseed","Klink","Klink","Klink","Tynamo","Tynamo","Tynamo","Elgyem","Elgyem","Litwick","Litwick","Litwick","Axew","Axew","Axew","Cubchoo","Cubchoo","Cryogonal","Shelmet","Shelmet","Stunfisk","Mienfoo","Mienfoo","Druddigon","Golett","Golett","Pawniard","Pawniard","Bouffalant","Rufflet","Rufflet","Vullaby","Vullaby","Heatmor","Durant","Deino","Deino","Deino","Larvesta","Larvesta","Cobalion","Terrakion","Virizion","Tornadus","Thundurus","Reshiram","Zekrom","Landorus","Kyurem","Keldeo","Meloetta","Genesect","Chespin","Chespin","Chespin","Fennekin","Fennekin","Fennekin","Froakie","Froakie","Froakie","Bunnelby","Bunnelby","Fletchling","Fletchling","Fletchling","Scatterbug","Scatterbug","Scatterbug","Litleo","Litleo","Flabébé","Flabébé","Flabébé","Skiddo","Skiddo","Pancham","Pancham","Furfrou","Espurr","Espurr","Honedge","Honedge","Honedge","Spritzee","Spritzee","Swirlix","Swirlix","Inkay","Inkay","Binacle","Binacle","Skrelp","Skrelp","Clauncher","Clauncher","Helioptile","Helioptile","Tyrunt","Tyrunt","Amaura","Amaura","Eevee","Hawlucha","Dedenne","Carbink","Goomy","Goomy","Goomy","Klefki","Phantump","Phantump","Pumpkaboo","Pumpkaboo","Bergmite","Bergmite","Noibat","Noibat","Xerneas","Yveltal","Zygarde","Diancie","Hoopa","Volcanion","Rowlet","Rowlet","Rowlet","Litten","Litten","Litten","Popplio","Popplio","Popplio","Pikipek","Pikipek","Pikipek","Yungoos","Yungoos","Grubbin","Grubbin","Grubbin","Crabrawler","Crabrawler","Oricorio","Cutiefly","Cutiefly","Rockruff","Rockruff","Wishiwashi","Mareanie","Mareanie","Mudbray","Mudbray","Dewpider","Dewpider","Fomantis","Fomantis","Morelull","Morelull","Salandit","Salandit","Stufful","Stufful","Bounsweet","Bounsweet","Bounsweet","Comfey","Oranguru","Passimian","Wimpod","Wimpod","Sandygast","Sandygast","Pyukumuku","Type: Null","Type: Null","Minior","Komala","Turtonator","Togedemaru","Mimikyu","Bruxish","Drampa","Dhelmise","Jangmo-o","Jangmo-o","Jangmo-o","Tapu Koko","Tapu Lele","Tapu Bulu","Tapu Fini","Cosmog","Cosmoem","Solgaleo","Lunala","Nihilego","Buzzwole","Pheromosa","Xurkitree","Celesteela","Kartana","Guzzlord","Necrozma","Magearna","Marshadow"];
 const BATTLE_STATS = ["Hit Points","Attack","Defense","Special Attack","Special Defense","Speed"];
 const BATTLE_STATS_ABBR = ["HP","Atk","Def","SpA","SpD","Spe"];
 const LANGUAGES = { "JPN": "Japanese", "ENG": "English", "FRE": "French", "GER": "German", "ITA": "Italian", "KOR": "Korean", "SPA": "Spanish", "CHT": "Traditional Chinese", "CHS": "Simplified Chinese" };
 const BABY_POKEMON = [172,173,174,175,236,238,239,240,298,360,433,438,439,440,446,447,458];
+const LEGENDARY_POKEMON = [144,145,146,150,151,243,244,245,249,250,251,377,378,379,380,381,382,383,384,385,386,480,481,482,483,484,485,486,487,488,489,490,491,492,493,494,638,639,640,641,642,643,644,645,646,647,648,649,716,717,718,719,720,721,785,786,787,788,789,790,791,792,793,794,795,796,797,798,799,800,801,802];
 const FEMALE_ONLY_POKEMON = [29,30,31,113,115,124,241,242,314,380,413,416,440,478,488,548,549,629,630,669,670,671,758,761,762,763];
 const POKEMON_WITH_A_GENDER_RATIO_OF_SEVEN_FEMALES_TO_ONE_MALE = [667,668];
 const POKEMON_WITH_A_GENDER_RATIO_OF_THREE_FEMALES_TO_ONE_MALE = [35,36,37,38,39,40,173,174,209,210,222,298,300,301,370,431,432,572,573,574,575,576,741,764];
@@ -246,6 +249,9 @@ var Pokemon = function() {
     this.isBaby = function() {
         return BABY_POKEMON.indexOf(this.dexNo) > -1;
     };
+    this.isLegendary = function() {
+        return LEGENDARY_POKEMON.indexOf(this.dexNo) > -1;
+    };
 };
 // Functions
 function getSpriteClass(pokemon) {
@@ -335,6 +341,8 @@ function getTags(pokemon) {
     tags.push("gen" + pokemon.generation());
     tags.push(pokemon.genderRatio());
     if (pokemon.isBaby()) tags.push("baby");
+    else if (pokemon.isLegendary()) tags.push("legendary");
+    else tags.push("normal");
     if (pokemon.hasHiddenAbility()) tags.push("hidden-ability");
     if (pokemon.isShiny) tags.push("shiny");
     for (i = 0; i < pokemon.balls.length; i++) {
@@ -377,6 +385,11 @@ function filterPokemon() {
     $("#ball-filter option:selected").each(function() {
         balls[i++] = "." + $(this).val();
     });
+    // get selected categories
+    var categories = []; i = 0;
+    $("#category-filter option:selected").each(function() {
+        categories[i++] = "." + $(this).val();
+    });
     // get misc filters
     var showOnlyBabyPokemon = $("#misc-filter [value='baby']:selected").length > 0;
     var showOnlyPokemonWithHiddenAbility = $("#misc-filter [value='hidden-ability']:selected").length > 0;
@@ -390,7 +403,7 @@ function filterPokemon() {
         if (showOnlyBabyPokemon && !$this.hasClass("baby")) return;
         if (showOnlyPokemonWithHiddenAbility && !$this.hasClass("hidden-ability")) return;
         if (showOnlyShinyPokemon && !$this.hasClass("shiny")) return;
-        if ($this.is(gens.join(',')) && $this.is(ratios.join(',')) && $this.is(balls.join(','))) {
+        if ($this.is(gens.join(',')) && $this.is(ratios.join(',')) && $this.is(balls.join(',')) && $this.is(categories.join(','))) {
             $this.removeClass("filtered");
         }
     });
@@ -434,6 +447,9 @@ function sheetIsForIndividualPokemon(entry) {
 spreadsheetId = window.location.search.substring(1) || spreadsheetId;
 var worksheetId = 1;
 var isForIndividualPokemon = false;
+var mode = "normal";
+var pokemons = [];
+var loadedPokemons = [];
 
 $(document).ready(function() {
     $.getJSON(getWorksheetUrl(spreadsheetId, 1), function(data) {
@@ -453,7 +469,7 @@ $(document).ready(function() {
         }
         // display trainer info
         $("title").text(inGameName + "'s Pokémon Trading Sheet");
-        $("header h1").prepend("<a href=\"" + contactUrl + "\">" + inGameName + "</a>");
+        $("header h1").prepend("<a href=\"" + contactUrl + "\">" + inGameName + "</a>'s Pokémon Trading <a href=\"https://docs.google.com/spreadsheets/d/" + spreadsheetId + "\">Sheet</a>");
         if (friendCode || inGameName) {
             var trainerInfo = "";
             if (!trainerIconUrl) {
@@ -473,7 +489,15 @@ $(document).ready(function() {
             $("#trainer-info").prepend(trainerInfo);
         }
         // display Pokémon
-        displayPokemon();
+        $.getJSON(getWorksheetUrl(spreadsheetId, worksheetId), function(data) {
+            var entry = data.feed.entry;
+            if (entry && entry[0]) {
+                isForIndividualPokemon = sheetIsForIndividualPokemon(entry[0]);
+            }
+            loadedPokemons = loadPokemon(entry);
+            pokemons = loadedPokemons;
+            displayPokemon();
+        });
         // add button links to other tabs
         $.getJSON(getSpreadsheetUrl(spreadsheetId), function(data) {
             var entry = data.feed.entry;
@@ -505,61 +529,84 @@ $(document).ready(function() {
         });
     });
 });
-
-function displayPokemon(){
-    $.getJSON(getWorksheetUrl(spreadsheetId, worksheetId), function(data) {
-        var entry = data.feed.entry;
-        if (entry && entry[0]) {
-            isForIndividualPokemon = sheetIsForIndividualPokemon(entry[0]);
+function loadPokemon(entries){
+    var pokemons = [];
+    $(entries).each(function(){
+        var pokemon = new Pokemon();
+        pokemon.dexNo = Number(getValue(this.gsx$dexno));
+        pokemon.name = getValue(this.gsx$name);
+        pokemon.form = getValue(this.gsx$form);
+        pokemon.nature = getValue(this.gsx$nature);
+        pokemon.ability = getValue(this.gsx$ability);
+        pokemon.ivs.hp = getValue(this.gsx$hpiv) || "x";
+        pokemon.ivs.atk = getValue(this.gsx$atkiv) || "x";
+        pokemon.ivs.def = getValue(this.gsx$defiv) || "x";
+        pokemon.ivs.spa = getValue(this.gsx$spaiv) || "x";
+        pokemon.ivs.spd = getValue(this.gsx$spdiv) || "x";
+        pokemon.ivs.spe = getValue(this.gsx$speiv) || "x";
+        pokemon.hiddenPower = getValue(this.gsx$hiddenpower);
+        pokemon.eggMoves = [
+            getValue(this.gsx$eggmove1),
+            getValue(this.gsx$eggmove2),
+            getValue(this.gsx$eggmove3),
+            getValue(this.gsx$eggmove4)
+            ].filter(function(e){return e;});
+        pokemon.gender = getValue(this.gsx$sex);
+        switch (pokemon.genderRatio()) {
+            case "gender-ratio-1-0":
+                pokemon.gender = 'F';
+                break;
+            case "gender-ratio-0-1":
+                pokemon.gender = 'M';
+                break;
+            case "gender-ratio-0-0":
+                pokemon.gender = '-';
+                break;
         }
-        $(entry).each(function(){
-            var pokemon = new Pokemon();
-            pokemon.dexNo = Number(getValue(this.gsx$dexno));
-            pokemon.name = getValue(this.gsx$name);
-            pokemon.form = getValue(this.gsx$form);
-            pokemon.nature = getValue(this.gsx$nature);
-            pokemon.ability = getValue(this.gsx$ability);
-            pokemon.ivs.hp = getValue(this.gsx$hpiv) || "x";
-            pokemon.ivs.atk = getValue(this.gsx$atkiv) || "x";
-            pokemon.ivs.def = getValue(this.gsx$defiv) || "x";
-            pokemon.ivs.spa = getValue(this.gsx$spaiv) || "x";
-            pokemon.ivs.spd = getValue(this.gsx$spdiv) || "x";
-            pokemon.ivs.spe = getValue(this.gsx$speiv) || "x";
-            pokemon.hiddenPower = getValue(this.gsx$hiddenpower);
-            pokemon.eggMoves = [
-                getValue(this.gsx$eggmove1),
-                getValue(this.gsx$eggmove2),
-                getValue(this.gsx$eggmove3),
-                getValue(this.gsx$eggmove4)
-                ].filter(function(e){return e;});
-            pokemon.gender = getValue(this.gsx$sex);
-            switch (pokemon.genderRatio()) {
-                case "gender-ratio-1-0":
-                    pokemon.gender = 'F';
-                    break;
-                case "gender-ratio-0-1":
-                    pokemon.gender = 'M';
-                    break;
-                case "gender-ratio-0-0":
-                    pokemon.gender = '-';
-                    break;
-            }
-            pokemon.isShiny = getValue(this.gsx$shiny);
-            pokemon.nickname = getValue(this.gsx$nickname);
-            pokemon.ot = getValue(this.gsx$ot);
-            pokemon.tid = getValue(this.gsx$tid);
-            pokemon.level = getValue(this.gsx$lv);
-            pokemon.evs.hp = getValue(this.gsx$hpev);
-            pokemon.evs.atk = getValue(this.gsx$atkev);
-            pokemon.evs.def = getValue(this.gsx$defev);
-            pokemon.evs.spa = getValue(this.gsx$spaev);
-            pokemon.evs.spd = getValue(this.gsx$spdev);
-            pokemon.evs.spe = getValue(this.gsx$speev);
-            if (getValue(this.gsx$ball)) {
-                pokemon.balls.push(getValue(this.gsx$ball));
-            }
-            pokemon.language = getValue(this.gsx$lang);
-            pokemon.notes = getValue(this.gsx$notes);
+        pokemon.amount = getValue(this.gsx$amount);
+        pokemon.isShiny = getValue(this.gsx$shiny);
+        pokemon.nickname = getValue(this.gsx$nickname);
+        pokemon.ot = getValue(this.gsx$ot);
+        pokemon.tid = getValue(this.gsx$tid);
+        pokemon.level = getValue(this.gsx$lv);
+        pokemon.evs.hp = getValue(this.gsx$hpev);
+        pokemon.evs.atk = getValue(this.gsx$atkev);
+        pokemon.evs.def = getValue(this.gsx$defev);
+        pokemon.evs.spa = getValue(this.gsx$spaev);
+        pokemon.evs.spd = getValue(this.gsx$spdev);
+        pokemon.evs.spe = getValue(this.gsx$speev);
+        if (getValue(this.gsx$ball)) {
+            pokemon.balls.push(getValue(this.gsx$ball));
+        }
+        pokemon.language = getValue(this.gsx$lang);
+        pokemon.notes = getValue(this.gsx$notes);
+        if (getValue(this.gsx$poke)) pokemon.balls.push("Poké Ball");
+        if (getValue(this.gsx$great)) pokemon.balls.push("Great Ball");
+        if (getValue(this.gsx$Ultra)) pokemon.balls.push("Ultra Ball");
+        if (getValue(this.gsx$master)) pokemon.balls.push("Master Ball");
+        if (getValue(this.gsx$safari)) pokemon.balls.push("Safari Ball");
+        if (getValue(this.gsx$level)) pokemon.balls.push("Level Ball");
+        if (getValue(this.gsx$lure)) pokemon.balls.push("Lure Ball");
+        if (getValue(this.gsx$moon)) pokemon.balls.push("Moon Ball");
+        if (getValue(this.gsx$friend)) pokemon.balls.push("Friend Ball");
+        if (getValue(this.gsx$love)) pokemon.balls.push("Love Ball");
+        if (getValue(this.gsx$heavy)) pokemon.balls.push("Heavy Ball");
+        if (getValue(this.gsx$fast)) pokemon.balls.push("Fast Ball");
+        if (getValue(this.gsx$sport)) pokemon.balls.push("Sport Ball");
+        if (getValue(this.gsx$premier)) pokemon.balls.push("Premier Ball");
+        if (getValue(this.gsx$repeat)) pokemon.balls.push("Repeat Ball");
+        if (getValue(this.gsx$timer)) pokemon.balls.push("Timer Ball");
+        if (getValue(this.gsx$nest)) pokemon.balls.push("Nest Ball");
+        if (getValue(this.gsx$net)) pokemon.balls.push("Net Ball");
+        if (getValue(this.gsx$dive)) pokemon.balls.push("Dive Ball");
+        if (getValue(this.gsx$luxury)) pokemon.balls.push("Luxury Ball");
+        if (getValue(this.gsx$heal)) pokemon.balls.push("Heal Ball");
+        if (getValue(this.gsx$quick)) pokemon.balls.push("Quick Ball");
+        if (getValue(this.gsx$dusk)) pokemon.balls.push("Dusk Ball");
+        if (getValue(this.gsx$cherish)) pokemon.balls.push("Cherish Ball");
+        if (getValue(this.gsx$dream)) pokemon.balls.push("Dream Ball");
+        if (getValue(this.gsx$beast)) pokemon.balls.push("Beast Ball");
+        if(pokemon.balls.length == 0) { // backwards compatibility
             if (this.gsx$_dcgjs) pokemon.balls.push("Poké Ball");
             if (this.gsx$_ddv49) pokemon.balls.push("Great Ball");
             if (this.gsx$_d415a) pokemon.balls.push("Ultra Ball");
@@ -586,183 +633,227 @@ function displayPokemon(){
             if (this.gsx$_e8rn7) pokemon.balls.push("Cherish Ball");
             if (this.gsx$_ea67k) pokemon.balls.push("Dream Ball");
             if (this.gsx$_ebks1) pokemon.balls.push("Beast Ball");
-            
-            var row = "<tr class=\"" + getTags(pokemon) + "\"" + getData(pokemon) + ">";
-            // Sprite
-            row += "<td class=\"sprite\"><span class=\"menu-sprite " + getSpriteClass(pokemon) + "\" title=\"" + pokemon.name + "\">" + pokemon.dexNo + "</span></td>";
-            // Name
-            row += "<td class=\"name\">" + (pokemon.dexNo == 29 || pokemon.dexNo == 32 ? "Nidoran" : pokemon.name);
-            if (pokemon.gender == "F") {
-                 row += " <span class=\"gender female\" title=\"Female\">&#x2640;</span>";
-            } else if (pokemon.gender == "M") {
-                 row += " <span class=\"gender male\" title=\"Male\">&#x2642;</span>";
+        }
+        
+        pokemons.push(pokemon);
+    });
+    return pokemons;
+}
+function getMissing(pokemons, filterByFamily){
+    var missingPokemons = [];
+    for(var i=0;i<801; i++){
+        var pokemon = new Pokemon();
+        pokemon.dexNo = i+1;
+        pokemon.name = POKEMON_NAMES[i];
+        pokemon.balls.push("Poké Ball");
+        if (filterByFamily && missingPokemons.find(function(e){return e.name == POKEMON_FAMILIES[i];})){
+            continue;
+        }
+        missingPokemons.push(pokemon);
+    }
+    if (filterByFamily){
+        for(var i=0;i<pokemons.length; i++){
+            missingPokemons = missingPokemons.filter(function(e){return e.name != POKEMON_FAMILIES[pokemons[i].dexNo-1];});
+        }
+    } else {
+        for(var i=0;i<pokemons.length; i++){
+            missingPokemons = missingPokemons.filter(function(e){return e.dexNo != pokemons[i].dexNo;});
+        }
+    }
+    return missingPokemons;
+}
+function displayPokemon(){
+    $("tbody").empty();
+    switch(mode){
+    case "show-missing":
+        pokemons = getMissing(loadedPokemons, false);
+        break;
+    case "show-missing-families":
+        pokemons = getMissing(loadedPokemons, true);
+        break;
+    default:
+        pokemons = loadedPokemons;
+        break;
+    }
+    $(pokemons).each(function(){
+        var pokemon = this;
+        var row = "<tr class=\"" + getTags(pokemon) + "\"" + getData(pokemon) + ">";
+        // Sprite
+        row += "<td class=\"sprite\"><a href=\"http://pokemondb.net/pokedex/" +
+            POKEMON_NAMES[pokemon.dexNo-1].replace(" ","-").replace("é","e").replace(".","").replace("♀","-f").replace("♂","-m") +
+            "\"><span class=\"menu-sprite " + getSpriteClass(pokemon) + "\" title=\"" + pokemon.name + "\">" + pokemon.dexNo + "</span></a></td>";
+        // Name
+        row += "<td class=\"name\">" + (pokemon.dexNo == 29 || pokemon.dexNo == 32 ? "Nidoran" : pokemon.name) + (pokemon.amount ? " (" + pokemon.amount + ")" : "");
+        if (pokemon.gender == "F") {
+                row += " <span class=\"gender female\" title=\"Female\">&#x2640;</span>";
+        } else if (pokemon.gender == "M") {
+                row += " <span class=\"gender male\" title=\"Male\">&#x2642;</span>";
+        }
+        if (pokemon.form) {
+            row += "<br><span class=\"form\">" + pokemon.form + "</span>";
+        }
+        row += "</td>";
+        // Nature
+        row += "<td class=\"nature " + pokemon.nature.toLowerCase() + "\">" + pokemon.nature + "</td>";
+        // Ability
+        row += "<td class=\"ability\">" + (pokemon.ability.endsWith('*') ? pokemon.ability.slice(0,-1) : pokemon.ability) + "</td>";
+        // IVs & EVs
+        var statAttribute;
+        for (i = 0; i < BATTLE_STATS.length; i++) {
+            statAttribute = pokemon.ivs[BATTLE_STATS_ABBR[i].toLowerCase()];
+            if (isNaN(statAttribute)) {
+                switch (statAttribute) {
+                    case "2x":
+                        statAttribute = "<abbr title=\"Any even value\">" + statAttribute;
+                        break;
+                    case "2x+1":
+                        statAttribute = "<abbr title=\"Any odd value\">" + statAttribute;
+                        break;
+                    default:
+                        statAttribute = "<abbr title=\"Any value\">" + statAttribute;
+                        break;
+                }
+                statAttribute += "</abbr>";
             }
-            if (pokemon.form) {
-                row += "<br><span class=\"form\">" + pokemon.form + "</span>";
-            }
-            row += "</td>";
-            // Nature
-            row += "<td class=\"nature " + pokemon.nature.toLowerCase() + "\">" + pokemon.nature + "</td>";
-            // Ability
-            row += "<td class=\"ability\">" + (pokemon.ability.endsWith('*') ? pokemon.ability.slice(0,-1) : pokemon.ability) + "</td>";
-            // IVs & EVs
-            var statAttribute;
+            row += "<td class=\"" + BATTLE_STATS_ABBR[i].toLowerCase() + "\">" + statAttribute + "</td>";
+        }
+        if (isForIndividualPokemon) {
+            var formattedIvs = [];
             for (i = 0; i < BATTLE_STATS.length; i++) {
                 statAttribute = pokemon.ivs[BATTLE_STATS_ABBR[i].toLowerCase()];
-                if (isNaN(statAttribute)) {
-                    switch (statAttribute) {
-                        case "2x":
-                            statAttribute = "<abbr title=\"Any even value\">" + statAttribute;
-                            break;
-                        case "2x+1":
-                            statAttribute = "<abbr title=\"Any odd value\">" + statAttribute;
-                            break;
-                        default:
-                            statAttribute = "<abbr title=\"Any value\">" + statAttribute;
-                            break;
-                    }
-                    statAttribute += "</abbr>";
-                }
-                row += "<td class=\"" + BATTLE_STATS_ABBR[i].toLowerCase() + "\">" + statAttribute + "</td>";
+                formattedIvs.push("<abbr title=\"" + BATTLE_STATS[i] + " IV\">" + statAttribute + "</abbr>");
             }
-            if (isForIndividualPokemon) {
-                var formattedIvs = [];
-                for (i = 0; i < BATTLE_STATS.length; i++) {
-                    statAttribute = pokemon.ivs[BATTLE_STATS_ABBR[i].toLowerCase()];
-                    formattedIvs.push("<abbr title=\"" + BATTLE_STATS[i] + " IV\">" + statAttribute + "</abbr>");
+            row += "<td class=\"ivs hidden\">" + formattedIvs.join('/') + "</td>";
+            var formattedEvs = [];
+            for (i = 0; i < BATTLE_STATS.length; i++) {
+                statAttribute = pokemon.evs[BATTLE_STATS_ABBR[i].toLowerCase()];
+                if (statAttribute) {
+                    formattedEvs.push("<abbr title=\"" + BATTLE_STATS[i] + " EV\">" + statAttribute + " " + BATTLE_STATS_ABBR[i] + "</abbr>");
                 }
-                row += "<td class=\"ivs hidden\">" + formattedIvs.join('/') + "</td>";
-                var formattedEvs = [];
-                for (i = 0; i < BATTLE_STATS.length; i++) {
-                    statAttribute = pokemon.evs[BATTLE_STATS_ABBR[i].toLowerCase()];
-                    if (statAttribute) {
-                        formattedEvs.push("<abbr title=\"" + BATTLE_STATS[i] + " EV\">" + statAttribute + " " + BATTLE_STATS_ABBR[i] + "</abbr>");
-                    }
-                }
-                formattedEvs = formattedEvs.join(' / ');
-                if (!formattedEvs) {
-                    formattedEvs = "Not EV-trained";
-                }
-                row += "<td class=\"evs hidden\">" + formattedEvs + "</td>";
             }
-            // Hidden Power
-            row += "<td class=\"hidden-power\">";
-            if (pokemon.hiddenPower) {
-                row += "<span title=\"" + pokemon.hiddenPower + "\"";
-                row += " class=\"hidden-power " + pokemon.hiddenPower.toLowerCase() + "\">";
-                row += pokemon.hiddenPower + "</span>";
-            } else {
-                row += "???";
+            formattedEvs = formattedEvs.join(' / ');
+            if (!formattedEvs) {
+                formattedEvs = "Not EV-trained";
             }
-            row += "</td>";
-            // Egg Moves
-            row += "<td class=\"egg-moves\">" + pokemon.eggMoves.join(', ') + "</td>";       
-            // Poké Balls
-            row += "<td class=\"poke-balls rows" + Math.ceil(pokemon.balls.length / 3) + "\">";
-            for (i = 0; i < pokemon.balls.length; i++) {
-                row += "<span title=\"" + pokemon.balls[i] + "\"";
-                row += " class=\"item-sprite " + pokemon.balls[i].toLowerCase().replace(' ', '-').replace('é', 'e');
-                row += " row" + Math.ceil((i + 1)/ 3) + "\">";
-                row += pokemon.balls[i] + "</span>";
-            }
-            row += "</td></tr>";
-            $("tbody").append(row);
-        });
-        $("#loader").fadeOut("slow");
-        var handle = 0;
-        $("tr").hover(function() {
-            var $pkmn = $(this).find(".sprite");
-            handle = setInterval(function() {
-                $pkmn.toggleClass("up");
-            }, 150);
-        }, function() {
-            $(this).find(".sprite").removeClass("up");
-            clearInterval(handle);
-        });
-        if (isForIndividualPokemon) {
-            $("body").addClass("shiny");
-            // Show modal
-            $("tr").click(function() {
-                var $this = $(this);
-                var $pokemonInfo = $("#pokemon-info");
-                var dexNo = Number($this.data("dexno"));
-                var isShiny = $this.data("isshiny");
-                if (isShiny) $pokemonInfo.addClass("shiny");
-                // Name, Nickname, Sex & Level
-                var name = dexNo == 29 || dexNo == 32 ? "Nidoran" : $this.data("name");
-                var nickname = $this.data("nickname");
-                if (nickname) {
-                    name = nickname + " (" + name + ")";
-                }
-                $pokemonInfo.find(".name").text(name);
-                var gender = $this.data("gender");
-                if (gender == "F") {
-                    $pokemonInfo.find(".gender").html("&#x2640;").attr("class", "gender female");
-                } else if (gender == "M") {
-                    $pokemonInfo.find(".gender").html("&#x2642;").attr("class", "gender male");
-                } else {
-                    $pokemonInfo.find(".gender").text('').attr("class", "gender");
-                }
-                $pokemonInfo.find(".level").text("Lv. " + $this.data("level"));
-                // Pokémon Sprite
-                var $sprite = $this.find(".menu-sprite");
-                var spriteClass = $sprite.attr("class").split(' ')[1];
-                $("#pokemon-info h1").prepend("<span class=\"menu-sprite " + spriteClass + "\">" + $this.data("dexno") + "</span>");
-                // Pokémon Model
-                var generation = Number($this.data("generation"));
-                $(new Image())
-                    .attr("class", "model")
-                    .attr("src", getModelUrl(dexNo, spriteClass, gender, isShiny))
-                    .appendTo($("#pokemon-info figure")).fadeIn();
-                // Trainer
-                $pokemonInfo.find(".trainer").next().text($this.data("ot") + " (" + $this.data("tid") + ")");
-                // Nature & Ability
-                $pokemonInfo.find(".nature").next().text($this.data("nature"));
-                var ability = $this.data("ability");
-                $pokemonInfo.find(".ability").next().text(ability.endsWith('*') ? ability.slice(0,-1) : ability);
-                // Language
-                var language = $this.data("language");
-                $pokemonInfo.find(".language").text(language).attr("title", LANGUAGES[language]);
-                // IVs & EVs
-                var statAttributes = $this.find(".ivs").html();
-                $pokemonInfo.find(".ivs").next().html(statAttributes);
-                statAttributes = $this.find(".evs").html();
-                $pokemonInfo.find(".evs").next().html(statAttributes);
-                // Egg Moves
-                var eggMoves = $this.find(".egg-moves").text().split(', ');
-                if (eggMoves[0]) {
-                    for (i = 0; i < eggMoves.length; i++) {
-                        $("#pokemon-info ul").append("<li>" + eggMoves[i]);
-                    }
-                }
-                // Poké Ball
-                var ball = $sprite.attr("title");
-                $sprite = $this.find(".item-sprite");
-                spriteClass = $sprite.attr("class").split(' ')[1];
-                $("#pokemon-info figure").append("<span class=\"item-sprite " + spriteClass + "\" title=\"" + ball + "\">" + ball + "</span>");
-                // Notes
-                var notes = $this.data("notes");
-                if (notes) {
-                    $("#pokemon-info").append("<p class=\"notes\">" + notes + "</p>");
-                }
-                // Unhide modal
-                $("#modal").removeClass("hidden");
-            });
-            $("#modal").click(function() {
-                $("#pokemon-info .menu-sprite").remove();
-                $("#pokemon-info .item-sprite").remove();
-                $("#pokemon-info figure img").remove();
-                $("#pokemon-info ul li").remove();
-                $("#pokemon-info .notes").remove();
-                $("#pokemon-info").removeClass("shiny");
-                $("#modal").addClass("hidden");
-            });
-            $("#pokemon-info").click(function(e) {
-                e.stopPropagation();
-            });
+            row += "<td class=\"evs hidden\">" + formattedEvs + "</td>";
         }
+        // Hidden Power
+        row += "<td class=\"hidden-power\">";
+        if (pokemon.hiddenPower) {
+            row += "<span title=\"" + pokemon.hiddenPower + "\"";
+            row += " class=\"hidden-power " + pokemon.hiddenPower.toLowerCase() + "\">";
+            row += pokemon.hiddenPower + "</span>";
+        } else {
+            row += "???";
+        }
+        row += "</td>";
+        // Egg Moves
+        row += "<td class=\"egg-moves\">" + pokemon.eggMoves.join(', ') + "</td>";       
+        // Poké Balls
+        row += "<td class=\"poke-balls rows" + Math.ceil(pokemon.balls.length / 3) + "\">";
+        for (i = 0; i < pokemon.balls.length; i++) {
+            row += "<span title=\"" + pokemon.balls[i] + "\"";
+            row += " class=\"item-sprite " + pokemon.balls[i].toLowerCase().replace(' ', '-').replace('é', 'e');
+            row += " row" + Math.ceil((i + 1)/ 3) + "\">";
+            row += pokemon.balls[i] + "</span>";
+        }
+        row += "</td></tr>";
+        $("tbody").append(row);
     });
-    $("select").multiselect({
+    $("#loader").fadeOut("slow");
+    var handle = 0;
+    $("tr").hover(function() {
+        var $pkmn = $(this).find(".sprite");
+        handle = setInterval(function() {
+            $pkmn.toggleClass("up");
+        }, 150);
+    }, function() {
+        $(this).find(".sprite").removeClass("up");
+        clearInterval(handle);
+    });
+    if (isForIndividualPokemon) {
+        $("body").addClass("shiny");
+        // Show modal
+        $("tr").click(function() {
+            var $this = $(this);
+            var $pokemonInfo = $("#pokemon-info");
+            var dexNo = Number($this.data("dexno"));
+            var isShiny = $this.data("isshiny");
+            if (isShiny) $pokemonInfo.addClass("shiny");
+            // Name, Nickname, Sex & Level
+            var name = dexNo == 29 || dexNo == 32 ? "Nidoran" : $this.data("name");
+            var nickname = $this.data("nickname");
+            if (nickname) {
+                name = nickname + " (" + name + ")";
+            }
+            $pokemonInfo.find(".name").text(name);
+            var gender = $this.data("gender");
+            if (gender == "F") {
+                $pokemonInfo.find(".gender").html("&#x2640;").attr("class", "gender female");
+            } else if (gender == "M") {
+                $pokemonInfo.find(".gender").html("&#x2642;").attr("class", "gender male");
+            } else {
+                $pokemonInfo.find(".gender").text('').attr("class", "gender");
+            }
+            $pokemonInfo.find(".level").text("Lv. " + $this.data("level"));
+            // Pokémon Sprite
+            var $sprite = $this.find(".menu-sprite");
+            var spriteClass = $sprite.attr("class").split(' ')[1];
+            $("#pokemon-info h1").prepend("<span class=\"menu-sprite " + spriteClass + "\">" + $this.data("dexno") + "</span>");
+            // Pokémon Model
+            var generation = Number($this.data("generation"));
+            $(new Image())
+                .attr("class", "model")
+                .attr("src", getModelUrl(dexNo, spriteClass, gender, isShiny))
+                .appendTo($("#pokemon-info figure")).fadeIn();
+            // Trainer
+            $pokemonInfo.find(".trainer").next().text($this.data("ot") + " (" + prependZeroes($this.data("tid")) + ")");
+            // Nature & Ability
+            $pokemonInfo.find(".nature").next().text($this.data("nature"));
+            var ability = $this.data("ability");
+            $pokemonInfo.find(".ability").next().text(ability.endsWith('*') ? ability.slice(0,-1) : ability);
+            // Language
+            var language = $this.data("language");
+            $pokemonInfo.find(".language").text(language).attr("title", LANGUAGES[language]);
+            // IVs & EVs
+            var statAttributes = $this.find(".ivs").html();
+            $pokemonInfo.find(".ivs").next().html(statAttributes);
+            statAttributes = $this.find(".evs").html();
+            $pokemonInfo.find(".evs").next().html(statAttributes);
+            // Egg Moves
+            var eggMoves = $this.find(".egg-moves").text().split(', ');
+            if (eggMoves[0]) {
+                for (i = 0; i < eggMoves.length; i++) {
+                    $("#pokemon-info ul").append("<li>" + eggMoves[i]);
+                }
+            }
+            // Poké Ball
+            var ball = $sprite.attr("title");
+            $sprite = $this.find(".item-sprite");
+            spriteClass = $sprite.attr("class").split(' ')[1];
+            $("#pokemon-info figure").append("<span class=\"item-sprite " + spriteClass + "\" title=\"" + ball + "\">" + ball + "</span>");
+            // Notes
+            var notes = $this.data("notes");
+            if (notes) {
+                $("#pokemon-info").append("<p class=\"notes\">" + notes + "</p>");
+            }
+            // Unhide modal
+            $("#modal").removeClass("hidden");
+        });
+        $("#modal").click(function() {
+            $("#pokemon-info .menu-sprite").remove();
+            $("#pokemon-info .item-sprite").remove();
+            $("#pokemon-info figure img").remove();
+            $("#pokemon-info ul li").remove();
+            $("#pokemon-info .notes").remove();
+            $("#pokemon-info").removeClass("shiny");
+            $("#modal").addClass("hidden");
+        });
+        $("#pokemon-info").click(function(e) {
+            e.stopPropagation();
+        });
+    }
+    $("select").not("#mode-filter").multiselect({
         buttonWidth: '140px',
         numberDisplayed: 0,
         includeSelectAllOption: true,
@@ -772,6 +863,50 @@ function displayPokemon(){
         onSelectAll: filterPokemon
     });
     $("#search-bar").on("input", filterPokemon);
-    $("select:not(#misc-filter)").multiselect("selectAll", false);
+    $("#mode-filter").multiselect({
+        buttonWidth: '240px',
+        maxHeight: 420,
+        onChange: function(){
+            mode = $("#mode-filter").val();
+            displayPokemon();
+        }
+    });
+    $("#copy").click(function() {
+        $("#copy").addClass("hidden");
+    });
+    $("#pokemon-copy-table").click(function(e) {
+        e.stopPropagation();
+    });
+    $("#copy-table").on("click", getRedditPokemonTable);
+    $("select:not(#misc-filter)").not("#mode-filter").multiselect("selectAll", false);
     $("select").multiselect('updateButtonText');
+}
+function getRedditPokemonTable() {
+    var table = `Pokemon| Ability| Nature| IVs| Egg Moves| Pokeball
+---|---|----|----|----|----
+`;
+    $(pokemons).each(function(){
+        table += (this.isShiny ? "★ " : "") + this.name + (this.gender == "M" ? "♂" : (this.gender == "F" ? "♀" : "")) + (this.form ? " - " + this.form : "") + (this.amount ? " (" + this.amount + ")" : "") + "| " +
+            this.ability + "| " + this.nature + "| " +
+            this.ivs.hp + "/" + this.ivs.atk + "/" + this.ivs.def + "/" + 
+            this.ivs.spa + "/" + this.ivs.spd + "/" + this.ivs.spe + "| ";
+        var moves = this.eggMoves
+        $(moves).each(function(i){
+            table += this + (i + 1 == moves.length ? "" : ", ");
+        });
+        table += "| "
+        $(this.balls).each(function(i){
+            table += "[](/" + this.replace(" ","").replace("é","e").toLowerCase() + ") ";
+        });
+        table += "\n";
+    });
+    $("#copy").removeClass("hidden");
+    $("#pokemon-copy-table").val(table);
+}
+function prependZeroes(number, characters){
+    number = number.toString()
+    while(number.length < characters){
+        number = "0" + number
+    }
+    return number
 }
