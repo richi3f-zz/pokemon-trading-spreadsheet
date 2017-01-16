@@ -89,6 +89,8 @@
                 <option value="baby">Baby Only</option>
                 <option value="hidden-ability">Hidden Ability Only</option>
                 <option value="shiny">Shiny Only</option>
+                <option value="legend">Legend Only</option>
+                <option value="sublegend">Sub-Legend Only</option>
             </select>
         </div><!--
         --><div class="filter">
@@ -119,6 +121,50 @@
         <tbody>
         </tbody>
     </table>
+    <div id="copy2reddit">
+        <h3>Reddit Table</h3>
+        <p>Click on a row above to add a Pokémon to your Reddit table. Click on it again to remove it.</p>
+        <div class="filter">
+            <label for="col-picker">Columns to Show</label>
+            <select id="col-picker" multiple="multiple">
+                <option value="trainer">OT/TID</option>
+                <option value="nature">Nature</option>
+                <option value="ability">Ability</option>
+                <option value="ivs">IVs</option>
+                <option value="evs">EVs</option>
+                <option value="egg-moves">Egg Moves</option>
+                <option value="poke-balls">Poké Balls</option>
+                <option value="language">Language</option>
+            </select>
+            <a data-clipboard-target="#markdown">Copy</a>
+        </div>
+        <div id="markdown"><!--
+            --><span class="line"><!--
+                --><span class="name">| Pokémon |</span>
+                <span class="trainer">OT/TID |</span>
+                <span class="nature">Nature |</span>
+                <span class="ability">Ability |</span>
+                <span class="ivs">IVs |</span>
+                <span class="evs">EVs |</span>
+                <span class="egg-moves">Egg Moves |</span>
+                <span class="poke-balls">Poké Balls |</span>
+                <span class="language">Language |</span>
+                <br>
+            </span><!--
+            --><span class="line">
+                <span class="name">|---------|</span><!--
+                --><span class="trainer">--------|</span><!--
+                --><span class="nature">--------|</span><!--
+                --><span class="ability">---------|</span><!--
+                --><span class="ivs">:---:|</span><!--
+                --><span class="evs">:---:|</span><!--
+                --><span class="egg-moves">-----------|</span><!--
+                --><span class="poke-balls">------------|</span><!--
+                --><span class="language">:--------:|</span>
+                <br>
+            </span>
+        </div>
+    </div>
     <footer role="contentinfo">
         <p>
             © of <a href="http://twitter.com/richi3f">richi3f</a>, <time datetime="2017">2017</time><br>
@@ -155,6 +201,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="static/bootstrap.min.js"></script>
 <script src="static/bootstrap.multiselect.js"></script>
+<script src="static/clipboard.min.js"></script>
 <script src="static/script.js"></script>
 
 </body>
