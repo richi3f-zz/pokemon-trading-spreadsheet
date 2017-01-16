@@ -172,17 +172,20 @@ nav > ul > li abbr::after {
     content:":";
 }
 
-nav ul li a {
+nav ul li a,
+#copy2reddit [data-clipboard-target] {
     display:inline-block;
     margin:0 0.5em 0 0;
     background-color:#4d6ad8;
+    font-weight:700;
     color:#f0f0f0;
-    padding:0.5em 1em;
+    padding:0.5em 0;
     border-radius:0.25em;
     line-height: 1.45;
-    width:7.5em
+    width:7.5em;
+    text-align:center
 }
-nav ul li a:hover {
+nav ul li a:hover, #copy2reddit [data-clipboard-target]:hover {
     color:#f0f0f0;
 }
 nav ul li.current::after {
@@ -197,6 +200,13 @@ nav ul li.current::after {
     top: 2.4375em;
     left: 3em;
 }
+nav ul li.wide a { width:11.25em }
+nav ul li.current.wide::after { left:4.875em }
+nav ul li.wider a { width:15em }
+nav ul li.current.wider::after { left:6.75em }
+nav ul li.widest a { width:18.75em }
+nav ul li.current.widest::after { left:8.625em }
+
 nav ul ul {
     margin: 0 0 0 0.5em;
     display: inline-block;
@@ -221,7 +231,7 @@ h3{
     display:inline-block;
     font-size:1em;
     line-height:2;
-    width:6em;text-indent:1em;
+    width:8em;text-indent:1em;
     margin:0;
     vertical-align: middle
 }
@@ -294,19 +304,37 @@ tr.shiny td.name::before,
 
 tr:hover td {
     background-color: rgba(67,178,224,0.5);
+    cursor:cell
+}
+tr.selected td {
+    background-color: rgba(68,68,68,0.25);
+}
+tr.selected:hover td {
+    background-color: rgba(213,58,58,0.25);
+    cursor:not-allowed
 }
 
 td.adamant ~ td.atk, td.brave ~ td.atk, td.lonely ~ td.atk, td.naughty ~ td.atk,
 td.bold ~ td.def, td.impish ~ td.def, td.relaxed ~ td.def,
 td.modest ~ td.spa, td.mild ~ td.spa, td.rash ~ td.spa, td.quiet ~ td.spa,
 td.calm ~ td.spd, td.careful ~ td.spd, td.sassy ~ td.spd,
-td.jolly ~ td.spe, td.timid ~ td.spe, td.hasty ~ td.spe, td.naive ~ td.spe { color: #c00000; }
+td.jolly ~ td.spe, td.timid ~ td.spe, td.hasty ~ td.spe, td.naive ~ td.spe,
+dd.adamant ~ dt.ivs + dd .atk, dd.brave ~ dt.ivs + dd .atk, dd.lonely ~ dt.ivs + dd .atk, dd.naughty ~ dt.ivs + dd .atk,
+dd.bold ~ dt.ivs + dd .def, dd.impish ~ dt.ivs + dd .def, dd.relaxed ~ dt.ivs + dd .def,
+dd.modest ~ dt.ivs + dd .spa, dd.mild ~ dt.ivs + dd .spa, dd.rash ~ dt.ivs + dd .spa, dd.quiet ~ dt.ivs + dd .spa,
+dd.calm ~ dt.ivs + dd .spd, dd.careful ~ dt.ivs + dd .spd, dd.sassy ~ dt.ivs + dd .spd,
+dd.jolly ~ dt.ivs + dd .spe, dd.timid ~ dt.ivs + dd .spe, dd.hasty ~ dt.ivs + dd .spe, dd.naive ~ dt.ivs + dd .spe{ color: #c00000; }
 
 td.modest ~ td.atk, td.timid ~ td.atk, td.calm ~ td.atk, td.bold ~ td.atk,
 td.lonely ~ td.def, td.mild ~ td.def, td.hasty ~ td.def,
 td.adamant ~ td.spa, td.jolly ~ td.spa, td.impish ~ td.spa, td.careful ~ td.spa,
 td.naive ~ td.spd, td.rash ~ td.spd, td.naughty  ~ td.spd,
-td.brave ~ td.spe, td.quiet ~ td.spe, td.sassy ~ td.spe, td.relaxed ~ td.spe { color: #0000d0; }
+td.brave ~ td.spe, td.quiet ~ td.spe, td.sassy ~ td.spe, td.relaxed ~ td.spe,
+dd.modest ~ dt.ivs + dd .atk, dd.timid ~ dt.ivs + dd .atk, dd.calm ~ dt.ivs + dd .atk, dd.bold ~ dt.ivs + dd .atk,
+dd.lonely ~ dt.ivs + dd .def, dd.mild ~ dt.ivs + dd .def, dd.hasty ~ dt.ivs + dd .def,
+dd.adamant ~ dt.ivs + dd .spa, dd.jolly ~ dt.ivs + dd .spa, dd.impish ~ dt.ivs + dd .spa, dd.careful ~ dt.ivs + dd .spa,
+dd.naive ~ dt.ivs + dd .spd, dd.rash ~ dt.ivs + dd .spd, td.naughty  ~ td.spd,
+dd.brave ~ dt.ivs + dd .spe, dd.quiet ~ dt.ivs + dd .spe, dd.sassy ~ dt.ivs + dd .spe, dd.relaxed ~ dt.ivs + dd .spe{ color: #0000d0; }
 
 tr.hidden-ability .ability { font-style: italic; }
 
@@ -1453,14 +1481,15 @@ span.hidden-power{
         display: none
     }
     
-    table, #filters, .btn, .dropdown-menu {
+    table, #filters, .btn, .dropdown-menu, #copy2reddit {
         font-size: 0.875em;
     }
     
-    .sprite,.sprite.up {
-        padding: 0;
-    }
-    
+    td.sprite,td.sprite.up {
+        padding:0;
+        width:auto;
+        max-width:none;
+    }    
 }
 
 @media screen and (max-width: 67.5em) {
@@ -1653,4 +1682,30 @@ body.shiny tbody tr {
 #pokemon-info .notes {
     font-size:0.75em;
     margin:1.667em 0 0
+}
+
+#copy2reddit{
+    margin: 1em;
+}
+#copy2reddit p {
+    display:inline-block;
+    line-height:2;
+    vertical-align:middle
+}
+#copy2reddit .filter {
+    display:block;
+    margin-top:.5em
+}
+#markdown {
+    font-family:Consolas,monaco,monospace;
+    font-size:0.75em;
+    height:15em;
+    overflow:scroll;
+    background:#fff;
+    padding:0.5em;
+    border:0.0625em solid #ccc;
+}
+#markdown .line {
+    white-space: nowrap;
+    word-wrap: break-word;
 }
