@@ -44,6 +44,8 @@ Use any of the following methods if you want a custom URL or want to make change
 4. Go to `Advanced Options` and set `Use default mobile theme` to false.
 5. Click `Exit` and you're set to share your Tumblr link.
 
+Do note that Tumblr's Preview does not work with this theme. You will not be able to see your Pokémon while the theme is being applied.
+
 #### Method 2B: GitHub Pages
 
 1. Clone this repository.
