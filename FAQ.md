@@ -1,5 +1,9 @@
 # FAQ
 
+**Q:** How do I obtain my trainer icon?
+
+> Log in to the [Pokémon Global Link](https://3ds.pokemon-gl.com/), register/sync your game and right-click the icon to save it.
+
 **Q:** How do I rename my tabs?
 
 > Double click on your tab's name. Add one of the following prefixes to have your tabs sorted: "FT:" (For Trade), "LF:" (Looking For), or "NFT:" (Not For Trade). Additionally, you may add the "!:" prefix to hide your tab altogether.
