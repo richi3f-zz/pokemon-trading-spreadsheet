@@ -6,8 +6,9 @@ A script made to display Pokémon trading information stored in Google Sheets
 
 * Display breedables, valuable Pokémon (e.g., shinies or RNGs), wants or your NFT collection
 * Faster loading than sharing a Google Sheets document
-* Filter Pokémon by generation, gender ratio, Poké Ball, shinyness or HA
+* Filter Pokémon by generation, gender ratio, Poké Ball, shinyness, etc.
 * Search for Pokémon (thanks to [Armienn](https://github.com/Armienn))
+* Generate a Reddit table to share just the Pokémon you want
 
 ## How to Use
 
@@ -21,7 +22,7 @@ A script made to display Pokémon trading information stored in Google Sheets
 2. Fill your copy of the spreadsheet with your Pokémon.
 3. Make your spreadsheet public (`File > Publish to the web…`).
 
-See [Demo](#demo) below if you're unsure of how to fill the spreadsheet.
+See [Demo](#demo) below if you're unsure of how to fill the spreadsheet and read the [FAQ](https://github.com/richi3f/pokemon-trading-spreadsheet/blob/master/FAQ.md#faq) to learn some cool tricks.
 
 ### Method 1: Beginner
 
@@ -61,6 +62,7 @@ If there's been an update, you will need to replace files on your end with the n
 
 ## Changelog
 
+* `2017.1.15.0` Added Legend/Sub-Legend filter, Reddit table, and support for Hypertrained stats.
 * `2017.1.6.0` Tabs without a prefix ("FT:", "LF:", or "NFT:") are now supported.
 * `2017.1.5.0` Added a search bar and support for NFT tabs (once again, thank you to [Armienn](https://github.com/Armienn)). Fixed Alolan Raichu's model and added minor customization to Tumblr theme.
 * `2017.1.4.0` Added support for more than 3 tabs (thanks to [Armienn](https://github.com/Armienn)). Added extra filters and fixed Hidden Abilities of Pokémon with an Alola Form.
