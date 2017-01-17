@@ -448,8 +448,7 @@ function sheetIsForIndividualPokemon(entry) {
         entry.gsx$spdev ||
         entry.gsx$speev ||
         entry.gsx$ball ||
-        entry.gsx$lang ||
-        entry.gsx$notes ? true : false;
+        entry.gsx$lang ? true : false;
 }
 function disableOption(value) {
     var $input = $("input[value='" + value + "']");
