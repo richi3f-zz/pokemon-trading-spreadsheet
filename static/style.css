@@ -340,13 +340,13 @@ tr.hidden-ability .ability { font-style: italic; }
 
 td.rows2 .item-sprite.row1,
 td.rows3 .item-sprite.row1,
-td.rows4 .item-sprite.row1 { margin-bottom: 0; }
+td.rows4 .item-sprite.row1 { margin-bottom:0; }
 td.rows2 .item-sprite.row2,
 td.rows3 .item-sprite.row3,
-td.rows4 .item-sprite.row4 { margin-top: 0; }
+td.rows4 .item-sprite.row4 { margin-top:0; }
 td.rows3 .item-sprite.row2,
 td.rows4 .item-sprite.row2,
-td.rows4 .item-sprite.row3 { margin: 0; }
+td.rows4 .item-sprite.row3 { margin:0 0.125em; }
 
 .menu-sprite, .item-sprite{
     display:inline-block;
@@ -1432,7 +1432,7 @@ span.hidden-power{
 .hidden-power.rock{background-position:-50px -90px}
 .hidden-power.dark{background-position:-100px 0}
 .hidden-power.dragon{background-position:-100px -18px}
-.hidden-power.fairy{background-position:-100px -36px}
+.hidden-power.fighting{background-position:0 0}
 .hidden-power.ice{background-position:-100px -54px}
 .hidden-power.psychic{background-position:-100px -72px}
 .hidden-power.steel{background-position:-100px -90px}
