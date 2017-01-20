@@ -54,7 +54,7 @@ input[type=search] {
     border: 1px solid #ccc;
     padding: 0.375em;
     line-height: 1.25;
-    width: 8.75em;
+    width: 8.75rem;
 }
 
 @media screen {
@@ -241,12 +241,18 @@ h3::after{
 }
 
 #filters {
-    width: 90%;
-    margin: 0 auto;
-    text-align: center
+    width:90%;
+    margin:0 auto;
+    text-align:center
 }
 
-table  {
+#filters h3{
+    display:block;
+    width:auto;
+    margin:0 0 0.5em
+}
+
+table {
     border-collapse:collapse;
     border-spacing:0;
     background: url(bg-td.gif);
@@ -279,12 +285,12 @@ td {
     border-bottom: 1px solid #8f8173;
 }
 
-td.sprite, td.name, td.hp, td.atk, td.def, td.spa, td.spd, td.spe { white-space: nowrap; }
-td.hp, td.atk, td.def, td.spa, td.spd, td.spe { width: 2.625em; }
-td.poke-balls { width: 6.625em }
-td.hidden-power { width: 3.125em; }
-td.name, td.nature, td.ability, td.egg-moves { text-align: left; }
-td.egg-moves { line-height: 1.45; }
+td.sprite, td.name, td.hp, td.atk, td.def, td.spa, td.spd, td.spe { white-space:nowrap }
+td.hp, td.atk, td.def, td.spa, td.spd, td.spe { width:2.625em }
+td.poke-balls { width:6.625em }
+td.hidden-power { width:3.125em }
+td.name, td.nature, td.ability, td.moves, td.egg-moves { text-align:left }
+td.moves,td.egg-moves { line-height:1.45 }
 
 td.sprite{width:3.5em;max-width:3.5em}
 
@@ -1518,12 +1524,15 @@ span.hidden-power{
     display: none;
 }
 .filter{
-  display:inline-block;
-  margin:0 1em 1em
+    display:inline-block;
+    margin:0 1em 1em
 }
 .filter label{
-  margin:0 0.5em 0 0;
-  vertical-align: middle;
+    margin:0 0.5em 0 0;
+    vertical-align: middle;
+}
+#filters .filter label[for] {
+    width:8em
 }
 .multiselect-container{
     position:absolute;
