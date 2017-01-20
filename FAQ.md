@@ -10,7 +10,32 @@
 
 **Q:** Is there a way to hide one of my tabs?
 
-> Yes! If a tab starts with the "!:" prefix it will be ignored.
+> Yes! If a tab starts with the "!:" prefix it will be ignored by the script.
+
+**Q:** Can I rename columns?
+
+> Yes! Some columns that can be renamed are:
+> - "Sex" or "Gender"
+> - "Lv", "Lvl" or "Level"
+> - "Egg Move" or "Relearn Move"
+> - "Lang" or "Language"
+> - "Notes", "Note", "Comments" or "Comment"
+>
+> Additionally, Poké Ball columns may be replaced with the their name instead of using icons.
+
+**Q:** Can I remove/hide columns?
+
+> The "Dex No" column should not be removed at all costs.
+>
+> If you're using the "Valuable Pokémon" tab template, you may remove any column.
+>
+> If you're using the "Breedables" tab template, remove a column will mess up with the Poké Balls. The reason for this is that since the headers are images instead of text the script must reference them by position. A workaround is to replace the images with the name of the Poké Ball (e.g., "Great", "Dive", "Lure", Love", etc.). This should allow you to remove columns you don't need.
+
+**Q:** Can I do away with the drop-down menu (or input custom text in the cells)?
+
+> Yes! The spreadsheet has data validation to make it easier for you to fill and easier for the script to handle. However, you may remove this validation at any time in order to input *custom text*. For instance, doing so should allow you to enter the words "Any" or "Random" instead of a set Nature/Ability.
+>
+> To remove data validation in Google Sheets, right-click on a cell or column, select `Data validation…` and press `Remove validation`.
 
 **Q:** How do I mark an IV as even/odd?
 
