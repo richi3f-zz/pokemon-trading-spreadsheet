@@ -14,6 +14,23 @@ const POKEMON_WITH_GENDER_DIFFERENCES = [3,12,19,20,25,26,29,32,41,42,44,45,64,6
 const TAPUS = [785,786,787,788];
 const LEGENDS = [150,151,249,250,251,382,383,384,385,386,483,484,487,489,490,491,492,493,494,643,644,646,647,648,649,716,717,718,719,720,721,789,790,791,792,800,801,802];
 const SUBLEGENDS = [144,145,146,243,244,245,377,378,379,380,381,480,481,482,485,486,488,638,639,640,641,642,645,772,773,785,786,787,788,793,794,795,796,797,798,799];
+const EGG_GROUPS = {
+    "Monster": [1,2,3,4,5,6,7,8,9,29,32,33,34,79,80,104,105,108,111,112,115,131,143,152,153,154,158,159,160,179,180,181,199,246,247,248,252,253,254,258,259,260,293,294,295,304,305,306,357,387,388,389,408,409,410,411,443,444,445,459,460,463,464,610,611,612,621,694,695,696,697,698,699,712,713,757,758,776,780],
+    "Water 1" : [7,8,9,54,55,60,61,62,79,80,86,87,116,117,131,138,139,140,141,147,148,149,158,159,160,183,184,186,194,195,199,222,223,224,225,226,230,258,259,260,270,271,272,278,279,283,284,341,342,349,350,363,364,365,366,367,368,369,393,394,395,399,400,418,419,422,423,489,490,535,536,537,564,565,580,581,594,618,656,657,658,686,687,690,691,692,693,728,729,730,747,748,751,752,771],
+    "Bug" : [10,11,12,13,14,15,46,47,48,49,123,127,165,166,167,168,193,204,205,207,212,213,214,265,266,267,268,269,283,284,290,291,313,314,328,329,330,401,402,412,413,414,415,416,451,452,469,472,540,541,542,543,544,545,557,558,588,589,595,596,616,617,632,636,637,664,665,666,736,737,738,742,743,751,752,767,768],
+    "Flying" : [16,17,18,21,22,41,42,83,84,85,142,163,164,169,176,177,178,198,227,276,277,278,279,333,334,396,397,398,430,441,468,519,520,521,527,528,561,566,567,580,581,627,628,629,630,661,662,663,714,715,722,723,724,731,732,733,741],
+    "Field" : [19,20,23,24,25,26,27,28,29,32,33,34,37,38,50,51,52,53,54,55,56,57,58,59,77,78,83,86,87,111,112,128,133,134,135,136,155,156,157,161,162,179,180,181,190,194,195,196,197,203,206,209,210,215,216,217,220,221,225,228,229,231,232,234,235,241,255,256,257,261,262,263,264,273,274,275,287,288,289,293,294,295,300,301,303,309,310,320,321,322,323,324,325,326,327,335,336,352,359,363,364,365,390,391,392,393,394,395,399,400,403,404,405,417,418,419,424,427,428,431,432,434,435,448,449,450,461,464,470,471,473,495,496,497,498,499,500,501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,516,517,518,522,523,527,528,529,530,551,552,553,554,555,559,560,570,571,572,573,585,586,587,613,614,619,620,626,631,650,651,652,653,654,655,659,660,667,668,672,673,674,675,676,677,678,700,702,725,726,727,728,729,730,734,735,744,745,749,750,759,760,765,766,775,777],
+    "Fairy" : [25,26,35,36,39,40,113,176,183,184,187,188,189,209,210,242,285,286,300,301,303,311,312,315,351,361,362,407,417,420,421,468,478,489,490,531,546,547,669,670,671,682,683,684,685,702,703,742,743,777],
+    "Grass" : [1,2,3,43,44,45,46,47,69,70,71,102,103,114,152,153,154,182,187,188,189,191,192,270,271,272,273,274,275,285,286,315,331,332,357,387,388,389,407,420,421,455,459,460,465,495,496,497,546,547,548,549,556,590,591,597,598,708,709,753,754,755,756,761,762,763,764],
+    "Human-Like" : [63,64,65,66,67,68,96,97,106,107,122,124,125,126,237,296,297,302,307,308,313,314,327,331,332,390,391,392,427,428,448,453,454,466,467,532,533,534,538,539,574,575,576,605,606,619,620,624,625,674,675,701],
+    "Water 3" : [72,73,90,91,98,99,120,121,138,139,140,141,222,341,342,345,346,347,348,451,452,564,565,566,567,688,689,692,693,739,740,767,768],
+    "Mineral" : [74,75,76,81,82,95,100,101,137,185,208,233,292,299,337,338,343,344,361,362,374,375,376,436,437,462,474,476,478,524,525,526,557,558,562,563,568,569,582,583,584,597,598,599,600,601,615,622,623,679,680,681,703,707,774,781],
+    "Amorphous" : [88,89,92,93,94,109,110,200,202,218,219,280,281,282,316,317,351,353,354,355,356,358,422,423,425,426,429,442,475,477,479,562,563,577,578,579,592,593,602,603,604,607,608,609,618,708,709,710,711,769,770,778],
+    "Water 2" : [118,119,129,130,170,171,211,223,224,318,319,320,321,339,340,369,370,456,457,550,594,686,687,746,779],
+    "Ditto" : [132],
+    "Dragon" : [4,5,6,23,24,116,117,129,130,147,148,149,230,252,253,254,333,334,336,349,350,371,372,373,443,444,445,559,560,610,611,612,621,633,634,635,690,691,694,695,696,697,704,705,706,757,758,776,780,782,783,784],
+    "Undiscovered" : [30,31,144,145,146,150,151,172,173,174,175,201,236,238,239,240,243,244,245,249,250,251,298,360,377,378,379,380,381,382,383,384,385,386,406,433,438,439,440,446,447,458,480,481,482,483,484,485,486,487,488,491,492,493,494,638,639,640,641,642,643,644,645,646,647,648,649,716,717,718,719,720,721,772,773,785,786,787,788,789,790,791,792,793,794,795,796,797,798,799,800,801,802]
+};
 const HIDDEN_ABILITIES = {
     "Lightning Rod": [25,26,118,119,172,311],
     "Sheer Force": [31,34,98,99,128,158,159,160,208,296,297,303,328,371,408,409,645,733],
@@ -170,6 +187,7 @@ const ALOLAN_HIDDEN_ABILITIES = {
     "Harvest": [103],
     "Rock Head": [105]
 };
+const POKE_BALLS = ["Great Ball","Ultra Ball","Master Ball","Safari Ball","Level Ball","Lure Ball","Moon Ball","Friend Ball","Love Ball","Heavy Ball","Fast Ball","Sport Ball","Premier Ball","Repeat Ball","Timer Ball","Nest Ball","Net Ball","Dive Ball","Luxury Ball","Heal Ball","Quick Ball","Dusk Ball","Cherish Ball","Dream Ball","Beast Ball"];
 const TAB_NAMES = { "FT": "For Trade", "LF": "Looking For", "NFT": "Not For Trade", "?": "Other" };
 // Stat Attributes object, used for IVs & EVs
 var StatAttributes = function() {
@@ -305,7 +323,7 @@ function getSpriteClass(pokemon) {
         }
     }
     cssClass = cssClass.toLowerCase().replace(' ', '_').replace('\'', '').replace('.', '').replace(':', '').replace('%', '');
-    return cssClass.toLowerCase();
+    return cssClass
 }
 function getModelUrl(dexNo, spriteClass, gender, isShiny) {
     var modelUrl = "http://www.pkparaiso.com/imagenes/";
@@ -344,7 +362,11 @@ function getTags(pokemon) {
     if (pokemon.isShiny) tags.push("shiny");
     if (LEGENDS.indexOf(pokemon.dexNo) > -1) tags.push("legend");
     if (SUBLEGENDS.indexOf(pokemon.dexNo) > -1) tags.push("sublegend");
-    for (i = 0; i < pokemon.balls.length; i++) {
+    if (["Electric", "Fighting", "Fire", "Grass", "Ground", "Ice", "Rock", "Water"].indexOf(pokemon.hiddenPower) > -1) tags.push("hidden-power");
+    Object.keys(EGG_GROUPS).forEach(function(egg_group) {
+        if (EGG_GROUPS[egg_group].indexOf(pokemon.dexNo) > -1) tags.push("egg-group-" + egg_group.toLowerCase().replace(' ', ''));
+    });
+    for (var i = 0; i < pokemon.balls.length; i++) {
         tags.push(pokemon.balls[i].toLowerCase().replace(' ', '-').replace('é', 'e'));
     }
     return tags.join(' ');
@@ -382,9 +404,15 @@ function filterPokemon() {
     $("#ball-filter option:selected").each(function() {
         balls[i++] = "." + $(this).val();
     });
+    // get selected egg groups
+    var eggGroups = []; i = 0;
+    $("#egg-group-filter option:selected").each(function() {
+        eggGroups[i++] = "." + $(this).val();
+    });
     // get misc filters
     var showOnlyBabyPokemon = $("#misc-filter [value='baby']:selected").length > 0;
     var showOnlyPokemonWithHiddenAbility = $("#misc-filter [value='hidden-ability']:selected").length > 0;
+    var showOnlyPokemonWithViableHiddenPower = $("#misc-filter [value='hidden-power']:selected").length > 0;
     var showOnlyShinyPokemon = $("#misc-filter [value='shiny']:selected").length > 0;
     var showOnlyLegends = $("#misc-filter [value='legend']:selected").length > 0;
     var showOnlySubLegends = $("#misc-filter [value='sublegend']:selected").length > 0;
@@ -396,10 +424,11 @@ function filterPokemon() {
         if (name.indexOf(query) == -1) return;
         if (showOnlyBabyPokemon && !$this.hasClass("baby")) return;
         if (showOnlyPokemonWithHiddenAbility && !$this.hasClass("hidden-ability")) return;
+        if (showOnlyPokemonWithViableHiddenPower && !$this.hasClass("hidden-power")) return;
         if (showOnlyShinyPokemon && !$this.hasClass("shiny")) return;
         if (showOnlyLegends && !$this.hasClass("legend")) return;
         if (showOnlySubLegends && !$this.hasClass("sublegend")) return;
-        if ($this.is(gens.join(',')) && $this.is(ratios.join(',')) && $this.is(balls.join(','))) {
+        if ($this.is(gens.join(',')) && $this.is(ratios.join(',')) && $this.is(balls.join(',')) && $this.is(eggGroups.join(','))) {
             $this.removeClass("filtered");
         }
     });
@@ -426,29 +455,20 @@ function getValue(field) {
     if (field) return field.$t;
     return undefined;
 }
+function tryGetValue(entry, whitelist) {
+    for (var i = 0; i < whitelist.length; i++) {
+        var field = "gsx$" + whitelist[i];
+        if (entry[field] && entry[field].$t) return entry[field].$t
+    }
+    return undefined;
+}
 function isInBlacklist(title) {
     var blacklist = ["template", "config", "item", "database", "!:"];
     title = title.toLowerCase();
-    for (i = 0; i < blacklist.length; i++) {
-        if (title.indexOf(blacklist[i]) > -1) {
-            return true;
-        }
+    for (var i = 0; i < blacklist.length; i++) {
+        if (title.indexOf(blacklist[i]) > -1) return true;
     }
     return title == "db";
-}
-function sheetIsForIndividualPokemon(entry) {
-    return entry.gsx$nickname ||
-        entry.gsx$ot ||
-        entry.gsx$tid ||
-        entry.gsx$lv ||
-        entry.gsx$hpev ||
-        entry.gsx$atkev ||
-        entry.gsx$defev ||
-        entry.gsx$spaev ||
-        entry.gsx$spdev ||
-        entry.gsx$speev ||
-        entry.gsx$ball ||
-        entry.gsx$lang ? true : false;
 }
 function disableOption(value) {
     var $input = $("input[value='" + value + "']");
@@ -505,8 +525,14 @@ function populateModal($this) {
     // Egg Moves
     var eggMoves = $this.find(".egg-moves").text().split(', ');
     if (eggMoves[0]) {
-        for (i = 0; i < eggMoves.length; i++) {
-            $("#pokemon-info ul").append("<li>" + eggMoves[i]);
+        for (var i = 0; i < eggMoves.length; i++) {
+            $("#pokemon-info ul.egg-moves").append("<li>" + eggMoves[i]);
+        }
+    }
+    var moves = $this.find(".moves").text().split(', ');
+    if (moves[0]) {
+        for (var i = 0; i < moves.length; i++) {
+            $("#pokemon-info ul.moves").append("<li>" + moves[i]);
         }
     }
     // Poké Ball
@@ -524,7 +550,7 @@ function displayPokemon(){
     $.getJSON(getWorksheetUrl(spreadsheetId, worksheetId), function(data) {
         var entry = data.feed.entry;
         if (entry && entry[0]) {
-            isForIndividualPokemon = sheetIsForIndividualPokemon(entry[0]);
+            isForIndividualPokemon = tryGetValue(entry[0], ["nickname","ot","tid","level","lv","lvl","hpev","atkev","defev","spaev","spdev","speev","lang","language"]);
         }
         var count = 0;
         $(entry).each(function(){
@@ -548,12 +574,12 @@ function displayPokemon(){
                 getValue(this.gsx$move4)
                 ].filter(function(e){return e;});
             pokemon.eggMoves = [
-                getValue(this.gsx$eggmove1),
-                getValue(this.gsx$eggmove2),
-                getValue(this.gsx$eggmove3),
-                getValue(this.gsx$eggmove4)
+                tryGetValue(this, ["eggmove1", "relearnmove1"]),
+                tryGetValue(this, ["eggmove2", "relearnmove2"]),
+                tryGetValue(this, ["eggmove3", "relearnmove3"]),
+                tryGetValue(this, ["eggmove4", "relearnmove4"])
                 ].filter(function(e){return e;});
-            pokemon.gender = getValue(this.gsx$sex);
+            pokemon.gender = tryGetValue(this, ["sex", "gender"]);
             switch (pokemon.genderRatio()) {
                 case "gender-ratio-1-0":
                     pokemon.gender = 'F';
@@ -570,45 +596,53 @@ function displayPokemon(){
             pokemon.ot = getValue(this.gsx$ot);
             pokemon.tid = getValue(this.gsx$tid);
             if (pokemon.tid) pokemon.tid = ("000000" + pokemon.tid).slice(-6);
-            pokemon.level = getValue(this.gsx$lv);
+            pokemon.level = tryGetValue(this, ["level", "lvl", "lv"]);
             pokemon.evs.hp = getValue(this.gsx$hpev);
             pokemon.evs.atk = getValue(this.gsx$atkev);
             pokemon.evs.def = getValue(this.gsx$defev);
             pokemon.evs.spa = getValue(this.gsx$spaev);
             pokemon.evs.spd = getValue(this.gsx$spdev);
             pokemon.evs.spe = getValue(this.gsx$speev);
-            if (getValue(this.gsx$ball)) {
-                pokemon.balls.push(getValue(this.gsx$ball));
+            pokemon.language = tryGetValue(this, ["language", "lang"]);
+            pokemon.notes = tryGetValue(this, ["note", "notes", "comment", "comments"]);
+            for (var i = 0; i < POKE_BALLS.length; i++) {
+                var pokeBall = POKE_BALLS[i].toLowerCase();
+                if (tryGetValue(this, [pokeBall.replace(' ', ''), pokeBall.slice(0, -5)])) pokemon.balls.push(pokeBall);
             }
-            pokemon.language = getValue(this.gsx$lang);
-            pokemon.notes = getValue(this.gsx$notes);
-            if (this.gsx$_dcgjs) pokemon.balls.push("Poké Ball");
-            if (this.gsx$_ddv49) pokemon.balls.push("Great Ball");
-            if (this.gsx$_d415a) pokemon.balls.push("Ultra Ball");
-            if (this.gsx$_d5fpr) pokemon.balls.push("Master Ball");
-            if (this.gsx$_d6ua4) pokemon.balls.push("Safari Ball");
-            if (this.gsx$_d88ul) pokemon.balls.push("Level Ball");
-            if (this.gsx$_dkvya) pokemon.balls.push("Lure Ball");
-            if (this.gsx$_dmair) pokemon.balls.push("Moon Ball");
-            if (this.gsx$_dnp34) pokemon.balls.push("Friend Ball");
-            if (this.gsx$_dp3nl) pokemon.balls.push("Love Ball");
-            if (this.gsx$_df9om) pokemon.balls.push("Heavy Ball");
-            if (this.gsx$_dgo93) pokemon.balls.push("Fast Ball");
-            if (this.gsx$_di2tg) pokemon.balls.push("Sport Ball");
-            if (this.gsx$_djhdx) pokemon.balls.push("Premier Ball");
-            if (this.gsx$_dw4je) pokemon.balls.push("Repeat Ball");
-            if (this.gsx$_dxj3v) pokemon.balls.push("Timer Ball");
-            if (this.gsx$_dyxo8) pokemon.balls.push("Nest Ball");
-            if (this.gsx$_e0c8p) pokemon.balls.push("Net Ball");
-            if (this.gsx$_dqi9q) pokemon.balls.push("Dive Ball");
-            if (this.gsx$_drwu7) pokemon.balls.push("Luxury Ball");
-            if (this.gsx$_dtbek) pokemon.balls.push("Heal Ball");
-            if (this.gsx$_dupz1) pokemon.balls.push("Quick Ball");
-            if (this.gsx$_e7d2q) pokemon.balls.push("Dusk Ball");
-            if (this.gsx$_e8rn7) pokemon.balls.push("Cherish Ball");
-            if (this.gsx$_ea67k) pokemon.balls.push("Dream Ball");
-            if (this.gsx$_ebks1) pokemon.balls.push("Beast Ball");
-            
+            if (pokemon.balls.length < 1) {
+                if (getValue(this.gsx$_ddv49)) pokemon.balls.push("Great Ball");
+                if (getValue(this.gsx$_d415a)) pokemon.balls.push("Ultra Ball");
+                if (getValue(this.gsx$_d5fpr)) pokemon.balls.push("Master Ball");
+                if (getValue(this.gsx$_d6ua4)) pokemon.balls.push("Safari Ball");
+                if (getValue(this.gsx$_d88ul)) pokemon.balls.push("Level Ball");
+                if (getValue(this.gsx$_dkvya)) pokemon.balls.push("Lure Ball");
+                if (getValue(this.gsx$_dmair)) pokemon.balls.push("Moon Ball");
+                if (getValue(this.gsx$_dnp34)) pokemon.balls.push("Friend Ball");
+                if (getValue(this.gsx$_dp3nl)) pokemon.balls.push("Love Ball");
+                if (getValue(this.gsx$_df9om)) pokemon.balls.push("Heavy Ball");
+                if (getValue(this.gsx$_dgo93)) pokemon.balls.push("Fast Ball");
+                if (getValue(this.gsx$_di2tg)) pokemon.balls.push("Sport Ball");
+                if (getValue(this.gsx$_djhdx)) pokemon.balls.push("Premier Ball");
+                if (getValue(this.gsx$_dw4je)) pokemon.balls.push("Repeat Ball");
+                if (getValue(this.gsx$_dxj3v)) pokemon.balls.push("Timer Ball");
+                if (getValue(this.gsx$_dyxo8)) pokemon.balls.push("Nest Ball");
+                if (getValue(this.gsx$_e0c8p)) pokemon.balls.push("Net Ball");
+                if (getValue(this.gsx$_dqi9q)) pokemon.balls.push("Dive Ball");
+                if (getValue(this.gsx$_drwu7)) pokemon.balls.push("Luxury Ball");
+                if (getValue(this.gsx$_dtbek)) pokemon.balls.push("Heal Ball");
+                if (getValue(this.gsx$_dupz1)) pokemon.balls.push("Quick Ball");
+                if (getValue(this.gsx$_e7d2q)) pokemon.balls.push("Dusk Ball");
+                if (getValue(this.gsx$_e8rn7)) pokemon.balls.push("Cherish Ball");
+                if (getValue(this.gsx$_ea67k)) pokemon.balls.push("Dream Ball");
+                if (getValue(this.gsx$_ebks1)) pokemon.balls.push("Beast Ball");
+            }
+            var ball = tryGetValue(this, ["ball", "pokeball", "pokéball"]);
+            if (ball && ball.length > 1 && pokemon.balls.length < 1) {
+                pokemon.balls.push(ball);
+            } else if (tryGetValue(this, ["poke", "poké", "pokeball", "pokéball", "_dcgjs"])) {
+                pokemon.balls.push("Poké Ball");
+            }
+
             var row = "<tr class=\"" + getTags(pokemon) + "\"" + getData(pokemon) + " data-id=\"" + count + "\">";
             // Sprite
             row += "<td class=\"sprite\"><span class=\"menu-sprite " + getSpriteClass(pokemon) + "\" title=\"" + pokemon.name + "\">" + pokemon.dexNo + "</span></td>";
@@ -632,13 +666,13 @@ function displayPokemon(){
             var statAttributeText;
             var formattedIvs = [];
             var formattedEvs = [];
-            for (i = 0; i < BATTLE_STATS.length; i++) {
+            for (var i = 0; i < BATTLE_STATS.length; i++) {
                 // IVs
                 statAttributeValue = pokemon.ivs[BATTLE_STATS_ABBR[i].toLowerCase()];
                 statAttributeText  = '';
                 if (isNaN(statAttributeValue)) {
                     if (statAttributeValue.endsWith('*')) {
-                        statAttributeText = "<abbr title=\"Hypertrained! This " + BATTLE_STATS[i] + " IV originally was " + statAttributeValue.slice(0, -1) + ".\"";
+                        statAttributeText = "<abbr title=\"Hyper trained! This " + BATTLE_STATS[i] + " IV originally was " + statAttributeValue.slice(0, -1) + ".\"";
                         statAttributeValue = "HT";
                     } else {
                         switch (statAttributeValue.toLowerCase()) {
@@ -651,7 +685,7 @@ function displayPokemon(){
                                 statAttributeText = "<abbr title=\"Any odd IV\"";
                                 break;
                             case "ht":
-                                statAttributeText = "<abbr title=\"Hypertrained!\"";
+                                statAttributeText = "<abbr title=\"Hyper trained!\"";
                                 break;
                             default:
                                 statAttributeText = "<abbr title=\"Any IV\"";
@@ -686,12 +720,13 @@ function displayPokemon(){
             } else {
                 row += "???";
             }
-            row += "</td>";   
+            row += "</td>";
             // Egg Moves
-            row += "<td class=\"egg-moves\">" + pokemon.eggMoves.join(', ') + "</td>";       
+            row += "<td class=\"moves" +  (pokemon.eggMoves.length > 1 || !isForIndividualPokemon ? " hidden" : '') + "\">" + pokemon.moves.join(', ') + "</td>";      
+            row += "<td class=\"egg-moves" +  (pokemon.eggMoves.length === 0 && isForIndividualPokemon ? " hidden" : '') + "\">" + pokemon.eggMoves.join(', ') + "</td>";       
             // Poké Balls
             row += "<td class=\"poke-balls rows" + Math.ceil(pokemon.balls.length / 3) + "\">";
-            for (i = 0; i < pokemon.balls.length; i++) {
+            for (var i = 0; i < pokemon.balls.length; i++) {
                 row += "<span title=\"" + pokemon.balls[i] + "\"";
                 row += " class=\"item-sprite " + pokemon.balls[i].toLowerCase().replace(' ', '-').replace('é', 'e');
                 row += " row" + Math.ceil((i + 1)/ 3) + "\">";
