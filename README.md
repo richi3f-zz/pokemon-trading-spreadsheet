@@ -15,14 +15,14 @@ A script made to display Pokémon trading information stored in Google Sheets
 ### Preparation
 
 1. Create a copy of this [spreadsheet](https://docs.google.com/spreadsheets/d/1djWEDpw4w0aLrurcnxkLupkzfB1Gw0_SHB8zZWY3Sts/edit?usp=sharing) (`File > Make a Copy…`).
-  * Be careful not to edit the 1st row (headers) of any sheet! 
+  * Be careful with the 1st row (headers) of each sheet! Read the [FAQ](https://github.com/richi3f/pokemon-trading-spreadsheet/blob/master/FAQ.md#faq) before renaming or removing any column.
   * Name your sheets in the following format "FT:Name of my sheet", "LF:Name of another sheet" or "NFT:Yet another sheet". They will be sorted by the script.
   * You may duplicate the "TEMPLATE" sheets (up to a maximum of 8 tabs).
   * Do not move or rename the "CONFIG" or "DB" sheets.
-2. Fill your copy of the spreadsheet with your Pokémon.
+2. Fill in "CONFIG" tab and start adding your Pokémon.
 3. Make your spreadsheet public (`File > Publish to the web…`).
 
-See [Demo](#demo) below if you're unsure of how to fill the spreadsheet and read the [FAQ](https://github.com/richi3f/pokemon-trading-spreadsheet/blob/master/FAQ.md#faq) to learn some cool tricks.
+See [Demo](#demo) below if you're unsure of how to fill the spreadsheet and read the [**FAQ**](https://github.com/richi3f/pokemon-trading-spreadsheet/blob/master/FAQ.md#faq) to learn some cool tricks.
 
 ### Method 1: Beginner
 
