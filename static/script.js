@@ -642,6 +642,7 @@ function displayPokemon(){
             } else if (tryGetValue(this, ["poke", "poké", "pokeball", "pokéball", "_dcgjs"])) {
                 pokemon.balls.push("Poké Ball");
             }
+            if (pokemon.balls.length === 0) pokemon.balls.push("Unknown");
 
             var row = "<tr class=\"" + getTags(pokemon) + "\"" + getData(pokemon) + " data-id=\"" + count + "\">";
             // Sprite
@@ -929,9 +930,9 @@ $(document).ready(function() {
             });
         });
         // copy reddit table
-        var clipboard = new Clipboard("#copy2reddit a");
+        var clipboard = new Clipboard("#copy2reddit [data-clipboard-target]");
         clipboard.on("success", function() {
-            var $button = $("#copy2reddit a");
+            var $button = $("#copy2reddit [data-clipboard-target]");
             $button.text("Copied!");
             setTimeout(function() {
                 $button.text("Copy");
