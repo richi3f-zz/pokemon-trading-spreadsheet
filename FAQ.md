@@ -29,7 +29,7 @@
 >
 > If you're using the "Valuable Pokémon" tab template, you may remove any column.
 >
-> If you're using the "Breedables" tab template, remove a column will mess up with the Poké Balls. The reason for this is that since the headers are images instead of text the script must reference them by position. A workaround is to replace the images with the name of the Poké Ball (e.g., "Great", "Dive", "Lure", Love", etc.). This should allow you to remove columns you don't need.
+> If you're using the "Breedables" tab template, removing a column will mess up with the Poké Balls. The reason for this is that since the headers are images instead of text the script must reference them by position. A workaround is to replace the images with the name of the Poké Ball (e.g., "Great", "Dive", "Lure", Love", etc.). This should allow you to remove columns you don't need.
 
 **Q:** Can I do away with the drop-down menu (or input custom text in the cells)?
 
@@ -39,9 +39,9 @@
 
 **Q:** How do I mark an IV as even/odd?
 
-> For odd IVs, you can write "2x+1" or "O." For even IVs, input "2x" or "E."
+> For odd IVs, you can write "2x+1," "odd" or "O." For even IVs, input "2x," "even" or "E." Case-insensitive
 
-**Q:** Is there a way to mark Hyper Training?
+**Q:** Is there a way to mark a Hyper trained stat?
 
 > Yes! When filling your Pokémon's IVs, you may write "HT" or (if you want to be more specific) a number followed by "\*" (e.g., "27\*").
 
