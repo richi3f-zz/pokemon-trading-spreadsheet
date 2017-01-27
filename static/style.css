@@ -267,13 +267,14 @@ table thead tr {
 
 thead th[rowspan], thead th[class] { border-bottom: 0.25em solid transparent; }
 
-thead th[rowspan] { padding-top: 0.625em; }
-thead th.hp { border-bottom-color: #77f296; }
-thead th.atk { border-bottom-color: #f4e585; }
-thead th.def { border-bottom-color: #ffb17a; }
-thead th.spa { border-bottom-color: #88dee3; }
-thead th.spd { border-bottom-color: #859fff; }
-thead th.spe { border-bottom-color: #d880ff; }
+thead th[rowspan] { padding-top:0.625em; }
+thead th.hp { border-bottom-color:#77f296; }
+thead th.atk { border-bottom-color:#f4e585; }
+thead th.def { border-bottom-color:#ffb17a; }
+thead th.spa { border-bottom-color:#88dee3; }
+thead th.spd { border-bottom-color:#859fff; }
+thead th.spe { border-bottom-color:#d880ff; }
+thead th.hidden-power { font-size:0.75em; }
 
 td, th {
     text-align: center;
@@ -287,9 +288,10 @@ td {
 
 td.sprite, td.name, td.hp, td.atk, td.def, td.spa, td.spd, td.spe { white-space:nowrap }
 td.hp, td.atk, td.def, td.spa, td.spd, td.spe { width:2.625em }
+td.hp.rows2, td.atk.rows2, td.def.rows2, td.spa.rows2, td.spd.rows2, td.spe.rows2 { font-size:0.75em;line-height:1.45 }
 td.poke-balls { width:6.625em }
 td.hidden-power { width:3.125em }
-td.name, td.nature, td.ability, td.moves, td.egg-moves { text-align:left }
+td.name, td.trainer, td.nature, td.ability, td.moves, td.egg-moves { text-align:left }
 td.moves,td.egg-moves { line-height:1.45 }
 
 td.sprite{width:3.5em;max-width:3.5em}
@@ -300,7 +302,7 @@ td.sprite{width:3.5em;max-width:3.5em}
 .gender.female { color:#f6807a }
 .gender.male { color:#499fff }
 
-td.name .form,td.name .nickname { font-size:0.75em }
+td.name .form,td.name .nickname,td.trainer .tid { font-size:0.75em }
 
 tr.shiny td.name::before,
 #pokemon-info.shiny .name::before{
@@ -1175,8 +1177,8 @@ tr:hover .menu-sprite.greninja-ash{background-position:-270px -900px}
 .menu-sprite.vivillon-continental{background-position:-750px -720px}
 .menu-sprite.vivillon-elegant{background-position:-810px -720px}
 .menu-sprite.vivillon-garden{background-position:-840px -720px}
-.menu-sprite.vivillon-high-plains{background-position:-870px -720px}
-.menu-sprite.vivillon-icy-snow{background-position:0 -750px}
+.menu-sprite.vivillon-high_plains{background-position:-870px -720px}
+.menu-sprite.vivillon-icy_snow{background-position:0 -750px}
 .menu-sprite.vivillon-jungle{background-position:-30px -750px}
 .menu-sprite.vivillon-marine{background-position:-60px -750px}
 .menu-sprite.vivillon-modern{background-position:-90px -750px}
@@ -1188,7 +1190,7 @@ tr:hover .menu-sprite.greninja-ash{background-position:-270px -900px}
 .menu-sprite.vivillon-savanna{background-position:-300px -750px}
 .menu-sprite.vivillon-sun{background-position:-330px -750px}
 .menu-sprite.vivillon-tundra{background-position:-360px -750px}
-.menu-sprite.vivillon-poke-ball{background-position:-180px -750px}
+.menu-sprite.vivillon-poke_ball{background-position:-180px -750px}
 .menu-sprite.vivillon-fancy{background-position:-780px -720px}
 .menu-sprite.litleo{background-position:-390px -750px}
 .menu-sprite.pyroar{background-position:-420px -750px}
@@ -1620,6 +1622,47 @@ body.shiny tbody tr {
     margin-left:-14em;
     margin-top:-10.1875em
 }
+
+
+#pokemon-info .carousel {
+    display:block;
+    width:3.0625rem;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:-3.0625rem;
+    text-indent:-999em
+}
+#pokemon-info .carousel.next{
+    left:auto;
+    right:-3.5625rem;
+}
+#pokemon-info .carousel a{
+    display:table;
+    box-sizing:border-box;
+    height:100%;
+    padding:0 0 0.5em;
+    text-indent:-999em
+}
+#pokemon-info .carousel a:hover{
+    text-decoration:none
+}
+#pokemon-info .carousel a::before{
+    content:"\0025c0";
+    color:#dedede;
+    text-indent:0;
+    font-size:3em;
+    display:table-cell;
+    vertical-align:middle
+}
+#pokemon-info .carousel.next a::before{
+    content:"\0025b6"
+}
+#pokemon-info .carousel a:hover::before{
+    color:#4d6ad8;
+    text-shadow: 0 0 1em #f0f0f0
+}
+
 #pokemon-info h1 {    
     color: #333;
     font-size: 1em;
@@ -1691,6 +1734,9 @@ body.shiny tbody tr {
 #pokemon-info .notes {
     font-size:0.75em;
     margin:1.667em 0 0
+}
+#pokemon-info .notes a {
+    color:#4d6ad8
 }
 
 #copy2reddit{
