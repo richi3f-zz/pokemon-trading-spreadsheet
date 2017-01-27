@@ -585,7 +585,6 @@ function displayPokemon(){
             pokemon.dexNo = Number(getValue(this.gsx$dexno));
             pokemon.name = getValue(this.gsx$name);
             if (!pokemon.dexNo || !pokemon.name) {
-                alert("it's happening");
                 return true;
             }
             pokemon.form = getValue(this.gsx$form);
