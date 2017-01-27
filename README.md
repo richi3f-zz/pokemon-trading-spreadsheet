@@ -4,10 +4,10 @@ A script made to display Pokémon trading information stored in Google Sheets
 
 ## Features
 
-* Display breedables, valuable Pokémon (e.g., shinies or RNGs), wants or your NFT collection
+* Display breedables, valuable Pokémon (e.g., shinies or RNGs), or your NFT collection
 * Faster loading than sharing a Google Sheets document
-* Filter Pokémon by generation, gender ratio, Poké Ball, shinyness, etc.
-* Search for Pokémon (thanks to [Armienn](https://github.com/Armienn))
+* Filter Pokémon by generation, gender ratio, Poké Ball, Egg Group, shinyness, etc.
+* Search for Pokémon by name (thanks to [Armienn](https://github.com/Armienn))
 * Generate a Reddit table to share just the Pokémon you want
 
 ## How to Use
@@ -64,6 +64,7 @@ If there's been an update, you will need to replace files on your end with the n
 
 ## Changelog
 
+* `2017.1.27.0` EVs (if available) are now displayed below IVs. I have also added Previous/Next buttons when a Pokémon's additional is displayed. Arrow and `HJKL` keys may also be used for navigation. The "Notes" field may also hold links in the following format: `[link text](http://github.com)`. Reddit usernames and subs are also automatically detected and converted into links.
 * `2017.1.20.0` Made compatible with [Armienn's project](https://armienn.github.io/pokemon/?1P9wMb9e0YbhcOua9RQeRCJjllf_L77uV-7i4Q0Yor0o). Added an Egg Group filter and the possibility of renaming some columns. Also, tabs for valuable Pokémon may now store Moves and Egg Moves.
 * `2017.1.15.0` Added [Legend](https://twitter.com/SciresM/status/799324958770032641)/[Sub-Legend](https://twitter.com/SciresM/status/799322666079551488) filter, Reddit table, and support for Hypertrained stats. Other undocumented changes I'm probably forgetting about right now were rolled in too.
 * `2017.1.6.0` Tabs without a prefix ("FT:", "LF:", or "NFT:") are now supported.
