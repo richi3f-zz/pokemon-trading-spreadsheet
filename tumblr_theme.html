@@ -6,7 +6,7 @@
     <link rel="shortcut icon" href="{Favicon}">
     <title>{Title}</title>
     <link rel="stylesheet" href="http://static.tumblr.com/28amrxm/I8Soj63cz/bootstrap.min.css">
-    <link rel="stylesheet" href="http://static.tumblr.com/28amrxm/KGLok2orn/style.css">
+    <link rel="stylesheet" href="http://static.tumblr.com/28amrxm/Zulokfj0u/style.css">
     
     <meta name="text:Spreadsheet ID" content="">
     <meta name="text:IGN" content="">
@@ -29,6 +29,8 @@
     h1 a:hover, h1 a:focus { color:{color:Header Link Hover} }
     nav ul li a { background-color:{color:Button};color:{color:Button Text} }
     nav ul li.current::after { border-top-color:{color:Button} }
+    #pokemon-info .notes a,
+    #pokemon-info .carousel a:hover::before{ color:{color:Button} }
     table { background-image:url("https://static.tumblr.com/28amrxm/gy9oj63g2/bg-td.gif") }
     table thead tr { background-image:url("https://static.tumblr.com/28amrxm/Ciloj63g4/bg-th.gif") }
     .menu-sprite{ background-image:url("https://static.tumblr.com/28amrxm/y5Zoj63gb/menusprites.png") }
@@ -137,9 +139,11 @@
             <select id="misc-filter" multiple="multiple">
                 <option value="baby">Baby Only</option>
                 <option value="hidden-ability">Hidden Ability Only</option>
+                <option value="hidden-power">Hidden Power Only</option>
                 <option value="shiny">Shiny Only</option>
                 <option value="legend">Legend Only</option>
                 <option value="sublegend">Sub-Legend Only</option>
+                <option value="allowed-on-vgc17">VGC17 Legal Only</option>
             </select>
         </div>
         <div class="filter">
@@ -151,6 +155,7 @@
         <thead>
             <tr>
                 <th class="name" colspan="2" rowspan="2">Pokémon</th>
+                <th class="trainer" rowspan="2"><abbr title="Original Trainer">OT</abbr></th>
                 <th class="nature" rowspan="2">Nature</th>
                 <th class="ability" rowspan="2">Ability</th>
                 <th class="ivs" colspan="6"><abbr title="Individual Values">IVs</abbr></th>
@@ -182,34 +187,37 @@
                 <option value="ivs">IVs</option>
                 <option value="evs">EVs</option>
                 <option value="egg-moves">Egg Moves</option>
-                <option value="poke-balls">Poké Balls</option>
+                <option value="poke-balls">Poké Ball(s)</option>
                 <option value="language">Language</option>
+                <option value="notes">Notes</option>
             </select>
             &nbsp;<a data-clipboard-target="#markdown">Copy</a>
         </div>
-        <div id="markdown"><!--
-            --><span class="line"><!--
-                --><span class="name">| Pokémon |</span>
+        <div id="markdown">
+            <span class="line">
+                <span class="name">| Pokémon |</span>
                 <span class="trainer"> OT/TID |</span>
                 <span class="nature"> Nature |</span>
                 <span class="ability"> Ability |</span>
                 <span class="ivs"> IVs |</span>
                 <span class="evs"> EVs |</span>
                 <span class="egg-moves"> Egg Moves |</span>
-                <span class="poke-balls"> Poké Balls |</span>
+                <span class="poke-balls"> Poké Ball |</span>
                 <span class="language"> Language |</span>
+                <span class="notes"> Notes |</span>
                 <br>
-            </span><!--
-            --><span class="line">
-                <span class="name">|---------|</span><!--
-                --><span class="trainer">--------|</span><!--
-                --><span class="nature">--------|</span><!--
-                --><span class="ability">---------|</span><!--
-                --><span class="ivs">:---:|</span><!--
-                --><span class="evs">:---:|</span><!--
-                --><span class="egg-moves">-----------|</span><!--
-                --><span class="poke-balls">------------|</span><!--
-                --><span class="language">:--------:|</span>
+            </span>
+            <span class="line">
+                <span class="name">|---------|</span>
+                <span class="trainer">--------|</span>
+                <span class="nature">--------|</span>
+                <span class="ability">---------|</span>
+                <span class="ivs">:---:|</span>
+                <span class="evs">:---:|</span>
+                <span class="egg-moves">-----------|</span>
+                <span class="poke-balls">-----------|</span>
+                <span class="language">:--------:|</span>
+                <span class="notes">:------|</span>
                 <br>
             </span>
         </div>
@@ -219,13 +227,14 @@
             © of <a href="http://twitter.com/richi3f">richi3f</a>, <time datetime="2017">2017</time><br>
             Bootstrap is © of Twitter, <time datetime="2017">2017</time><br>
             <a href="http://davidstutz.github.io/bootstrap-multiselect/">Bootstrap Multiselect</a> is © of <a href="http://davidstutz.de/">David Stutz</a>, <time datetime="2012">2012</time>-<time datetime="2014">2014</time><br>
-            Animated models extracted by <a href="http://www.pkparaiso.com/">Pokémon Paraíso</a><br>
             <a href="https://clipboardjs.com">Clipboard.js</a> is © of <a href="http://zenorocha.com">Zeno Rocha</a>, <time datetime="2015">2015</time>-<time datetime="2017">2017</time><br>
+            Animated models extracted by <a href="http://www.pkparaiso.com/">Pokémon Paraíso</a><br>
             Pokémon is © of Nintendo, <time datetime="1995">1995</time>-<time datetime="2017">2017</time>
         </p>
     </footer>
     <div id="modal" class="hidden">
         <div id="pokemon-info">
+            <div class="carousel prev"><a href="#" title="Previous">Previous</a></div>
             <figure></figure>
             <h1>
                 <span class="name"></span> <span class="gender"></span> <span class="level"></span>
@@ -247,6 +256,7 @@
             </ul>
             <ul class="egg-moves">
             </ul>
+            <div class="carousel next"><a href="#" title="Next">Next</a></div>
         </div>
     </div>
 </article>
@@ -261,7 +271,7 @@ var inGameName = "{text:IGN}";
 var contactUrl = "{text:Contact URL}";
 var trainerIconUrl = "{image:Trainer Icon}";
 </script>
-<script src="http://static.tumblr.com/28amrxm/yggok2p0s/script.js"></script>
+<script src="http://static.tumblr.com/28amrxm/Qciokfj25/script.js"></script>
 
 </body>
 </html>
