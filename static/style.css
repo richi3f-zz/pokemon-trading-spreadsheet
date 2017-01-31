@@ -1208,7 +1208,7 @@ tr:hover .menu-sprite.greninja-ash{background-position:-270px -900px}
 .menu-sprite.furfrou-star{background-position:-870px -750px}
 .menu-sprite.furfrou-pharaoh{background-position:0 -780px}
 .menu-sprite.furfrou-kabuki{background-position:-30px -780px}
-.menu-sprite.furfrou-la-reine{background-position:-60px -780px}
+.menu-sprite.furfrou-la_reine{background-position:-60px -780px}
 .menu-sprite.furfrou-matron{background-position:-90px -780px}
 .menu-sprite.furfrou-dandy{background-position:-120px -780px}
 .menu-sprite.furfrou-debutante{background-position:-150px -780px}
@@ -1485,7 +1485,7 @@ span.hidden-power{
 }
 
 @media screen and (max-width: 51.25em) {
-    .menu-sprite,.ivs, .hp, .atk, .def, .spa, .spd, .spe, .hidden-power {
+    .menu-sprite,.ivs, .hp, .atk, .def, .spa, .spd, .spe, th.hidden-power, td.hidden-power {
         display: none
     }
     
@@ -1501,7 +1501,7 @@ span.hidden-power{
 }
 
 @media screen and (max-width: 67.5em) {
-    .hidden-power {
+    th.hidden-power,td.hidden-power {
         display: none
     }
 }
