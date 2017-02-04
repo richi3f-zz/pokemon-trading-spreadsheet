@@ -1477,6 +1477,14 @@ span.hidden-power{
 .item-sprite.dream-ball{background-position:-416px -312px}
 .item-sprite.beast-ball{background-position:-312px -442px}
 
+.game-mark{
+    width:10px;height:10px;
+    background-image:url(gamemarks.png);
+}
+.game-mark.black-clover{background-position:-10px 0}
+.game-mark.vc{background-position:0 -10px}
+.game-mark.go{background-position:-10px -10px}
+
 /* Footer */
 [role="contentinfo"] {
     padding: 1.5em 0 0;
@@ -1729,6 +1737,12 @@ body.shiny tbody tr {
     line-height:1;
     position: absolute;
     top: 1em;
+    right: 1em;
+}
+#pokemon-info .game-mark{
+    position: absolute;
+    text-indent:-999em;
+    top: 2.5em;
     right: 1em;
 }
 #pokemon-info .notes {

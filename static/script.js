@@ -219,6 +219,7 @@ var Pokemon = function() {
     this.moves = [];
     this.eggMoves = [];
     this.balls = [];
+    this.gameMark = undefined;
     this.language = "";
     this.notes = "";
     this.genderRatio = function() {
@@ -302,17 +303,22 @@ function getSpriteClass(pokemon) {
             case "Ordinary Form":
             case "Meadow Pattern":
             case "Red Flower":
+            case "Natural Form":
             case "Average Size":
             case "Small Size":
             case "Large Size":
             case "Super Size":
             case "50% Forme":
+            case "Hoopa Confined":
             case "Baile Style":
             case "Midday Form":
             case "Meteor Form":
                 break;
             case "Ash-Greninja":
                 cssClass = "greninja-ash";
+                break;
+            case "Hoopa Unbound":
+                cssClass = "hoopa-unbound";
                 break;
             default:
                 cssClass += "-" + pokemon.form.substring(0, pokemon.form.lastIndexOf(" "));
@@ -383,6 +389,20 @@ function getData(pokemon) {
     });
     data += " data-generation=\"" + pokemon.generation() + "\"";
     return data;
+}
+function getGameMarkAsClass(gameMark) {
+    switch (gameMark) {
+        case "Blue Pentagon":
+            return "blue-pentagon";
+        case "Alola Symbol":
+        case "Black Clover":
+            return "black-clover";
+        case "Pokémon Go":
+            return "go";
+        case "Virtual Console":
+            return "vc";
+    }
+    return undefined;
 }
 function filterPokemon() {
     // hide all Pokémon
@@ -483,6 +503,7 @@ function clearModal() {
     $("#pokemon-info figure img").remove();
     $("#pokemon-info ul li").remove();
     $("#pokemon-info .notes").remove();
+    $("#pokemon-info .game-mark").remove();
     $("#pokemon-info .nature").next().attr("class", '');
     $("#pokemon-info").removeClass("shiny");
 }
@@ -535,9 +556,13 @@ function populateModal($this) {
     $pokemonInfo.find(".nature").next().text($this.data("nature")).addClass($this.data("nature").toLowerCase());
     var ability = $this.data("ability");
     $pokemonInfo.find(".ability").next().text(ability.endsWith('*') ? ability.slice(0,-1) : ability);
-    // Language
+    // Language & Game Mark
     var language = $this.data("language");
     $pokemonInfo.find(".language").text(language).attr("title", LANGUAGES[language]);
+    var gameMark = $this.data("gamemark");
+    if (gameMark) {
+        $("#pokemon-info").append("<div class=\"game-mark " + getGameMarkAsClass(gameMark) + "\" title=\"" + gameMark + "\">" + gameMark + "</p>");
+    }
     // IVs & EVs
     var statAttributes = $this.find(".ivs").html();
     $pokemonInfo.find(".ivs").next().html(statAttributes);
@@ -625,7 +650,6 @@ function displayPokemon(){
             pokemon.nickname = getValue(this.gsx$nickname);
             pokemon.ot = getValue(this.gsx$ot);
             pokemon.tid = getValue(this.gsx$tid);
-            if (pokemon.tid) pokemon.tid = ("000000" + pokemon.tid).slice(-6);
             pokemon.level = tryGetValue(this, ["level", "lvl", "lv"]);
             pokemon.evs.hp = getValue(this.gsx$hpev);
             pokemon.evs.atk = getValue(this.gsx$atkev);
@@ -633,6 +657,14 @@ function displayPokemon(){
             pokemon.evs.spa = getValue(this.gsx$spaev);
             pokemon.evs.spd = getValue(this.gsx$spdev);
             pokemon.evs.spe = getValue(this.gsx$speev);
+            pokemon.gameMark = tryGetValue(this, ["genmark", "generationmark", "gamemark"]);
+            if (pokemon.tid) {
+                if (pokemon.gameMark == "Alola Symbol" || pokemon.gameMark == "Black Clover") {
+                    pokemon.tid = ("000000" + pokemon.tid).slice(-6);
+                } else {
+                    pokemon.tid = ("00000" + pokemon.tid).slice(-5);
+                }
+            }
             pokemon.language = tryGetValue(this, ["language", "lang"]);
             pokemon.notes = tryGetValue(this, ["note", "notes", "comment", "comments"]);
             for (var i = 0; i < POKE_BALLS.length; i++) {
@@ -727,6 +759,15 @@ function displayPokemon(){
                             case "o":
                             case "odd":
                                 legend = "Odd " + stat + " IV";
+                                break;
+                            case "vg":
+                                legend = "Very Good (26-29) " + stat + " IV";
+                                break;
+                            case "pg":
+                                legend = "Pretty Good (16-25) " + stat + " IV";
+                                break;
+                            case "d":
+                                legend = "Decent (1-15) " + stat + " IV";
                                 break;
                             case "ht":
                                 legend = "Hyper trained " + stat + " IV!";
@@ -946,10 +987,10 @@ $(document).ready(function() {
         // read config worksheet if exists
         var entry = data.feed.entry[0];
         if (entry.gsx$ingamename) {
-            friendCode = entry.gsx$friendcode.$t || friendCode;
-            inGameName = entry.gsx$ingamename.$t || inGameName;
-            contactUrl = entry.gsx$contacturl.$t || contactUrl;
-            trainerIconUrl = entry.gsx$trainericonurl.$t || trainerIconUrl;
+            friendCode = getValue(entry.gsx$friendcode) || friendCode;
+            inGameName = getValue(entry.gsx$ingamename) || inGameName;
+            contactUrl = getValue(entry.gsx$contacturl) || contactUrl;
+            trainerIconUrl = getValue(entry.gsx$trainericonurl) || trainerIconUrl;
             worksheetId = 2;
         }
         // get worksheet from URL, otherwise it defaults to 1st sheet
