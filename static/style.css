@@ -1434,28 +1434,28 @@ tr:hover .menu-sprite.wishiwashi,
 span.hidden-power{
     background-image:url(types.png);
     background-repeat:no-repeat;
-    background-position:0 -72px;
     display:inline-block;
-    width:3.125em;
+    width:3em;
     height:1.125em;
     text-indent:-999em
 }
-.hidden-power.fire{background-position:0 -18px}
-.hidden-power.flying{background-position:0 -36px}
-.hidden-power.grass{background-position:0 -54px}
-.hidden-power.water{background-position:0 -90px}
-.hidden-power.bug{background-position:-50px 0}
-.hidden-power.electric{background-position:-50px -18px}
-.hidden-power.ghost{background-position:-50px -36px}
-.hidden-power.ground{background-position:-50px -54px}
-.hidden-power.poison{background-position:-50px -72px}
-.hidden-power.rock{background-position:-50px -90px}
-.hidden-power.dark{background-position:-100px 0}
-.hidden-power.dragon{background-position:-100px -18px}
-.hidden-power.fighting{background-position:0 0}
-.hidden-power.ice{background-position:-100px -54px}
-.hidden-power.psychic{background-position:-100px -72px}
-.hidden-power.steel{background-position:-100px -90px}
+.hidden-power.fighting{background-position:-48px 0}
+.hidden-power.flying{background-position:-96px 0}
+.hidden-power.poison{background-position:0 -18px}
+.hidden-power.ground{background-position:-48px -18px}
+.hidden-power.rock{background-position:-96px -18px}
+.hidden-power.bug{background-position:0 -36px}
+.hidden-power.ghost{background-position:-48px -36px}
+.hidden-power.steel{background-position:-96px -36px}
+.hidden-power.fire{background-position:0 -54px}
+.hidden-power.water{background-position:-48px -54px}
+.hidden-power.grass{background-position:-96px -54px}
+.hidden-power.electric{background-position:0 -72px}
+.hidden-power.psychic{background-position:-48px -72px}
+.hidden-power.ice{background-position:-96px -72px}
+.hidden-power.dark{background-position:0 -90px}
+.hidden-power.dragon{background-position:-48px -90px}
+.hidden-power.fairy{background-position:-96px -90px}
 
 .item-sprite{
 	width:1.625em;height:1.625em;
