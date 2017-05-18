@@ -1453,8 +1453,8 @@ span.hidden-power{
 .hidden-power.electric{background-position:0 -72px}
 .hidden-power.psychic{background-position:-48px -72px}
 .hidden-power.ice{background-position:-96px -72px}
-.hidden-power.dark{background-position:0 -90px}
-.hidden-power.dragon{background-position:-48px -90px}
+.hidden-power.dark{background-position:-48px -90px}
+.hidden-power.dragon{background-position:0 -90px}
 .hidden-power.fairy{background-position:-96px -90px}
 
 .item-sprite{
