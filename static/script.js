@@ -901,12 +901,11 @@ function displayPokemon(){
                     ability = "**" + ability + "**";
                 }
                 line += "<span class=\"ability\"> " + ability + " |</span>";
-                /* IVs & EVs
+                // IVs & EVs
                 var statAttributes = $this.find(".ivs").text();
                 line += "<span class=\"ivs\"> " + statAttributes + " |</span>";
                 statAttributes = $this.find(".evs").text();
                 line += "<span class=\"evs\"> " + statAttributes + " |</span>";
-                */
                 // Egg Moves
                 line += "<span class=\"egg-moves\"> " + $this.find(".egg-moves").text() + " |</span>";
                 // Poké Balls
