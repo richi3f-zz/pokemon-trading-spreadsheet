@@ -258,10 +258,11 @@ table {
     background: url(bg-td.gif);
     line-height: 1;
     width: 75%;
+    margin:auto
 }
 
 table thead tr {
-    background: url(bg-gif);
+    background-color: #333333;
     color: #f0f0f0;
 }
 
@@ -269,7 +270,6 @@ thead th[rowspan], thead th[class] { border-bottom: 0.25em solid transparent;}
 
 thead th[rowspan] { padding-top:0.625em; }
 thead th.ivs { display: none}
-thead th.hidden-power { display: none}
 thead th.hp { border-bottom-color:#77f296; display: none}
 thead th.atk { border-bottom-color:#f4e585; display: none}
 thead th.def { border-bottom-color:#ffb17a; display: none}
