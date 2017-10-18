@@ -252,6 +252,8 @@ h3::after{
     margin:0 0 0.5em
 }
 
+#copy2reddit {display:none }
+
 table {
     border-collapse:collapse;
     border-spacing:0;
