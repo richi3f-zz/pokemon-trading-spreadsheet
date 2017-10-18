@@ -268,7 +268,7 @@ table thead tr {
 thead th[rowspan], thead th[class] { border-bottom: 0.25em solid transparent;}
 
 thead th[rowspan] { padding-top:0.625em; }
-thead th.hp { border-bottom-color:#77f296;}
+thead th.hp { border-bottom-color:#77f296; display: none}
 thead th.atk { border-bottom-color:#f4e585;}
 thead th.def { border-bottom-color:#ffb17a;}
 thead th.spa { border-bottom-color:#88dee3;}
