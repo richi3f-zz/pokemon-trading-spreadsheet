@@ -278,7 +278,7 @@ thead th.def { border-bottom-color:#ffb17a; display: none}
 thead th.spa { border-bottom-color:#88dee3; display: none}
 thead th.spd { border-bottom-color:#859fff; display: none}
 thead th.spe { border-bottom-color:#d880ff; display: none}
-thead th.hidden-power { font-size:0.75em; }
+thead th.hidden-power {display: none}
 
 td, th {
     text-align: center;
