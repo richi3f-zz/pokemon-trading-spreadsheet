@@ -1017,8 +1017,9 @@ $(document).ready(function() {
                 trainerInfo += "<dd>" + friendCode + "</dd>";
             }
             trainerInfo += "</dl>";
-            trainerInfo += "<dl>LF: Dream, Safari, Beast, Apriball, and Sport Ball Pokémon I don't have.<br>";
-            trainerInfo += "<dl>If you're trading a non-HA Pokemon, I would prefer it to be male.<br>";
+            trainerInfo += "</dl>";
+            trainerInfo += "<dl><size = 1>LF: Dream, Safari, Beast, Apriball, and Sport Ball Pokémon I don't have.<br>";
+            trainerInfo += "If you're trading a non-HA Pokemon, I would prefer it to be male.</size>";
             trainerInfo += "</dl>";
             $("#trainer-info").prepend(trainerInfo);
         }
