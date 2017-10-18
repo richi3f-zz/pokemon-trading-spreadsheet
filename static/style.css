@@ -257,8 +257,7 @@ table {
     border-spacing:0;
     background: url(bg-td.gif);
     line-height: 1;
-    width: 75%;
-	margin: auto;
+    width: 100%;
 }
 
 table thead tr {
