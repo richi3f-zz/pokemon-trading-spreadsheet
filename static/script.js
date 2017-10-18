@@ -794,7 +794,7 @@ function displayPokemon(){
             evs = evs.join(' / ');
             if (evTotal === 0) evs = "Not EV-trained";
             row += "<td class=\"ivs hidden\">" + ivs + "</td>";
-            row += "<td class=\"evs hidden\">" + evs + "</td>";*/
+            row += "<td class=\"evs hidden\">" + evs + "</td>";
             // Hidden Power
             row += "<td class=\"hidden-power\">";
             if (pokemon.hiddenPower) {
@@ -803,7 +803,7 @@ function displayPokemon(){
                 row += pokemon.hiddenPower + "</span>";
             } else {
                 row += "-";
-            }
+            }*/
             row += "</td>";
             // Egg Moves
             row += "<td class=\"moves" +  (pokemon.eggMoves.length > 0 || !isForIndividualPokemon ? " hidden" : '') + "\">" + pokemon.moves.join(', ') + "</td>";      
