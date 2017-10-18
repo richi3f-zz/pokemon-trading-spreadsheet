@@ -257,7 +257,7 @@ table {
     border-spacing:0;
     background: url(bg-td.gif);
     line-height: 1;
-    width: 100%
+    width: 75%
 }
 
 table thead tr {
@@ -265,7 +265,7 @@ table thead tr {
     color: #f0f0f0;
 }
 
-thead th[rowspan], thead th[class] { border-bottom: 0.25em solid transparent; }
+thead th[rowspan], thead th[class] { border-bottom: 0.25em solid transparent; display:none}
 
 thead th[rowspan] { padding-top:0.625em; }
 thead th.hp { border-bottom-color:#77f296; }
