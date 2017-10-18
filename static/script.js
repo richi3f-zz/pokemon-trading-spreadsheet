@@ -737,7 +737,7 @@ function displayPokemon(){
                     evs.push("<abbr title=\"" + stat + " EV\">" + ev + " " + stat + "</abbr>");
                 }
             }
-            // IVs
+            /* IVs
             var ivs = [];
             for (var i = 0; i < BATTLE_STATS.length; i++) {
                 var stat = BATTLE_STATS_ABBR[i];
@@ -794,7 +794,7 @@ function displayPokemon(){
             evs = evs.join(' / ');
             if (evTotal === 0) evs = "Not EV-trained";
             row += "<td class=\"ivs hidden\">" + ivs + "</td>";
-            row += "<td class=\"evs hidden\">" + evs + "</td>";
+            row += "<td class=\"evs hidden\">" + evs + "</td>";*/
             // Hidden Power
             row += "<td class=\"hidden-power\">";
             if (pokemon.hiddenPower) {
