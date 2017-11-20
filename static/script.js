@@ -329,7 +329,7 @@ function getSpriteClass(pokemon) {
                 break;
             case "Dusk Mane":
             case "Dawn Wings":
-                cssClass += "-" + pokemon.form;
+                cssClass += "-" + pokemon.form.replace(' ', '-');
                 break;
             default:
                 cssClass += "-" + pokemon.form.substring(0, pokemon.form.lastIndexOf(" "));
