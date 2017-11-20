@@ -291,6 +291,13 @@ function getSpriteClass(pokemon) {
     }
     if (pokemon.form) {
         switch (pokemon.form) {
+            case "Original Cap":
+            case "Hoenn Cap":
+            case "Sinnoh Cap":
+            case "Unova Cap":
+            case "Kalos Cap":
+            case "Alola Cap":
+            case "Partner Cap":
             case "Normal Forme":
             case "Plant Cloak":
             case "West Sea":
@@ -320,8 +327,9 @@ function getSpriteClass(pokemon) {
             case "Hoopa Unbound":
                 cssClass = "hoopa-unbound";
                 break;
-            case "Ultra Necrozma":
-                cssClass = "necrozma-ultra";
+            case "Dusk Mane":
+            case "Dawn Wings":
+                cssClass += "-" + pokemon.form;
                 break;
             default:
                 cssClass += "-" + pokemon.form.substring(0, pokemon.form.lastIndexOf(" "));
