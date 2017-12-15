@@ -1182,7 +1182,7 @@ tr:hover .menu-sprite.greninja-ash{background-position:-270px -900px}
 .menu-sprite.vivillon-jungle{background-position:-30px -750px}
 .menu-sprite.vivillon-marine{background-position:-60px -750px}
 .menu-sprite.vivillon-modern{background-position:-90px -750px}
-.menu-sprite.vivillon-moonsoon{background-position:-120px -750px}
+.menu-sprite.vivillon-monsoon{background-position:-120px -750px}
 .menu-sprite.vivillon-ocean{background-position:-150px -750px}
 .menu-sprite.vivillon-polar{background-position:-210px -750px}
 .menu-sprite.vivillon-river{background-position:-240px -750px}
@@ -1466,8 +1466,8 @@ span.hidden-power{
 .hidden-power.electric{background-position:0 -72px}
 .hidden-power.psychic{background-position:-48px -72px}
 .hidden-power.ice{background-position:-96px -72px}
-.hidden-power.dark{background-position:0 -90px}
-.hidden-power.dragon{background-position:-48px -90px}
+.hidden-power.dark{background-position:-48px -90px}
+.hidden-power.dragon{background-position:0 -90px}
 .hidden-power.fairy{background-position:-96px -90px}
 
 .item-sprite{
