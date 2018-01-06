@@ -737,7 +737,7 @@ function displayPokemon(){
             row += "<td class=\"nature " + pokemon.nature.toLowerCase() + "\">" + pokemon.nature + "</td>";
             // Ability
             row += "<td class=\"ability\">" + (pokemon.ability.endsWith('*') ? pokemon.ability.slice(0,-1) : pokemon.ability) + "</td>";
-            // EVs
+            /* EVs
             var evs = [];
             var evTotal = 0;
             for (var i = 0; i < BATTLE_STATS.length; i++) {
@@ -814,7 +814,7 @@ function displayPokemon(){
                 row += pokemon.hiddenPower + "</span>";
             } else {
                 row += "-";
-            }
+            }*/
             row += "</td>";
             // Egg Moves
             row += "<td class=\"moves" +  (pokemon.eggMoves.length > 0 || !isForIndividualPokemon ? " hidden" : '') + "\">" + pokemon.moves.join(', ') + "</td>";      
@@ -912,11 +912,11 @@ function displayPokemon(){
                     ability = "**" + ability + "**";
                 }
                 line += "<span class=\"ability\"> " + ability + " |</span>";
-                // IVs & EVs
+                /* IVs & EVs
                 var statAttributes = $this.find(".ivs").text();
                 line += "<span class=\"ivs\"> " + statAttributes + " |</span>";
                 statAttributes = $this.find(".evs").text();
-                line += "<span class=\"evs\"> " + statAttributes + " |</span>";
+                line += "<span class=\"evs\"> " + statAttributes + " |</span>";*/
                 // Egg Moves
                 line += "<span class=\"egg-moves\"> " + $this.find(".egg-moves").text() + " |</span>";
                 // Poké Balls
@@ -939,7 +939,7 @@ function displayPokemon(){
         $("tbody tr").attr("title", "Click to " + (isForIndividualPokemon ? "display more information and" : '') + " add to Reddit table.");
         if (isForIndividualPokemon) {
             $("body").addClass("shiny");
-            $("th.ivs").append(" / <abbr title=\"Effort Values\">EVs</abbr>");
+            //$("th.ivs").append(" / <abbr title=\"Effort Values\">EVs</abbr>");
             $("th.egg-moves").text("Moves");
             $("#modal").click(function() {
                 $(this).addClass("hidden");
@@ -1030,6 +1030,11 @@ $(document).ready(function() {
             trainerInfo += "</dl>";
             $("#trainer-info").prepend(trainerInfo);
         }
+        var lookingfor = "";
+        lookingfor += "<dl>LF: Dream, Safari, Beast, Apriball, and Sport Ball Pokémon I don't have.<br>";
+        lookingfor += "If you're trading a non-HA Pokemon, I would prefer it to be male.</size>";
+        lookingfor += "</dl>";
+        $("#lookingfor").prepend(lookingfor);
         // display Pokémon
         displayPokemon();
         // add button links to other tabs

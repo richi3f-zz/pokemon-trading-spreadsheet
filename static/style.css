@@ -252,29 +252,33 @@ h3::after{
     margin:0 0 0.5em
 }
 
+#copy2reddit {display:none }
+
 table {
     border-collapse:collapse;
     border-spacing:0;
     background: url(bg-td.gif);
     line-height: 1;
-    width: 100%
+    width: 75%;
+    margin:auto
 }
 
 table thead tr {
-    background: url(bg-th.gif);
+    background-color: #333333;
     color: #f0f0f0;
 }
 
-thead th[rowspan], thead th[class] { border-bottom: 0.25em solid transparent; }
+thead th[rowspan], thead th[class] { border-bottom: 0.25em solid transparent;}
 
 thead th[rowspan] { padding-top:0.625em; }
-thead th.hp { border-bottom-color:#77f296; }
-thead th.atk { border-bottom-color:#f4e585; }
-thead th.def { border-bottom-color:#ffb17a; }
-thead th.spa { border-bottom-color:#88dee3; }
-thead th.spd { border-bottom-color:#859fff; }
-thead th.spe { border-bottom-color:#d880ff; }
-thead th.hidden-power { font-size:0.75em; }
+thead th.ivs { display: none}
+thead th.hp { border-bottom-color:#77f296; display: none}
+thead th.atk { border-bottom-color:#f4e585; display: none}
+thead th.def { border-bottom-color:#ffb17a; display: none}
+thead th.spa { border-bottom-color:#88dee3; display: none}
+thead th.spd { border-bottom-color:#859fff; display: none}
+thead th.spe { border-bottom-color:#d880ff; display: none}
+thead th.hidden-power {display: none}
 
 td, th {
     text-align: center;
@@ -287,8 +291,8 @@ td {
 }
 
 td.sprite, td.name, td.hp, td.atk, td.def, td.spa, td.spd, td.spe { white-space:nowrap }
-td.hp, td.atk, td.def, td.spa, td.spd, td.spe { width:2.625em }
-td.hp.rows2, td.atk.rows2, td.def.rows2, td.spa.rows2, td.spd.rows2, td.spe.rows2 { font-size:0.75em;line-height:1.45 }
+td.hp, td.atk, td.def, td.spa, td.spd, td.spe { width:2.625em;}
+td.hp.rows2, td.atk.rows2, td.def.rows2, td.spa.rows2, td.spd.rows2, td.spe.rows2 { font-size:0.75em;line-height:1.45;}
 td.poke-balls { width:6.625em }
 td.hidden-power { width:3.125em }
 td.name, td.trainer, td.nature, td.ability, td.moves, td.egg-moves { text-align:left }
