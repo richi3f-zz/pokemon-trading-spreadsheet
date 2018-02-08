@@ -122,7 +122,7 @@ h1 a {
 }
 
 h1 a:focus, h1 a:hover {
-    color:#4d6ad8;
+    color:#444649;
 }
 
 #trainer-info {
@@ -176,7 +176,7 @@ nav ul li a,
 #copy2reddit [data-clipboard-target] {
     display:inline-block;
     margin:0 0.5em 0 0;
-    background-color:#4d6ad8;
+    background-color:#444649;
     font-weight:700;
     color:#f0f0f0;
     padding:0.5em 0;
@@ -193,7 +193,7 @@ nav ul li.current::after {
     height: 0;
     border-left: .75em solid transparent;
     border-right: .75em solid transparent;
-    border-top: .75em solid #4d6ad8;
+    border-top: .75em solid #444649;
     content: " ";
     display: block;
     position: absolute;
@@ -220,7 +220,7 @@ nav > ul > li:not(:first-child)::before {
 
 h2{
     background-color:#f0f0f0;
-    color:#4d6ad8;
+    color:#444649;
     font-size:1.5em;
     font-weight:700;
     margin: 0 0 1em;
@@ -1692,7 +1692,7 @@ body.shiny tbody tr {
     content:"\0025b6"
 }
 #pokemon-info .carousel a:hover::before{
-    color:#4d6ad8;
+    color:#444649;
     text-shadow: 0 0 1em #f0f0f0
 }
 
@@ -1775,7 +1775,7 @@ body.shiny tbody tr {
     margin:1.667em 0 0
 }
 #pokemon-info .notes a {
-    color:#4d6ad8
+    color:#444649
 }
 
 #copy2reddit{
