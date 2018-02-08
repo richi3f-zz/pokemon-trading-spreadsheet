@@ -203,6 +203,7 @@ var StatAttributes = function() {
 // Pokémon object
 var Pokemon = function() {
     this.dexNo = 0;
+    this.event = "";
     this.name = "";
     this.form = "";
     this.nickname = "";
@@ -619,6 +620,7 @@ function displayPokemon(){
         $(entry).each(function(){
             var pokemon = new Pokemon();
             pokemon.dexNo = Number(getValue(this.gsx$dexno));
+            pokemon.event = getValue(this.gsx$event);
             pokemon.name = getValue(this.gsx$name);
             if (!pokemon.dexNo || !pokemon.name) {
                 return true;
