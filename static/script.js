@@ -1021,7 +1021,7 @@ $(document).ready(function() {
             trainerInfo += "<dl>";
             if (inGameName) {
                 trainerInfo += "<dt><abbr title=\"In-Game Name\">IGN</abbr></dt>";
-                trainerInfo += "<dd>" + inGameName + "</dd>";
+                trainerInfo += "<dd>" + "Alena/Arlo" + "</dd>";
             }
             if (friendCode) {
                 trainerInfo += "<dt><abbr title=\"Friend Code\">FC</abbr></dt>";
