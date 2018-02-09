@@ -540,8 +540,9 @@ function populateModal($this) {
     // Name, Nickname, Sex & Level
     var name = dexNo == 29 || dexNo == 32 ? "Nidoran" : $this.data("name");
     var nickname = $this.data("nickname");
+
     if (nickname) {
-        name = nickname + " (" + name + ")";
+        name = " " + name + " (" + "NN: " + nickname + ")";
     }
     $pokemonInfo.find(".event").text(event);
     $pokemonInfo.find(".name").text(name);
