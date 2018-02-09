@@ -533,6 +533,7 @@ function populateModal($this) {
         prevId = $this.nextAll().not(".filtered").last().data("id");
     }
     var $pokemonInfo = $("#pokemon-info");
+    var event = $this.data("event");
     var dexNo = Number($this.data("dexno"));
     var isShiny = $this.data("isshiny");
     if (isShiny) $pokemonInfo.addClass("shiny");
@@ -540,7 +541,7 @@ function populateModal($this) {
     var name = dexNo == 29 || dexNo == 32 ? "Nidoran" : $this.data("name");
     var nickname = $this.data("nickname");
     if (nickname) {
-        name = nickname + " (" + name + ")";
+        name = nickname + "da" + " (" + name + ")";
     }
     $pokemonInfo.find(".name").text(name);
     var gender = $this.data("gender");
