@@ -541,8 +541,9 @@ function populateModal($this) {
     var name = dexNo == 29 || dexNo == 32 ? "Nidoran" : $this.data("name");
     var nickname = $this.data("nickname");
     if (nickname) {
-        name = nickname + "da" + " (" + name + ")";
+        name = nickname + " (" + name + ")";
     }
+    $pokemonInfo.find(".event").text(event);
     $pokemonInfo.find(".name").text(name);
     var gender = $this.data("gender");
     if (gender == "F") {
@@ -725,6 +726,7 @@ function displayPokemon(){
             // Spriteew
             row += "<td class=\"sprite\"><span class=\"menu-sprite " + getSpriteClass(pokemon) + "\" title=\"" + pokemon.name + "\">" + pokemon.dexNo + "</span></td>";
             // Name
+            row += "<td class=\"event\">" + pokemon.event + "</span></td>";
             row += "<td class=\"name\">" + (pokemon.dexNo == 29 || pokemon.dexNo == 32 ? "Nidoran" : pokemon.name);
             if (pokemon.gender == "F") {
                  row += " <span class=\"gender female\" title=\"Female\">&#x2640;</span>";
@@ -906,7 +908,8 @@ function displayPokemon(){
                 if (nickname) {
                     name = nickname + " (" + name + ")";
                 }
-                line += "<span class=\"name\">| " + $this.data("event") + name + " |</span>";
+                line += "<span class=\"event\">| " + event + " |</span>";
+                line += "<span class=\"name\">| " + name + " |</span>";
                 // Trainer
                 line += "<span class=\"trainer\"> " + $this.data("ot") + " (" + $this.data("tid") + ")" + " |</span>";
                 // Nature & Ability
