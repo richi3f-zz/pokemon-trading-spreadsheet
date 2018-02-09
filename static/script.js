@@ -909,9 +909,9 @@ function displayPokemon(){
                 //set name to event + name
                 //name = event + " " + name;
                 
-                //unneccessarysfkjdsfljsd f
+                //Charizard (NN: carl)
                 if (nickname) {
-                    name = nickname + " (" + name + ")";
+                    name = name + " (" + "NN: " + nickname + ")";
                 }
                 //This is where the reddit table data is drawn.. i think
                 line += "<span class=\"event\">| " + event + " </span>";
@@ -932,7 +932,8 @@ function displayPokemon(){
                 statAttributes = $this.find(".evs").text();
                 line += "<span class=\"evs\"> " + statAttributes + " |</span>";
                 // Egg Moves
-                line += "<span class=\"egg-moves\"> " + $this.find(".egg-moves").text() + " |</span>";
+                //turned into moves
+                line += "<span class=\"moves\"> " + $this.find(".moves").text() + " |</span>";
                 // Poké Balls
                 line += "<span class=\"poke-balls\"> ";
                 $this.find(".item-sprite").each(function() {
