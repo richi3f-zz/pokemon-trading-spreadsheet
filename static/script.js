@@ -203,6 +203,7 @@ var StatAttributes = function() {
 // Pokémon object
 var Pokemon = function() {
     this.dexNo = 0;
+    this.event = "";
     this.name = "";
     this.form = "";
     this.nickname = "";
@@ -613,12 +614,13 @@ function displayPokemon(){
     $.getJSON(getWorksheetUrl(spreadsheetId, worksheetId), function(data) {
         var entry = data.feed.entry;
         if (entry && entry[0]) {
-            isForIndividualPokemon = tryGetValue(entry[0], ["nickname","ot","tid","level","lv","lvl","hpev","atkev","defev","spaev","spdev","speev","lang","language"]);
+            isForIndividualPokemon = tryGetValue(entry[0], ["event","nickname","ot","tid","level","lv","lvl","hpev","atkev","defev","spaev","spdev","speev","lang","language"]);
         }
         var count = 0;
         $(entry).each(function(){
             var pokemon = new Pokemon();
             pokemon.dexNo = Number(getValue(this.gsx$dexno));
+            pokemon.event = getValue(this.gsx$event);
             pokemon.name = getValue(this.gsx$name);
             if (!pokemon.dexNo || !pokemon.name) {
                 return true;
@@ -657,6 +659,7 @@ function displayPokemon(){
                     pokemon.gender = '-';
                     break;
             }
+            pokemon.event = getValue(this.gsx$event);
             pokemon.isShiny = getValue(this.gsx$shiny);
             pokemon.nickname = getValue(this.gsx$nickname);
             pokemon.ot = getValue(this.gsx$ot);
@@ -889,6 +892,7 @@ function displayPokemon(){
             } else {
                 var line = "";
                 // Pokémon Name
+                var event = $this.data("event");
                 var name = $this.data("name");
                 if ($this.data("isshiny")) name = "★ " + name;
                 var gender = $this.data("gender");
@@ -901,7 +905,7 @@ function displayPokemon(){
                 if (nickname) {
                     name = nickname + " (" + name + ")";
                 }
-                line += "<span class=\"name\">| " + name + " |</span>";
+                line += "<span class=\"name\">| " + $this.data("event") + name + " |</span>";
                 // Trainer
                 line += "<span class=\"trainer\"> " + $this.data("ot") + " (" + $this.data("tid") + ")" + " |</span>";
                 // Nature & Ability
@@ -1021,7 +1025,7 @@ $(document).ready(function() {
             trainerInfo += "<dl>";
             if (inGameName) {
                 trainerInfo += "<dt><abbr title=\"In-Game Name\">IGN</abbr></dt>";
-                trainerInfo += "<dd>" + inGameName + "</dd>";
+                trainerInfo += "<dd>" + "Alena/Arlo" + "</dd>";
             }
             if (friendCode) {
                 trainerInfo += "<dt><abbr title=\"Friend Code\">FC</abbr></dt>";
