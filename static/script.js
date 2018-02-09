@@ -908,7 +908,7 @@ function displayPokemon(){
                 //set name to event + name
                 //name = event + " " + name;
                 
-                //unneccessarysfkjdsfljsd
+                //unneccessarysfkjdsfljsd f
                 if (nickname) {
                     name = nickname + " (" + name + ")";
                 }
