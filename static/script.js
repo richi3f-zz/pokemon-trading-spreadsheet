@@ -614,7 +614,7 @@ function displayPokemon(){
     $.getJSON(getWorksheetUrl(spreadsheetId, worksheetId), function(data) {
         var entry = data.feed.entry;
         if (entry && entry[0]) {
-            isForIndividualPokemon = tryGetValue(entry[0], ["nickname","ot","tid","level","lv","lvl","hpev","atkev","defev","spaev","spdev","speev","lang","language"]);
+            isForIndividualPokemon = tryGetValue(entry[0], ["event","nickname","ot","tid","level","lv","lvl","hpev","atkev","defev","spaev","spdev","speev","lang","language"]);
         }
         var count = 0;
         $(entry).each(function(){
@@ -659,6 +659,7 @@ function displayPokemon(){
                     pokemon.gender = '-';
                     break;
             }
+            pokemon.event = getValue(this.gsx$event);
             pokemon.isShiny = getValue(this.gsx$shiny);
             pokemon.nickname = getValue(this.gsx$nickname);
             pokemon.ot = getValue(this.gsx$ot);
@@ -891,6 +892,7 @@ function displayPokemon(){
             } else {
                 var line = "";
                 // Pokémon Name
+                var event = $this.data("event");
                 var name = $this.data("name");
                 if ($this.data("isshiny")) name = "★ " + name;
                 var gender = $this.data("gender");
@@ -903,7 +905,7 @@ function displayPokemon(){
                 if (nickname) {
                     name = nickname + " (" + name + ")";
                 }
-                line += "<span class=\"name\">| " + name + " |</span>";
+                line += "<span class=\"name\">| " + $this.data("event") + name + " |</span>";
                 // Trainer
                 line += "<span class=\"trainer\"> " + $this.data("ot") + " (" + $this.data("tid") + ")" + " |</span>";
                 // Nature & Ability
