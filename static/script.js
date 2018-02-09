@@ -738,6 +738,8 @@ function displayPokemon(){
                 row += "<br><span class=\"form\">" + pokemon.form + "</span>";
             }
             row += "</td>";
+            //empty space
+            row += "<td class=\"name\">" + " " + "</span></td>";
             // Trainer
             row += "<td class=\"trainer\">" + pokemon.ot + "<br><span class=\"tid\">(" + pokemon.tid + ")</span></td>";
             // Nature
