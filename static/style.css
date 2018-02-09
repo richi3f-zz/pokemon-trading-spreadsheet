@@ -304,9 +304,9 @@ td.sprite{width:3.5em;max-width:3.5em}
 
 td.name .form,td.name .nickname,td.trainer .tid { font-size:0.75em }
 
-tr.shiny td.name::before,
-#pokemon-info.shiny .name::before{
-    content: "★ ";
+tr.shiny td.name::after,
+#pokemon-info.shiny .name::after{
+    content: " ★";
     color:#f11
 }
 
