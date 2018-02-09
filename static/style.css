@@ -292,7 +292,7 @@ td.name, td.event {width:10em}
 td.hp.rows2, td.atk.rows2, td.def.rows2, td.spa.rows2, td.spd.rows2, td.spe.rows2 { font-size:0.75em;line-height:1.45 }
 td.poke-balls { width:6.625em }
 td.hidden-power { width:3.125em }
-td.name, td.event, td.trainer, td.nature, td.ability, td.moves, td.egg-moves { text-align:left }
+td.name, td.event, td.trainer, td.nature, td.ability, td.moves, td.egg-moves { text-align:center }
 td.moves,td.egg-moves { line-height:1.45 }
 
 td.sprite{width:3.5em;max-width:3.5em}
