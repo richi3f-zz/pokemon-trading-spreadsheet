@@ -897,6 +897,7 @@ function displayPokemon(){
                 // Pokémon Name
                 var event = $this.data("event");
                 var name = $this.data("name");
+                //Should draw the shiny sprite after the name...
                 if ($this.data("isshiny")) name = name + " ★";
                 var gender = $this.data("gender");
                 if (gender == "F") {
