@@ -905,6 +905,7 @@ function displayPokemon(){
                     name += " ♂";
                 }
                 var nickname = $this.data("nickname");
+                name = event + " " + name;
                 if (nickname) {
                     name = nickname + " (" + name + ")";
                 }
