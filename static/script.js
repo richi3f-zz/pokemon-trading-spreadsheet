@@ -912,7 +912,8 @@ function displayPokemon(){
                 if (nickname) {
                     name = nickname + " (" + name + ")";
                 }
-                line += "<span class=\"event\">| " + event + " |</span>";
+                //This is where the reddit table data is drawn.. i think
+                line += "<span class=\"event\">| " + event + " </span>";
                 line += "<span class=\"name\">| " + name + " |</span>";
                 // Trainer
                 line += "<span class=\"trainer\"> " + $this.data("ot") + " (" + $this.data("tid") + ")" + " |</span>";
