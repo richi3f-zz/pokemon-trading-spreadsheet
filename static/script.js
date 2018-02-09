@@ -542,7 +542,7 @@ function populateModal($this) {
     var nickname = $this.data("nickname");
 
     if (nickname) {
-        name = " " + name + " (" + "NN: " + nickname + ")";
+        name = " " + name + " (" + nickname + ")";
     }
     $pokemonInfo.find(".event").text(event);
     $pokemonInfo.find(".name").text(name);
