@@ -977,6 +977,7 @@ function displayPokemon(){
             });
         } else {
             $("table .trainer").addClass("hidden");
+            $("table .event").addClass("hidden");
         }
         $("select:not(#col-picker)").multiselect({
             buttonWidth: '140px',
@@ -1000,10 +1001,11 @@ function displayPokemon(){
         $("select:not(#misc-filter)").multiselect("selectAll", false);
         if (!isForIndividualPokemon) {
             disableOption("trainer");
+            disableOption("event");
             disableOption("evs");
             disableOption("language");
             disableOption("notes");
-            $("#col-picker").multiselect("deselect", ["trainer", "evs", "language"]);
+            $("#col-picker").multiselect("deselect", ["trainer", "event", "evs", "language"]);
             toggleCols();
         }
         $("select").multiselect("updateButtonText");
