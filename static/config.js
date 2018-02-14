@@ -1,5 +1,5 @@
 ﻿// ***********************************************************************************
-// ID of the Google spreadsheet
+// ID of the Google spreadsheet done
 // ***********************************************************************************
 // Make sure your spreadsheet is published (File > Publish to the web…)
 var spreadsheetId = "1wdZkQOEYNJOKk2asowibMG6OuUeeYVckWrS6VWnvB4Y";
