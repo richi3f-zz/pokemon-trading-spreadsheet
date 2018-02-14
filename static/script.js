@@ -978,7 +978,6 @@ function displayPokemon(){
         } else {
             $("table .trainer").addClass("hidden");
             $("table .event").addClass("hidden");
-            $("table .ivs").addClass("hidden");
         }
         $("select:not(#col-picker)").multiselect({
             buttonWidth: '140px',
