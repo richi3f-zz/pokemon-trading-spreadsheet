@@ -686,7 +686,7 @@ function displayPokemon(){
                 }
             }
             pokemon.language = tryGetValue(this, ["language", "lang"]);
-            pokemon.notes = tryGetValue(this, ["note", "notes", "comment", "comments", "hatch threads"]);
+            pokemon.notes = tryGetValue(this, ["note", "notes", "comment", "comments"]);
             for (var i = 0; i < POKE_BALLS.length; i++) {
                 var pokeBall = POKE_BALLS[i].toLowerCase();
                 if (tryGetValue(this, [pokeBall.replace(' ', ''), pokeBall.slice(0, -5)])) pokemon.balls.push(pokeBall);
@@ -843,7 +843,6 @@ function displayPokemon(){
             $("tbody").append(row);
             count++;
         });
-        //
         $("#loader").fadeOut("slow");
         var handle = 0;
         $("tbody tr").hover(function() {
@@ -857,7 +856,6 @@ function displayPokemon(){
         });
         $("tbody tr").click(function() {
             var $this = $(this);
-            //sfdsdf
             if ($this.hasClass("selected")) {
                 $this.attr("title", "Click to " + (isForIndividualPokemon ? "display more information and " : '') + "add to Reddit table.");
             } else {
@@ -978,7 +976,7 @@ function displayPokemon(){
                 e.stopPropagation();
             });
         } else {
-            $("table .event").addClass("hidden");
+            $("table .trainer").addClass("hidden");
         }
         $("select:not(#col-picker)").multiselect({
             buttonWidth: '140px',
@@ -1001,10 +999,11 @@ function displayPokemon(){
         $("#search-bar").on("input", filterPokemon);
         $("select:not(#misc-filter)").multiselect("selectAll", false);
         if (!isForIndividualPokemon) {
-            disableOption("event");
+            disableOption("trainer");
             disableOption("evs");
             disableOption("language");
-            $("#col-picker").multiselect("deselect", ["event", "evs", "language"]);
+            disableOption("notes");
+            $("#col-picker").multiselect("deselect", ["trainer", "evs", "language"]);
             toggleCols();
         }
         $("select").multiselect("updateButtonText");
@@ -1075,7 +1074,7 @@ $(document).ready(function() {
             Object.keys(tabs).forEach(function(i) {
                 if (tabs[i]) $("nav > ul").append("<li><abbr title=\"" + TAB_NAMES[i] + "\">" + i + "</abbr><ul>" + tabs[i] + "</ul>");
             });
-            // make each button reload the page on click
+            // make each button reload the page on clickk
             $("nav a").each(function() {
                 $(this).click(function() {
                     window.location.hash = this.hash;
