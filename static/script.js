@@ -857,6 +857,7 @@ function displayPokemon(){
         });
         $("tbody tr").click(function() {
             var $this = $(this);
+            //sfd
             if ($this.hasClass("selected")) {
                 $this.attr("title", "Click to " + (isForIndividualPokemon ? "display more information and " : '') + "add to Reddit table.");
             } else {
