@@ -978,7 +978,6 @@ function displayPokemon(){
                 e.stopPropagation();
             });
         } else {
-            //$("table .trainer").addClass("hidden");
             $("table .event").addClass("hidden");
         }
         $("select:not(#col-picker)").multiselect({
