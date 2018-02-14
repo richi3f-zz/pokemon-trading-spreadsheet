@@ -48,6 +48,8 @@
                 <option value="poke-ball">Poké Ball</option>
                 <option value="great-ball">Great Ball</option>
                 <option value="ultra-ball">Ultra Ball</option>
+                <option value="cherish-ball">Cherish Ball</option>
+                <option value="master-ball">Master Ball</option>
                 <option value="safari-ball">Safari Ball</option>
                 <option value="net-ball">Net Ball</option>
                 <option value="dive-ball">Dive Ball</option>
@@ -123,7 +125,9 @@
     <table>
         <thead>
             <tr>
-                <th class="name" colspan="2" rowspan="2">Pokémon</th>
+                <th class="space" rowspan="2"></th>
+                <th class="event" rowspan="2"><abbr title="Event">Event</abbr></th>
+                <th class="name" rowspan="2" colspan="2">Pokémon</th>
                 <th class="trainer" rowspan="2"><abbr title="Original Trainer">OT</abbr></th>
                 <th class="nature" rowspan="2">Nature</th>
                 <th class="ability" rowspan="2">Ability</th>
@@ -150,12 +154,13 @@
         <div class="filter">
             <label for="col-picker">Columns to Show</label><!--
             --><select id="col-picker" multiple="multiple">
+                <option value="event">Event</option>
                 <option value="trainer">OT/TID</option>
                 <option value="nature">Nature</option>
                 <option value="ability">Ability</option>
                 <option value="ivs">IVs</option>
                 <option value="evs">EVs</option>
-                <option value="egg-moves">Egg Moves</option>
+                <option value="moves">Moves</option>
                 <option value="poke-balls">Poké Ball(s)</option>
                 <option value="language">Language</option>
                 <option value="notes">Notes</option>
@@ -164,26 +169,28 @@
         </div>
         <div id="markdown"><!--
             --><span class="line"><!--
-                --><span class="name">| Pokémon |</span>
+                --><span class="event">| Event |</span>
+                <span class="name">Pokémon |</span>
                 <span class="trainer">OT/TID |</span>
                 <span class="nature">Nature |</span>
                 <span class="ability">Ability |</span>
                 <span class="ivs">IVs |</span>
                 <span class="evs">EVs |</span>
-                <span class="egg-moves">Egg Moves |</span>
+                <span class="moves">Moves |</span>
                 <span class="poke-balls">Poké Ball |</span>
                 <span class="language">Language |</span>
                 <span class="notes"> Notes |</span>
                 <br>
             </span><!--
             --><span class="line">
-                <span class="name">|---------|</span><!--
+                <span class="event">|---------|</span><!--
+                --><span class="name">---------|</span><!--
                 --><span class="trainer">--------|</span><!--
                 --><span class="nature">--------|</span><!--
                 --><span class="ability">---------|</span><!--
                 --><span class="ivs">:---:|</span><!--
                 --><span class="evs">:---:|</span><!--
-                --><span class="egg-moves">-----------|</span><!--
+                --><span class="moves">-----------|</span><!--
                 --><span class="poke-balls">-----------|</span><!--
                 --><span class="language">:--------:|</span><!--
                 --><span class="notes">:------|</span>
@@ -203,10 +210,11 @@
     </footer>
     <div id="modal" class="hidden">
         <div id="pokemon-info">
+            <!-- When you click on a pokemon, this is the little box that is displayed -->
             <div class="carousel prev"><a href="#" title="Previous">Previous</a></div>
             <figure></figure>
             <h1>
-                <span class="name"></span> <span class="gender"></span> <span class="level"></span>
+                <span class="event"><p> a </p></span><span class="name"></span> <span class="gender"></span> <span class="level"></span>
             </h1>
             <span class="language" title=""></span>
             <dl>
