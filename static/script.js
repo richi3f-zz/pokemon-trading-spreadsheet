@@ -686,7 +686,7 @@ function displayPokemon(){
                 }
             }
             pokemon.language = tryGetValue(this, ["language", "lang"]);
-            pokemon.notes = tryGetValue(this, ["note", "notes", "comment", "comments"]);
+            pokemon.notes = tryGetValue(this, ["note", "notes", "comment", "comments", "hatch threads"]);
             for (var i = 0; i < POKE_BALLS.length; i++) {
                 var pokeBall = POKE_BALLS[i].toLowerCase();
                 if (tryGetValue(this, [pokeBall.replace(' ', ''), pokeBall.slice(0, -5)])) pokemon.balls.push(pokeBall);
@@ -976,7 +976,7 @@ function displayPokemon(){
                 e.stopPropagation();
             });
         } else {
-            $("table .trainer").addClass("hidden");
+            //$("table .trainer").addClass("hidden");
             $("table .event").addClass("hidden");
         }
         $("select:not(#col-picker)").multiselect({
@@ -1000,13 +1000,10 @@ function displayPokemon(){
         $("#search-bar").on("input", filterPokemon);
         $("select:not(#misc-filter)").multiselect("selectAll", false);
         if (!isForIndividualPokemon) {
-            disableOption("trainer");
             disableOption("event");
             disableOption("evs");
-            disableOption("ivs");
             disableOption("language");
-            disableOption("notes");
-            $("#col-picker").multiselect("deselect", ["trainer", "event", "ivs", "evs", "language"]);
+            $("#col-picker").multiselect("deselect", ["event", "evs", "language"]);
             toggleCols();
         }
         $("select").multiselect("updateButtonText");
