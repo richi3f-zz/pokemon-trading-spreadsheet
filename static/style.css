@@ -122,7 +122,7 @@ h1 a {
 }
 
 h1 a:focus, h1 a:hover {
-    color:#4d6ad8;
+    color:#444649;
 }
 
 #trainer-info {
@@ -176,7 +176,7 @@ nav ul li a,
 #copy2reddit [data-clipboard-target] {
     display:inline-block;
     margin:0 0.5em 0 0;
-    background-color:#4d6ad8;
+    background-color:#444649;
     font-weight:700;
     color:#f0f0f0;
     padding:0.5em 0;
@@ -193,7 +193,7 @@ nav ul li.current::after {
     height: 0;
     border-left: .75em solid transparent;
     border-right: .75em solid transparent;
-    border-top: .75em solid #4d6ad8;
+    border-top: .75em solid #444649;
     content: " ";
     display: block;
     position: absolute;
@@ -220,7 +220,7 @@ nav > ul > li:not(:first-child)::before {
 
 h2{
     background-color:#f0f0f0;
-    color:#4d6ad8;
+    color:#444649;
     font-size:1.5em;
     font-weight:700;
     margin: 0 0 1em;
@@ -286,12 +286,13 @@ td {
     border-bottom: 1px solid #8f8173;
 }
 
-td.sprite, td.name, td.hp, td.atk, td.def, td.spa, td.spd, td.spe { white-space:nowrap }
+td.sprite, td.name, td.event, td.hp, td.atk, td.def, td.spa, td.spd, td.spe { white-space:nowrap }
 td.hp, td.atk, td.def, td.spa, td.spd, td.spe { width:2.625em }
+td.name, td.event {width:10em}
 td.hp.rows2, td.atk.rows2, td.def.rows2, td.spa.rows2, td.spd.rows2, td.spe.rows2 { font-size:0.75em;line-height:1.45 }
 td.poke-balls { width:6.625em }
 td.hidden-power { width:3.125em }
-td.name, td.trainer, td.nature, td.ability, td.moves, td.egg-moves { text-align:left }
+td.name, td.event, td.trainer, td.nature, td.ability, td.moves, td.egg-moves { text-align:center }
 td.moves,td.egg-moves { line-height:1.45 }
 
 td.sprite{width:3.5em;max-width:3.5em}
@@ -304,9 +305,9 @@ td.sprite{width:3.5em;max-width:3.5em}
 
 td.name .form,td.name .nickname,td.trainer .tid { font-size:0.75em }
 
-tr.shiny td.name::before,
-#pokemon-info.shiny .name::before{
-    content: "★ ";
+tr.shiny td.name::after,
+#pokemon-info.shiny .name::after{
+    content: " ★";
     color:#f11
 }
 
@@ -1692,7 +1693,7 @@ body.shiny tbody tr {
     content:"\0025b6"
 }
 #pokemon-info .carousel a:hover::before{
-    color:#4d6ad8;
+    color:#444649;
     text-shadow: 0 0 1em #f0f0f0
 }
 
@@ -1775,7 +1776,7 @@ body.shiny tbody tr {
     margin:1.667em 0 0
 }
 #pokemon-info .notes a {
-    color:#4d6ad8
+    color:#444649
 }
 
 #copy2reddit{
