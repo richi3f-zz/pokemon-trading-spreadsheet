@@ -843,6 +843,7 @@ function displayPokemon(){
             $("tbody").append(row);
             count++;
         });
+        //
         $("#loader").fadeOut("slow");
         var handle = 0;
         $("tbody tr").hover(function() {
