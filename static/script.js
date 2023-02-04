@@ -477,10 +477,10 @@ function toggleCols() {
     });
 }
 function getWorksheetUrl(spreadsheetId, worksheetId) {
-    return "https://docs.google.com/spreadsheets/d/e/" + spreadsheetId + "/" + worksheetId + "/pubhtml";
+    return "https://docs.google.com/spreadsheets/d/e/2PACX-1vRXeiohzQhsjrim_TznP6zDiJ-JOIidn_QSXqO0ADwoYLnEqzXnTjZhME9tDYR19tAEooj9Z2K00uNf/pubhtml";
 }
 function getSpreadsheetUrl(spreadsheetId) {
-    return "https://docs.google.com/spreadsheets/d/e/" + spreadsheetId + "/pubhtml";
+    return "https://docs.google.com/spreadsheets/d/e/2PACX-1vRXeiohzQhsjrim_TznP6zDiJ-JOIidn_QSXqO0ADwoYLnEqzXnTjZhME9tDYR19tAEooj9Z2K00uNf/pubhtml";
 }
 function getValue(field) {
     if (field && field.$t) return field.$t;
